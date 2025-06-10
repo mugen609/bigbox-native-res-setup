@@ -152,10 +152,30 @@ Some paid and free components are used. Essential software is required for core 
 - Network Setup: Enabling SSH on the emulation PC (e.g., via OpenSSH Server) allows file transfers without USB drives. USB or NAS work too but SSH is best with a Gamepad only machine.
 - Clean Windows Install: Install Windows without internet to avoid automatic driver updates, then use the Show/Hide Updates tool to block AMD driver changes.
 
+
 ## Video Signal Chain
+
+
+```Video signal
+[Mini PC]
+Ryzen 9 8945HS
+780M iGPU
+│
+└─[eGPU Dock via OCuLink]
+│
+└─[RX 580 GPU]
+│
+└─[HDMI Output (Custom Resolutions via CRU)]
+│
+└─[RetroTink 4K]
+(Scaler + CRT Shaders)
+│
+└─[Eizo FG2421 Monitor]
+(1080p 120Hz, 4:3 or TATE)
+```
 The system outputs native resolutions (224p–720p) via HDMI, upscaled by a scaler to a modern display. Below is the signal flow for my setup, adaptable to other GPUs, scalers, or monitors.
 
-[PC: RX580 GPU] --> [HDMI: 224p–720p] --> [RT4K Scaler: Upscales to 1080p/4K] --> [FG2421 Display: 1080p]
+
 
 In my configuration:
 - The mini PC (Ryzen 9 8945HS) and RX 580 eGPU generate native resolutions.
