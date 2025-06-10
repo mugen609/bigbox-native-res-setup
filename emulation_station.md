@@ -129,7 +129,7 @@ Some paid and free components are used. Essential software is required for core 
 | [Steam](https://store.steampowered.com/)                             | In-Pay | Or similar client.                                                    |
 | [AutoHotkey 1.1](https://www.autohotkey.com/)                    | Free | Scripts for unified hotkeys and popup dismissal.                        |
 | [Res-O-Matic](https://www.majorgeeks.com/files/details/res_o_matic.html)                       | Free | Forces specific resolutions for emulators.                              |
-| [Visual C++]((https://aka.ms/vs/17/release/vc_redist.x64.exe)), [.NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net481), [DirectX](https://www.microsoft.com/en-us/download/details.aspx?id=35) | Free | Runtime libraries for emulator compatibility.                          |
+| [Visual C++](https://aka.ms/vs/17/release/vc_redist.x64.exe), [.NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net481), [DirectX](https://www.microsoft.com/en-us/download/details.aspx?id=35) | Free | Runtime libraries for emulator compatibility.                          |
 
 #### Optional Software
 - [Microsoft Show/Hide Updates]((https://download.microsoft.com/download/f/2/2/f22d5fdb-59cd-4275-8c95-1be17bf70b21/wushowhide.diagcab)): Prevents unwanted AMD driver updates that break 240p support.
