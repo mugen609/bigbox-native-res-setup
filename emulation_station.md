@@ -113,6 +113,11 @@ The system requires a PC with sufficient power for emulation, a GPU supporting l
   Tested: Sony DualSense x2, Hori Octa Pro, Xbox Series X controller (four players).
 
 
+
+
+  ![OCulink RX580](OCulink_RX580.jpeg)
+
+
 ### Software Requirements
 Some paid and free components are used. Essential software is required for core functionality, while optional tools simplify setup or enhance performance.
 
