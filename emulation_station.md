@@ -1,8 +1,13 @@
 # BigBox Trans-Generational Emulation Station
+Native Resolutions • Seamless Gamepad Control • Console-Like Experience for scalers on modern displays
+
+
+
+Imagine launching Pac-Man in its original 224p arcade resolution, then switching to The Witcher 3 at 720; all from your couch, using only a gamepad… No keyboard, no fuss. This project is a passion-driven emulation hub that unifies 40+ years of gaming history, from 1980s arcade classics to modern Switch and Steam titles, in their original resolutions. It’s a console-like experience that prioritizes visual fidelity, ease of use, and minimum compromises.
+
+
 
 # Table of Contents
-- [Summary](#summary)
-- [BigBox Trans-Generational Emulation Station](#bigbox-trans-generational-emulation-station)
   - [Overview](#overview)
     - [Key Features](#key-features)
   - [Supported Systems and Resolutions](#supported-systems-and-resolutions)
@@ -50,15 +55,6 @@
   - [Conclusion](#conclusion)
   - [Links](#links)
 
-## Summary
-The BigBox Trans-Generational Emulation Station is a passion-driven project that unifies 40+ years of gaming history, from 1980s arcade classics to modern Switch and Steam titles, into a console-like experience on Windows 10. It outputs native resolutions (224p–720p) over HDMI to modern scalers for pixel-perfect visuals, uses LaunchBox/BigBox for a gamepad-only interface, and standardizes controls with REWASD. Key features include seamless gamepad navigation, CRT shaders via a RetroTink 4K scaler, and support for horizontal and vertical (TATE) arcade games. Built with a Ryzen 9 mini PC, RX 580 eGPU, and custom scripts, it overcomes challenges like Windows controller reordering and popup dismissal, offering a polished, couch-friendly emulation hub.
-
----
-
-# BigBox Trans-Generational Emulation Station
-Native Resolutions • Seamless Gamepad Control • Console-Like Experience for scalers on modern displays
-
-Imagine launching Pac-Man in its original 224p arcade resolution, then switching to The Witcher 3 at 720; all from your couch, using only a gamepad… No keyboard, no fuss. This project is a passion-driven emulation hub that unifies 40+ years of gaming history, from 1980s arcade classics to modern Switch and Steam titles, in their original resolutions. It’s a console-like experience that prioritizes visual fidelity, ease of use, and minimum compromises.
 
 ## Overview
 The idea is to create a unified emulation platform that preserves the authentic visual experience of retro gaming while providing modern convenience:
