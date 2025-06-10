@@ -137,7 +137,7 @@ Some paid and free components are used. Essential software is required for core 
 | [Visual C++](https://aka.ms/vs/17/release/vc_redist.x64.exe), [.NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net481), [DirectX](https://www.microsoft.com/en-us/download/details.aspx?id=35) | Free | Runtime libraries for emulator compatibility.                          |
 
 #### Optional Software
-- [Microsoft Show/Hide Updates]((https://download.microsoft.com/download/f/2/2/f22d5fdb-59cd-4275-8c95-1be17bf70b21/wushowhide.diagcab)): Prevents unwanted AMD driver updates that break 240p support.
+- [Microsoft Show/Hide Updates](https://download.microsoft.com/download/f/2/2/f22d5fdb-59cd-4275-8c95-1be17bf70b21/wushowhide.diagcab): Prevents unwanted AMD driver updates that break 240p support.
 - [7Zip](https://www.7-zip.org/): Manages emulator and ROM archives. (or any other archive manager)
 - Proprietary Controller Drivers: Possibly required for some windows gamepads (It is the case with my Hori Octa Pro).
 - [WinSCP](https://winscp.net/eng/index.php): Simplifies ROM transfers over a network (requires SSH setup on the PC).
