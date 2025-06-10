@@ -53,7 +53,7 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
     - [Additional Optimizations](#additional-optimizations)
       - [Optimization Notes](#optimization-notes)
   - [Conclusion](#conclusion)
-  - [Links](#links)
+  - [Links Recap](#Links-Recap)
 
 
 ## Overview
@@ -107,40 +107,47 @@ Most notably, Windows lacks native support for consistent controller order, requ
 ### Hardware Requirements
 The system requires a PC with sufficient power for emulation, a GPU supporting low-resolution timings, an HDMI scaler and monitor. My tested setup is only provided as an example.
 
-- PC: A powerful enough multi-threaded CPU (e.g., 8 cores) and at least 16GB RAM to handle PS3, Switch, and Steam emulation. Tested with: GMKtec NucBox K11 with Ryzen 9 8945HS, 32GB DDR5.
-- GPU: A graphics card supporting 240p–720p native resolutions over HDMI and Vulkan for modern emulators. Tested: RX 580 via OCuLink eGPU, the highest-performing GPU with 240p support.
-- Scaler/Display: An HDMI scaler accepting 224p–720p inputs, ideally upscaling to 1080p or 4K with CRT shader support. Tested: RetroTink 4K scaler outputting to an Eizo FG2421 1080p monitor on a VESA stand for TATE mode.
-- Controllers: Gamepads (wired or wireless). Tested: Sony DualSense x2, Hori Octa Pro, Xbox Series X controller (four players).
+- PC: A powerful enough multi-threaded CPU (e.g., 8 cores) and at least 16GB RAM to handle PS3, Switch, and Steam emulation.
+  Tested with: GMKtec NucBox K11 with Ryzen 9 8945HS, 32GB DDR5.
+  
+- GPU: A graphics card supporting 240p–720p native resolutions over HDMI and Vulkan for modern emulators.
+  Tested: RX 580 via OCuLink eGPU, the highest-performing GPU with 240p support.
+  
+- Scaler/Display: An HDMI scaler accepting 224p–720p inputs, ideally upscaling to 1080p or 4K with CRT shader support.
+  Tested: RetroTink 4K scaler outputting to an Eizo FG2421 1080p monitor on a VESA stand for TATE mode.
+  
+- Controllers: Gamepads (wired or wireless).
+  Tested: Sony DualSense x2, Hori Octa Pro, Xbox Series X controller (four players).
+
 
 ### Software Requirements
-(links at the end of the post)
 Some paid and free components are used. Essential software is required for core functionality, while optional tools simplify setup or enhance performance.
 
 #### Essential Software
 | Software                          | Type | Purpose                                                                 |
 |-----------------------------------|------|-------------------------------------------------------------------------|
 | Windows 10 Pro                    | Paid | OS                                                                      |
-| LaunchBox/BigBox                  | Paid | Gamepad-driven frontend for unified emulator and Steam integration.     |
-| REWASD                            | Paid | Standardizes controller inputs across all systems and emulators.        |
-| Custom Resolution Utility (CRU)   | Free | Defines native resolutions (224p–720p) for retro systems.               |
-| Adrenalin 22.5.1                  | Free | AMD driver supporting 240p timings and Vulkan (for compatible GPUs).    |
-| RetroArch                         | Free |                                                                         |
+| [LaunchBox/BigBox](https://www.launchbox-app.com/)                  | Paid | Gamepad-driven frontend for unified emulator and Steam integration.     |
+| [REWASD](https://www.rewasd.com/)                            | Paid | Standardizes controller inputs across all systems and emulators.        |
+| [Custom Resolution Utility (CRU)](https://customresolutionutility.net/)   | Free | Defines native resolutions (224p–720p) for retro systems.               |
+| [Adrenalin 22.5.1](https://www.amd.com/en/support/downloads/previous-drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-580.html)                  | Free | AMD driver supporting 240p timings and Vulkan (for compatible GPUs).    |
+| [RetroArch](https://www.retroarch.com/?page=platforms)                         | Free |                                                                         |
 | Standalone Emulators              | Free | For programs better than RA or where libretro core is not available.    |
-| Steam                             | In-Pay | Or similar client.                                                    |
-| AutoHotkey 1.1                    | Free | Scripts for unified hotkeys and popup dismissal.                        |
-| Res-O-Matic                       | Free | Forces specific resolutions for emulators.                              |
-| Visual C++, .NET Framework, DirectX | Free | Runtime libraries for emulator compatibility.                          |
+| [Steam](https://store.steampowered.com/)                             | In-Pay | Or similar client.                                                    |
+| [AutoHotkey 1.1](https://www.autohotkey.com/)                    | Free | Scripts for unified hotkeys and popup dismissal.                        |
+| [Res-O-Matic](https://www.majorgeeks.com/files/details/res_o_matic.html)                       | Free | Forces specific resolutions for emulators.                              |
+| [Visual C++]((https://aka.ms/vs/17/release/vc_redist.x64.exe)), [.NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net481), [DirectX](https://www.microsoft.com/en-us/download/details.aspx?id=35) | Free | Runtime libraries for emulator compatibility.                          |
 
 #### Optional Software
-- Microsoft Show/Hide Updates: Prevents unwanted AMD driver updates that break 240p support.
-- 7Zip: Manages emulator and ROM archives. (or any other archive manager)
+- [Microsoft Show/Hide Updates]((https://download.microsoft.com/download/f/2/2/f22d5fdb-59cd-4275-8c95-1be17bf70b21/wushowhide.diagcab)): Prevents unwanted AMD driver updates that break 240p support.
+- [7Zip](https://www.7-zip.org/): Manages emulator and ROM archives. (or any other archive manager)
 - Proprietary Controller Drivers: Possibly required for some windows gamepads (It is the case with my Hori Octa Pro).
-- WinSCP: Simplifies ROM transfers over a network (requires SSH setup on the PC).
-- Debloating Tools (O&O ShutUp10, Winaero Tweaker): Optimize Windows by disabling telemetry and lockscreen.
-- Notepad++: Enhances scripting for AutoHotkey and batch files.
-- AMD Clean-Up Utility, DDU: Ensures clean GPU driver uninstallation.
-- Vulkan SDK: Improves compatibility for emulators like RPCS3.
-- Revo Uninstaller, CCleaner: Manages startup apps and removes unnecessary software.
+- [WinSCP](https://winscp.net/eng/index.php): Simplifies ROM transfers over a network (requires SSH setup on the PC).
+- Debloating Tools ([O&O ShutUp10](https://www.oo-software.com/en/shutup10), [Winaero Tweaker](https://winaerotweaker.com/)): Optimize Windows by disabling telemetry and lockscreen.
+- [Notepad++](https://notepad-plus-plus.org/downloads/): Enhances scripting for AutoHotkey and batch files.
+- [AMD Clean-Up Utility](https://www.amd.com/en/resources/support-articles/faqs/GPU-601.html), [DDU](https://www.guru3d.com/download/display-driver-uninstaller-download/): Ensures clean GPU driver uninstallation.
+- [Vulkan SDK](https://vulkan.lunarg.com/sdk/home#windows): Improves compatibility for emulators like RPCS3.
+- [Revo Uninstaller](https://www.revouninstaller.com/), [CCleaner](https://www.ccleaner.com/ccleaner/download): Manages startup apps and removes unnecessary software.
 
 #### Additional Recommendations
 - Secondary PC: Useful for setup tasks like ROM transfers or scripting, but not required.
@@ -149,6 +156,7 @@ Some paid and free components are used. Essential software is required for core 
 
 ## Video Signal Chain
 The system outputs native resolutions (224p–720p) via HDMI, upscaled by a scaler to a modern display. Below is the signal flow for my setup, adaptable to other GPUs, scalers, or monitors.
+
 [PC: RX580 GPU] --> [HDMI: 224p–720p] --> [RT4K Scaler: Upscales to 1080p/4K] --> [FG2421 Display: 1080p]
 
 In my configuration:
@@ -167,7 +175,9 @@ Setting up the emulation station involves preparing the PC, configuring the GPU 
    - Skip setting a password to enable auto-login, critical for gamepad-only operation (see SSH section below).
 
 ### GPU and Driver Setup
-A compatible GPU is essential for outputting native resolutions (224p–720p) and supporting modern emulators. These steps are based on my RX 580 with Adrenalin 22.5.1 drivers, but other GPUs supporting low-resolution timings and Vulkan can work. The CRT Emudriver page lists the compatible GPUs: https://geedorah.com/eiusdemmodi/forum/viewtopic.php?id=295
+A compatible GPU is essential for outputting native resolutions (224p–720p) and supporting modern emulators. These steps are based on my RX 580 with Adrenalin 22.5.1 drivers, but other GPUs supporting low-resolution timings and Vulkan can work. The [CRT Emudriver page]([https://customresolutionutility.net](https://geedorah.com/eiusdemmodi/forum/viewtopic.php?id=295)) lists the compatible GPUs: 
+
+
 
 1. Install Drivers:
    - Download Adrenalin 22.5.1 from AMD website. (Link at the bottom of this post)
@@ -379,7 +389,7 @@ Standalone emulators handle modern systems (PS2, Switch, etc.) and some retro sy
    - Namco/SNK: Run at 720p (desktop resolution) automatically which is fine by me but you can repeat the ST-V process with resolution 640x480@60 if desired.
 
 2. Supermodel (Sega Model 3):
-   - Get the Supermodel.ini (likely for Xinput) and NVRAM files from the great thread of Warped Polygon https://forums.launchbox-app.com/files/file/3857-sega-model-3-supermodel-git-everything-pre-configured-inc-controls-for-pc-controller-mouse-light-guns-test-menus-configured-free-play-all-games-in-english-2-player-mouse-support-audio-adjusted-layout-imagesthe-whole-9-yards/
+   - Get the Supermodel.ini (likely for Xinput) and NVRAM files from the great [thread of Warped Polygon](https://forums.launchbox-app.com/files/file/3857-sega-model-3-supermodel-git-everything-pre-configured-inc-controls-for-pc-controller-mouse-light-guns-test-menus-configured-free-play-all-games-in-english-2-player-mouse-support-audio-adjusted-layout-imagesthe-whole-9-yards)
    - Follow additional setup from Warped Polygon’s guide (But no GUI needed to preserve 384p).
    - Edit /supermodel/Config/Supermodel.ini:
      ```
@@ -639,7 +649,7 @@ These tweaks polish the system, ensuring it boots directly into BigBox and runs 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
 
-## Links
+## Links Recap
 - [CRU (Custom Resolution Utility)](https://customresolutionutility.net)
 - [Adrenalin 22.5.1](https://www.amd.com/en/support/downloads/previous-drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-580.html)
 - [Visual C++](https://aka.ms/vs/17/release/vc_redist.x64.exe)
