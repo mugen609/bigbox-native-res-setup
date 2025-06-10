@@ -104,7 +104,7 @@ The system requires a PC with sufficient power for emulation, a GPU supporting l
   Tested with: GMKtec NucBox K11 with Ryzen 9 8945HS, 32GB DDR5.
   
 - GPU: A graphics card supporting 240p–720p native resolutions over HDMI and Vulkan for modern emulators.
-  Tested: RX 580 via OCuLink eGPU, the highest-performing GPU with 240p support.
+  Tested: RX 580 Nitro+ 8GB via OCuLink eGPU, the highest-performing GPU with 240p support.
   
 - Scaler/Display: An HDMI scaler accepting 224p–720p inputs, ideally upscaling to 1080p or 4K with CRT shader support.
   Tested: RetroTink 4K scaler outputting to an Eizo FG2421 1080p monitor on a VESA stand for TATE mode.
@@ -193,7 +193,7 @@ Setting up the emulation station involves preparing the PC, configuring the GPU 
    - Skip setting a password to enable auto-login, critical for gamepad-only operation (see SSH section below).
 
 ### GPU and Driver Setup
-A compatible GPU is essential for outputting native resolutions (224p–720p) and supporting modern emulators. These steps are based on my RX 580 with Adrenalin 22.5.1 drivers, but other GPUs supporting low-resolution timings and Vulkan can work. The [CRT Emudriver page]([https://customresolutionutility.net](https://geedorah.com/eiusdemmodi/forum/viewtopic.php?id=295)) lists the compatible GPUs: 
+A compatible GPU is essential for outputting native resolutions (224p–720p) and supporting modern emulators. These steps are based on my RX 580 with Adrenalin 22.5.1 drivers, but other GPUs supporting low-resolution timings and Vulkan can work. The [CRT Emudriver page](https://geedorah.com/eiusdemmodi/forum/viewtopic.php?id=295) lists the compatible GPUs: 
 
 
 
