@@ -11,15 +11,13 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
   - [Overview](#overview)
     - [Key Features](#key-features)
   - [Supported Systems and Resolutions](#supported-systems-and-resolutions)
-    - [Note](#note)
+
   - [Why Build It?](#why-build-it)
   - [Challenges & Constraints](#challenges--constraints)
   - [Requirements and Software](#requirements-and-software)
     - [Hardware Requirements](#hardware-requirements)
     - [Software Requirements](#software-requirements)
-      - [Essential Software](#essential-software)
-      - [Optional Software](#optional-software)
-      - [Additional Recommendations](#additional-recommendations)
+
   - [Video Signal Chain](#video-signal-chain)
   - [Setup Process](#setup-process)
     - [Preparing the PC](#preparing-the-pc)
@@ -27,31 +25,26 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
       - [AMD GPU + Scaler HDCP Fix](#amd-gpu--scaler-hdcp-fix)
     - [Windows Configuration](#windows-configuration)
   - [SSH for File Transfers](#ssh-for-file-transfers)
-    - [Why Password-Free SSH?](#why-password-free-ssh)
-    - [SSH Setup Steps](#ssh-setup-steps)
-    - [Alternative](#alternative)
-    - [SSH Notes](#ssh-notes)
+
   - [Resolution and Emulator Configuration](#resolution-and-emulator-configuration)
-    - [Resolution Setup with CRU](#resolution-setup-with-cru)
-      - [Resolution Table](#resolution-table)
-      - [Resolution Notes](#resolution-notes)
     - [CRU Setup Steps](#cru-setup-steps)
+
     - [Emulator Configuration](#emulator-configuration)
       - [RetroArch Configuration](#retroarch-configuration)
       - [Standalone Emulator Configuration](#standalone-emulator-configuration)
+      - [Steam](#steam)
   - [Using Res-O-Matic for Custom Resolutions](#using-res-o-matic-for-custom-resolutions)
-    - [Steam](#steam)
+
   - [REWASD and LaunchBox Setup](#rewasd-and-launchbox-setup)
-    - [REWASD Setup](#rewasd-setup)
     - [Proposed Controller Mapping](#proposed-controller-mapping)
+
     - [LaunchBox Configuration](#launchbox-configuration)
   - [Controller Reordering Workaround](#controller-reordering-workaround)
   - [Final Touches](#final-touches)
     - [Debloating Windows](#debloating-windows)
-      - [O&O ShutUp10 Configuration](#oo-shutup10-configuration)
-      - [Winaero Tweaker Configuration](#winaero-tweaker-configuration)
+
     - [Additional Optimizations](#additional-optimizations)
-      - [Optimization Notes](#optimization-notes)
+
   - [Conclusion](#conclusion)
   - [Links Recap](#Links-Recap)
 
@@ -229,6 +222,7 @@ When using an AMD GPU with an HDMI scaler (e.g., RetroTink 4K, OSSC), you will l
    - Run Windows Update, install all updates, and reboot until no updates remain. (AMD Display driver should not show since they’ve previously been hidden).
 
 8. Set Your desired Desktop Resolution (I am using 1280 x 720)
+- Driver Caution: Always block AMD /Adrenalin driver updates to preserve 240p compatibility.
 
 ## SSH for File Transfers
 A core goal of this setup is to boot directly into BigBox with no keyboard or mouse interaction. However, adding a Windows password breaks automatic login and forces keyboard input at startup—violating the gamepad-only design. Standard USB transfers aren't practical either, as they require launching Explorer via Task Manager and connection keyboard and mouse.
@@ -283,7 +277,6 @@ The solution is to enable password-free SSH, which allows file transfers from an
 Use USB drives for file transfers, only recommended if SSH is not feasible.
 
 ### SSH Notes
-- Driver Caution: Always block AMD /Adrenalin driver updates to preserve 240p compatibility.
 - SSH Security: Password-free SSH is designed for isolated emulation PCs. If your PC stores sensitive data, consider a password and accept the keyboard input trade-off.
 
 ## Resolution and Emulator Configuration
@@ -417,6 +410,13 @@ Standalone emulators handle modern systems (PS2, Switch, etc.) and some retro sy
 
 5. PPSSPP (PSP):
    - Set to 272p (native) or 720p (desktop) based on scaler performance.
+  
+### Steam
+Upon installing Steam and connecting to your account, go to:
+Steam/ Settings/ Controller => Guide Button Focuses Steam = OFF
+And Enable Guide Button Chord for Controller = OFF
+Also, it is up to you, but if you want the games to install on the emulation PC locally and be available without network, better go to Steam/ Settings/ Remote Play/ and turn it OFF. (Otherwise, if your main PC is connected, games might not install locally and rather use the install from the other computer and trigger the mirror screen on both machines).
+
 
 ## Using Res-O-Matic for Custom Resolutions
 Res-O-Matic forces specific resolutions when RetroArch’s CRT SwitchRes isn’t used (e.g., DS, GameCube). We will create bat files in the emulators’ folders and configure these alternative emulators in LaunchBox.
@@ -446,11 +446,6 @@ Res-O-Matic forces specific resolutions when RetroArch’s CRT SwitchRes isn’t
 Tip: Adjust paths and core names to match your setup. Create similar scripts for other systems needing custom resolutions.
 Note: check the core spelling going to /RetroArch/Cores/ directory
 
-### Steam
-Upon installing Steam and connecting to your account, go to:
-Steam/ Settings/ Controller => Guide Button Focuses Steam = OFF
-And Enable Guide Button Chord for Controller = OFF
-Also, it is up to you, but if you want the games to install on the emulation PC locally and be available without network, better go to Steam/ Settings/ Remote Play/ and turn it OFF. (Otherwise, if your main PC is connected, games might not install locally and rather use the install from the other computer and trigger the mirror screen on both machines).
 
 ## REWASD and LaunchBox Setup
 This section configures REWASD to standardize gamepad inputs across all emulators and LaunchBox/BigBox to unify emulators, Steam, and scripts for a seamless, gamepad-only experience.
