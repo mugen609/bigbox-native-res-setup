@@ -33,12 +33,13 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
       - [RetroArch Configuration](#retroarch-configuration)
       - [Standalone Emulator Configuration](#standalone-emulator-configuration)
       - [Steam](#steam)
-  - [Using Res-O-Matic for Custom Resolutions](#using-res-o-matic-for-custom-resolutions)
-
+  
   - [REWASD and LaunchBox Setup](#rewasd-and-launchbox-setup)
     - [Proposed Controller Mapping](#proposed-controller-mapping)
 
     - [LaunchBox Configuration](#launchbox-configuration)
+      - [Using Res-O-Matic for Custom Resolutions](#using-res-o-matic-for-custom-resolutions)
+  
   - [Controller Reordering Workaround](#controller-reordering-workaround)
   - [Final Touches](#final-touches)
     - [Debloating Windows](#debloating-windows)
@@ -443,34 +444,6 @@ And Enable Guide Button Chord for Controller = OFF
 Also, it is up to you, but if you want the games to install on the emulation PC locally and be available without network, better go to Steam/ Settings/ Remote Play/ and turn it OFF. (Otherwise, if your main PC is connected, games might not install locally and rather use the install from the other computer and trigger the mirror screen on both machines).
 
 
-## Using Res-O-Matic for Custom Resolutions
-Res-O-Matic forces specific resolutions when RetroArch’s CRT SwitchRes isn’t used (e.g., DS, GameCube). We will create bat files in the emulators’ folders and configure these alternative emulators in LaunchBox.
-
-- Example: Nintendo DS (2560×256):
-  - Create C:/RetroArch/launch_retroarch_ds_256x2560.bat, containing:
-    ```batch
-    @echo off
-    echo start /wait "" "C:\Emulators\RetroArch\retroarch.exe" -L "cores\desmume_libretro.dll" %* > "%TEMP%\launch_ds.bat"
-    start /wait "" "C:\resUtilities\reso.exe" "%TEMP%\launch_ds.bat" 2560 256 32 60
-    del "%TEMP%\launch_ds.bat"
-    ```
-  - In LaunchBox, add as a new emulator (e.g., “RetroArch DS 256p”), target Application path = launch_retroarch_ds_256x2560.bat and associate with Nintendo DS.
-
-![Nintendo DS Emulator](csEmul.png)
-
-- Example: GameCube (1024×768):
-  - Create /RetroArch/launch_retroarch_dolphin_1024x768.bat, containing:
-    ```batch
-    @echo off
-    echo start /wait "" "C:\Emulators\RetroArch\retroarch.exe" -L "cores\dolphin_libretro.dll" %* > "%TEMP%\launch_dl.bat"
-    start /wait "" "C:\resUtilities\reso.exe" "%TEMP%\launch_dl.bat" 1024 768 32 60
-    del "%TEMP%\launch_dl.bat"
-    ```
-  - Add as a new emulator in LaunchBox for GameCube.
-
-Tip: Adjust paths and core names to match your setup. Create similar scripts for other systems needing custom resolutions.
-Note: check the core spelling going to /RetroArch/Cores/ directory
-
 
 ## REWASD and LaunchBox Setup
 This section configures REWASD to standardize gamepad inputs across all emulators and LaunchBox/BigBox to unify emulators, Steam, and scripts for a seamless, gamepad-only experience.
@@ -541,6 +514,35 @@ I am not doing a Launchbox tutorial here and will only focus on the steps useful
     - Repeat for other emulators (replace rpcs3.exe with the emulator’s executable).
 
 ![LaunchBox Quit Script](close.png)
+
+## Using Res-O-Matic for Custom Resolutions
+Res-O-Matic forces specific resolutions when RetroArch’s CRT SwitchRes isn’t used (e.g., DS, GameCube). We will create bat files in the emulators’ folders and configure these alternative emulators in LaunchBox.
+
+- Example: Nintendo DS (2560×256):
+  - Create C:/RetroArch/launch_retroarch_ds_256x2560.bat, containing:
+    ```batch
+    @echo off
+    echo start /wait "" "C:\Emulators\RetroArch\retroarch.exe" -L "cores\desmume_libretro.dll" %* > "%TEMP%\launch_ds.bat"
+    start /wait "" "C:\resUtilities\reso.exe" "%TEMP%\launch_ds.bat" 2560 256 32 60
+    del "%TEMP%\launch_ds.bat"
+    ```
+  - In LaunchBox, add as a new emulator (e.g., “RetroArch DS 256p”), target Application path = launch_retroarch_ds_256x2560.bat and associate with Nintendo DS.
+
+![Nintendo DS Emulator](csEmul.png)
+
+- Example: GameCube (1024×768):
+  - Create /RetroArch/launch_retroarch_dolphin_1024x768.bat, containing:
+    ```batch
+    @echo off
+    echo start /wait "" "C:\Emulators\RetroArch\retroarch.exe" -L "cores\dolphin_libretro.dll" %* > "%TEMP%\launch_dl.bat"
+    start /wait "" "C:\resUtilities\reso.exe" "%TEMP%\launch_dl.bat" 1024 768 32 60
+    del "%TEMP%\launch_dl.bat"
+    ```
+  - Add as a new emulator in LaunchBox for GameCube.
+
+Tip: Adjust paths and core names to match your setup. Create similar scripts for other systems needing custom resolutions.
+Note: check the core spelling going to /RetroArch/Cores/ directory
+
 
 ## Dismissing Popups
 - For games with popups (e.g., Steam’s Forza Horizon 5 giving me a GPU obsolete driver warning):
