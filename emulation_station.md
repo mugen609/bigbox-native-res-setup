@@ -209,7 +209,11 @@ A compatible GPU is essential for outputting native resolutions (224p–720p) an
    - Hide any AMD display driver updates.
 
 ### AMD GPU + Scaler HDCP Fix
-When using an AMD GPU with an HDMI scaler (e.g., RetroTink 4K, OSSC), you will likely encounter a blurred or pixelated display due to DRM issues. Here is the fix:
+When using an AMD GPU with an HDMI scaler (e.g., RetroTink 4K, OSSC), you will likely encounter a blurred or pixelated display due to DRM issues.
+
+![AMD HDCP issue](DRM.jpg)
+
+Here is the fix:
 1. Setup Dual HDMI Connections:
    - Temporarily connect a second HDMI cable directly from the GPU to the monitor (assuming it has multiple HDMI inputs).
 
