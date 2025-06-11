@@ -357,6 +357,7 @@ RetroArch is used for most retro systems, while standalone emulators are preferr
    - For each core, load a game, open the menu, and set:
      - Video → Scaling → Aspect Ratio: Core Provided (or Full for vertical games if stretched).
      - Save core overrides: Quick Menu → Overrides → Save Core Overrides.
+     - However if a game is strectched with ratio Core Provided and needs Full to look fine, save it as Game Override instead of Core Overrride.
 
 2. Note on Ratio:
    “Core Provided” usually works, but if a game looks stretched—especially vertical ones—switch to “Full.” This is safe because the RetroTink 4K enforces 4:3 output, so nothing gets stretched to 16:9. It also smartly adapts when 16:9 content (like Vita or desktop) is detected.
