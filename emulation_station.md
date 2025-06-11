@@ -174,7 +174,7 @@ Ryzen 9 8945HS
 └─[Eizo FG2421 Monitor]
 (1080p 120Hz, 4:3 or TATE)
 ```
-The system outputs native resolutions (224p–720p) via HDMI, upscaled by a scaler to a modern display. Below is the signal flow for my setup, adaptable to other GPUs, scalers, or monitors.
+The system outputs native resolutions (224p–720p) via HDMI, upscaled by a scaler to a modern display. Above is the signal flow for my setup, adaptable to other GPUs, scalers, or monitors.
 
 
 
