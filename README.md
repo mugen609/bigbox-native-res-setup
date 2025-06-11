@@ -2,22 +2,43 @@
 
 ![BigBox Powered Station](BB.png)
 
-Welcome to the BigBox Trans-Generational Emulation Station, a project that unifies 40+ years of gaming—from 1980s arcade classics to modern Switch and Steam titles—into a console-like experience on Windows 10. This setup delivers pixel-perfect native resolutions (224p–720p) via HDMI to a compatible modern scaler, providing a gamepad-only interface, and standardized controls across everything. It supports horizontal and vertical (TATE) arcade games, running on any capable PC.
+**One gamepad. Four decades of games. Zero compromises.**
+- **📖 [Jump to the full setup guide](emulation_station.md)** 
 
-## About
-This repository contains detailed documentation for building and configuring the emulation station, including hardware/software requirements, resolution setup, emulator configuration specifics, and workarounds for Windows limitations (e.g., controller reordering, popup dismissal). The goal is a seamless, couch-friendly emulation hub that feels like a premium retro console.
+This project transforms a Windows PC into a unified emulation console—boot straight into a gamepad-only interface spanning everything from 1980s arcade machines to modern Switch and Steam titles. No stretched pixels. No desktop clutter. Just the games, the way they were meant to be seen and played.
 
-## Documentation
-Read the full guide here: [emulation_station.md](emulation_station.md)
+## Why It Exists
 
-## Features
-- **Pixel-Perfect Visuals**: Native resolutions with CRT shaders.
-- **Gamepad-Only Control**: No keyboard/mouse needed, with consistent hotkeys.
-- **Unified Frontend**: LaunchBox/BigBox integrates emulators and Steam.
-- **Versatile Output**: Supports TATE mode and modern scalers.
+With the rise of high-quality HDMI scalers and CRT shader support, delivering original game resolutions is more desirable than ever—these devices achieve the best results when fed native signals.
 
-## Images
-![PS1 Example](crono.jpg)
+Most emulation boxes cut corners—either sacrificing visual accuracy or ignoring modern systems. This build aims higher:
+
+- **Native resolution output** (224p–720p) via HDMI for pixel-perfect fidelity  
+- **Gamepad-only operation** from boot to gameplay  
+- **Support for rotated (TATE) and horizontal displays**  
+- **Integration of standalone emulators + Steam via LaunchBox/BigBox**
+
+It’s not just an emulation setup. It’s a reimagined console.
+
+
+## At a Glance
+
+| Feature              | Details                                           |
+|----------------------|--------------------------------------------------|
+| **Frontend**         | LaunchBox / BigBox (fully gamepad-navigable)     |
+| **Supported Systems**| NES, SNES, PS1, Dreamcast, Switch, Steam & more  |
+| **Display Output**   | True native 224p to 720p over HDMI                |
+| **Scaler Used**      | Tested with RetroTink 4K for CRT-style upscaling |
+| **Controllers**      | Tested with DualSense, Xbox, Hori — up to 4 players |
+
+
+From hardware to hotkeys — everything you need to turn Windows into a console.
+
+## Screenshots
+
+![PS1 Example](crono.jpg)  
+*Chrono Trigger running at original resolution with CRT shader via RetroTink 4K*
 
 ## License
-This guide is made for anyone to use, share or adapt. I don’t claim ownership over the softwares or configurations.
+
+Feel free to use, adapt, or share this project. All referenced tools and emulators remain under their original licenses.
