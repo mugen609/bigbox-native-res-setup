@@ -542,7 +542,7 @@ Res-O-Matic forces specific resolutions when RetroArch’s CRT SwitchRes isn’t
   - Add as a new emulator in LaunchBox for GameCube.
 
 Tip: Adjust paths and core names to match your setup. Create similar scripts for other systems needing custom resolutions.
-Note: check the core spelling going to /RetroArch/Cores/ directory
+- Note: check the core spelling going to /RetroArch/Cores/ directory
 
 
 ## Dismissing Popups
