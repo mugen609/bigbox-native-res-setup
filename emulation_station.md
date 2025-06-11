@@ -440,9 +440,9 @@ Standalone emulators handle modern systems (PS2, Switch, etc.) and some retro sy
   
 ### Steam
 Upon installing Steam and connecting to your account, go to:
-Steam/ Settings/ Controller => Guide Button Focuses Steam = OFF
-And Enable Guide Button Chord for Controller = OFF
-Also, it is up to you, but if you want the games to install on the emulation PC locally and be available without network, better go to Steam/ Settings/ Remote Play/ and turn it OFF. (Otherwise, if your main PC is connected, games might not install locally and rather use the install from the other computer and trigger the mirror screen on both machines).
+- Steam/ Settings/ Controller => Guide Button Focuses Steam = OFF
+- And Enable Guide Button Chord for Controller = OFF
+- Also, it is up to you, but if you want the games to install on the emulation PC locally and be available without network, better go to Steam/ Settings/ Remote Play/ and turn it OFF. (Otherwise, if your main PC is connected, games might not install locally and rather use the install from the other computer and trigger the mirror screen on both machines).
 
 
 
