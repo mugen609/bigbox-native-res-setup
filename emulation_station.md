@@ -102,16 +102,16 @@ Most notably, Windows lacks native support for consistent controller order, requ
 The system requires a PC with sufficient power for emulation, a GPU supporting low-resolution timings, an HDMI scaler and monitor. My tested setup is only provided as an example.
 
 - PC: A powerful enough multi-threaded CPU (e.g., 8 cores) and at least 16GB RAM to handle PS3, Switch, and Steam emulation.
-  Tested with: GMKtec NucBox K11 with Ryzen 9 8945HS, 32GB DDR5.
+  - Tested with: GMKtec NucBox K11 with Ryzen 9 8945HS, 32GB DDR5.
   
-- GPU: A graphics card supporting 240p–720p native resolutions over HDMI and Vulkan for modern emulators.
-  Tested: RX 580 Nitro+ 8GB via OCuLink eGPU, the highest-performing GPU with 240p support.
+- GPU: A graphics card supporting 240p–720p native resolutions over HDMI and Vulkan for modern emulators. [CRT Emudriver page lists compatible GPUs](https://geedorah.com/eiusdemmodi/forum/viewtopic.php?id=295)
+    - Tested: RX 580 Nitro+ 8GB via OCuLink eGPU, one of the highest-performing GPU with 240p support.
   
 - Scaler/Display: An HDMI scaler accepting 224p–720p inputs, ideally upscaling to 1080p or 4K with CRT shader support.
-  Tested: RetroTink 4K scaler outputting to an Eizo FG2421 1080p monitor on a VESA stand for TATE mode.
+  - Tested: RetroTink 4K scaler outputting to an Eizo FG2421 1080p monitor on a VESA stand for TATE mode.
   
 - Controllers: Gamepads (wired or wireless).
-  Tested: Sony DualSense x2, Hori Octa Pro, Xbox Series X controller (four players).
+  - Tested: Sony DualSense x2, Hori Octa Pro, Xbox Series X controller (four players).
 
 
 
