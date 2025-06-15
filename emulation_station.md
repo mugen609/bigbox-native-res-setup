@@ -116,7 +116,7 @@ The system requires a PC with sufficient power for emulation, a GPU supporting l
 
 
 
-  ![OCulink RX580](OCulink_RX580.jpeg)
+  ![OCulink RX580](/images/OCulink_RX580.jpeg)
 
 
 ### Software Requirements
@@ -211,7 +211,7 @@ A compatible GPU is essential for outputting native resolutions (224p–720p) an
 ### AMD GPU + Scaler HDCP Fix
 When using an AMD GPU with an HDMI scaler (e.g., RetroTink 4K, OSSC), you will likely encounter a blurred or pixelated display due to DRM issues.
 
-![AMD HDCP issue](DRM.jpg)
+![AMD HDCP issue](/images/DRM.jpg)
 
 Here is the fix:
 1. Setup Dual HDMI Connections:
@@ -229,7 +229,7 @@ Here is the fix:
    - Remove the second HDMI cable, leaving only the GPU → scaler → monitor connection.
    - The display should now be clear, with native resolutions output correctly to the scaler. If not, memorize the position of Adrenalin interface and find overrides /HDCP again with a pixelated screen… And turn it OFF!
 
-![AMD HDCP Fix](AMD.png)
+![AMD HDCP Fix](/images/AMD.png)
 
 ### Windows Configuration
 1. Activate Windows
@@ -331,7 +331,7 @@ Here are the resolutions and timings used in my setup, which you can adapt to yo
 - My Setup: I output PSP, Vita and 480p /480i systems at 720p (desktop resolution) because my RetroTink 4K handles 720p better than 272p or 480p when upscaling to 1080p. Other scalers or 4K displays may perform better at native 272p/480.
 - Horizontal Timings: All resolutions use the same horizontal settings (Active: 2560, Front Porch: 16, Sync Width: 32, Blanking: 80, Polarity: -).
 
-![240p Resolution](240.PNG)
+![240p Resolution](/images/240.PNG)
 
 ### CRU Setup Steps
 1. Open CRU: Launch CRU and ensure your scaler/display is selected (top left, marked “active”). If not, choose it from the dropdown.
@@ -371,7 +371,7 @@ RetroArch is used for most retro systems, while standalone emulators are preferr
    - Aspect Ratio: Core Provided.
    - Save core overrides.
 
-![PS1 Example](crono.jpg)
+![PS1 Example](/images/crono.jpg)
 
 4. Arcade (FBNeo Core):
    - Same as PS1, plus Quick Menu → Core Options → Vertical Mode: TATE or TATE Alternate (Will only affect vertical games).
@@ -464,7 +464,7 @@ Connect all your controllers and start REWASD.
   - Click the Xbox icon (top center, “Output Devices Settings”).
   - Enable Virtual Xbox 360 (or XInput /SDL of your choice) on the left and save.
 
-![REWASD Output Settings](rewasdOUT.png)
+![REWASD Output Settings](/images/rewasdOUT.png)
 
 - Configure Hotkeys:
   - Click the Home button (e.g., PS or Xbox button) on the gamepad schematic.
@@ -518,7 +518,7 @@ I am not doing a Launchbox tutorial here and will only focus on the steps useful
       ```
     - Repeat for other emulators (replace rpcs3.exe with the emulator’s executable).
 
-![LaunchBox Quit Script](close.png)
+![LaunchBox Quit Script](/images/close.png)
 
 ## Using Res-O-Matic for Custom Resolutions
 Res-O-Matic forces specific resolutions when RetroArch’s CRT SwitchRes isn’t used (e.g., DS, GameCube). We will create bat files in the emulators’ folders and configure these alternative emulators in LaunchBox.
@@ -533,7 +533,7 @@ Res-O-Matic forces specific resolutions when RetroArch’s CRT SwitchRes isn’t
     ```
   - In LaunchBox, add as a new emulator (e.g., “RetroArch DS 256p”), target Application path = launch_retroarch_ds_256x2560.bat and associate with Nintendo DS.
 
-![Nintendo DS Emulator](csEmul.png)
+![Nintendo DS Emulator](/images/csEmul.png)
 
 - Example: GameCube (1024×768):
   - Create /RetroArch/launch_retroarch_dolphin_1024x768.bat, containing:
@@ -629,11 +629,11 @@ Tip: Adjust paths and core names to match your setup. Create similar scripts for
 - In BigBox, launch the “BT-Toggle” fake rom to toggle Bluetooth, then reconnect controllers in desired order (Player 1 first, Player 2 second, etc.).
 - Enhance visuals: In LaunchBox, filter by platform, find BT-Toggle and right click on it: edit metadata, and add images (e.g., Bluetooth logo, gamepads) as banner / clear logo override / device / fanart. Whatever works best with your BB theme.
 
-![LaunchBox Platforms](platforms.png)
+![LaunchBox Platforms](/images/platforms.png)
 
-![BT-Toggle Platform](BTplatform.png)
+![BT-Toggle Platform](/images/BTplatform.png)
 
-![LaunchBox Interface](LB.png)
+![LaunchBox Interface](/images/LB.png)
 
 ## Final Touches
 With emulators, resolutions, and gamepad controls configured, the final step is to optimize Windows for maximum performance and a distraction-free, gamepad-only experience as close as possible to a gaming console.

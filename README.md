@@ -1,6 +1,6 @@
 # BigBox Trans-Generational Emulation Station
 
-![BigBox Powered Station](BB.png)
+![BigBox Powered Station](/images/BB.png)
 
 **One gamepad. Four decades of games. Zero compromises.**
 - **📖 [Jump to the full setup guide](emulation_station.md)** 
@@ -36,7 +36,7 @@ From hardware to hotkeys — everything you need to turn Windows into a console.
 
 ## Screenshots
 
-![PS1 Example](crono.jpg)  
+![PS1 Example](/images/crono.jpg)  
 *Chrono Trigger running at original resolution with CRT shader via RetroTink 4K*
 
 ## License
