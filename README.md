@@ -6,6 +6,7 @@
 - **📖 [Jump to the full setup guide](GameMaze.md)** 
 
 This project transforms a Windows PC into a unified emulation console—boot straight into a gamepad-only interface spanning everything from 1980s arcade machines to modern Switch and Steam titles. No stretched pixels. No desktop clutter. Just the games, the way they were meant to be seen and played.
+
 Digital output (HDMI/DP → scaler → modern display). Not a CRT/analog-output guide.
 
 ## Why It Exists
