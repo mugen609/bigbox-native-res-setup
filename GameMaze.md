@@ -60,7 +60,9 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
 ## Overview
 The idea is to create a unified emulation platform that preserves the authentic visual experience of retro gaming while providing modern convenience: Instead of separate devices for different eras or accepting visual compromises, you get one system that handles everything from 1980s arcade cabinets to current-generation Switch games - all displaying at their original resolutions before being properly upscaled by dedicated hardware. The key breakthrough is outputting true native resolutions (tested from 160p up to 1080p) over HDMI to modern scalers, something most PCs and emulation distributions can't achieve. Combined with gamepad-only operation through BigBox and standardized controls via REWASD, the result feels like using a premium retro console rather than managing a collection of emulators on a computer. The system aims at removing the usual drawbacks of PC emulation: no keyboard/mouse dependency, no resolution mismatches, no juggling between different interfaces. You boot directly into a unified game library, select any title from four decades of gaming, and it launches at the correct resolution with consistent controls - exactly as these games were meant to be experienced, but on modern displays.
 
+
 ![DQ6](/images/DQ6.jpg)
+*Dragon Quest 6 on SNES in native resolution*
 
 ### Key Features 
 - Pixel-Perfect Visuals: Every game runs at its native resolution, upscaled to a modern display with CRT shaders. 
@@ -71,6 +73,7 @@ The idea is to create a unified emulation platform that preserves the authentic 
 The system is thought to output to any HDMI-compatible scaler, supporting up to 4K with a suitable monitor.
 
 In my setup, I use a RetroTink 4K scaler to upscale the PC’s native inputs to 1440p (limited by my LG 27GS95QE-B OLED monitor), applying CRT shaders for a crisp, scanline-rich image. Vertical arcade games are displayed in TATE mode by rotating the monitor on a VESA stand.
+
 
 ## For Digital output (not CRT)
 This guide is for getting authentic retro resolutions from a Windows emulation PC over digital video (HDMI/DisplayPort) to a modern flat panel. For best results, a low-latency scaler is required in the chain (e.g., a RetroTINK) before the display.
@@ -157,7 +160,7 @@ Some paid and free components are used. Essential software is required for core 
 - [WinSCP](https://winscp.net/eng/index.php): Simplifies ROM transfers over a network (requires SSH setup on the PC). 
 - Debloating tools ([O&O ShutUp10](https://www.oo-software.com/en/shutup10), [Winaero Tweaker](https://winaerotweaker.com/)): Reduce telemetry/popups and improve couch-only usability. 
 - [Notepad++](https://notepad-plus-plus.org/downloads/): Handy for scripts and config editing. 
-- [[Bulk Crap Uninstaller]( https://www.bcuninstaller.com/): Deinstallation /startup app management. 
+- [Bulk Crap Uninstaller]( https://www.bcuninstaller.com/): Deinstallation /startup app management. 
 
 #### Troubleshooting Tools
  - [Microsoft Show/Hide Updates](https://download.microsoft.com/download/f/2/2/f22d5fdb-59cd-4275-8c95-1be17bf70b21/wushowhide.diagcab): Hide a problematic Windows/driver update if something ever breaks.
@@ -411,6 +414,7 @@ RetroArch is used for most retro systems, while standalone emulators are preferr
    - Save core overrides.
 
 ![PS1 Example](/images/crono.jpg)
+*Chrono Trigger PS1* 
 
 4. Arcade (FBNeo Core):
    - Same as PS1, plus Quick Menu → Core Options → Vertical Mode: TATE or TATE Alternate (Will only affect vertical games).
@@ -430,7 +434,7 @@ RetroArch is used for most retro systems, while standalone emulators are preferr
    - Use Res-O-Matic to force 640×480 (480p) in LaunchBox.
 
 ![FF5GBA](/images/FF5.jpeg)
-Final Fantasy 5 on GBA at 160p
+*Final Fantasy 5 on GBA at 160p*
 
 #### Standalone Emulator Configuration
 Standalone emulators handle modern systems (PS2, Switch, etc.) and some retro systems. Set them to native resolutions or 720p, depending on your scaler’s performance.
@@ -752,6 +756,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
