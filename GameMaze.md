@@ -491,6 +491,27 @@ Note: For resolutions different from your desktop resolution, you need to use Re
 5. PPSSPP (PSP):
    - Set to 272p (native) or desktop based on preference.
   
+ - Note: If for any reasons you need extra tools to rotate your display for a specific emulator, use iRotate in a LB script:
+
+![irotate](/images/rotate.png)
+```
+; Rotate to portrait when emulator starts
+Send ^!{Left}   ; Ctrl + Alt + Right for portrait rotation
+Sleep, 500
+
+; Override Escape behavior while Azahar is running
+#IfWinActive ahk_exe Azahar.exe
+$Esc::
+    Send ^!{Up}                      ; Rotate back to landscape
+    Sleep, 200                       ; Small buffer
+    WinClose, ahk_exe Azahar.exe     ; Ask Azahar to close
+    Sleep, 500
+    if WinExist("ahk_exe Azahar.exe")
+        Process, Close, Azahar.exe   ; Force kill if needed
+return
+#IfWinActive
+```
+  
 
 ### Steam
 Upon installing Steam and connecting to your account, go to:
@@ -756,6 +777,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
