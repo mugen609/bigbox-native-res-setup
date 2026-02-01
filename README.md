@@ -44,4 +44,5 @@ From hardware to hotkeys — everything you need to turn Windows into a console.
 ## License
 
 Feel free to use, adapt, or share this project. All referenced tools and emulators remain under their original licenses.
+
 **📖 [Full guide here!](GameMaze.md)** 
