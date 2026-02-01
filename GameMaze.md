@@ -147,15 +147,15 @@ Some paid and free components are used. Essential software is required for core 
 | [Custom Resolution Utility (CRU)](https://customresolutionutility.net/) | Free | Adds custom HDMI resolutions/timings (EDID override) for low/legacy modes. |
 | [RetroArch](https://www.retroarch.com/?page=platforms) | Free | Multi-system frontend/emulator (Libretro cores) for many classic platforms. |
 | Standalone emulators | Free | For systems where standalone emulators are preferred or no Libretro core is available. |
-| [Steam](https://store.steampowered.com/) | In-Pay | PC game client (or similar). |
+| [Steam (or similar)](https://store.steampowered.com/) | In-Pay | PC game client. |
 | [AutoHotkey 1.1](https://www.autohotkey.com/) | Free | Automation scripts for unified hotkeys and small UI workarounds. |
 | [Res-O-Matic](https://m.majorgeeks.com/files/details/res_o_matic.html) | Free | Forces a specific Windows resolution when launching an emulator/game. |
 | [Visual C++](https://aka.ms/vs/17/release/vc_redist.x64.exe), [.NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net481), [DirectX](https://www.microsoft.com/en-us/download/details.aspx?id=35) | Free | Runtime libraries for emulator compatibility. |
 
 #### Optional Software 
 - [iRotate](https://www.entechtaiwan.com/util/irotate.shtm): Display rotation utility, Required for TATE / stacked handheld layouts. 
-- [7-Zip](https://www.7-zip.org/): Manages emulator and ROM archives. 
-– [Rufus](https://rufus.ie/en/#download/): Writes bootable Windows install. 
+- [7-Zip](https://www.7-zip.org/): Manages emulator and ROM archives.
+- [Rufus](https://rufus.ie/en/#download/): Writes bootable Windows install. 
 - Proprietary controller drivers: Possibly required for some Windows gamepads (e.g., Hori Octa Pro). 
 - [WinSCP](https://winscp.net/eng/index.php): Simplifies ROM transfers over a network (requires SSH setup on the PC). 
 - Debloating tools ([O&O ShutUp10](https://www.oo-software.com/en/shutup10), [Winaero Tweaker](https://winaerotweaker.com/)): Reduce telemetry/popups and improve couch-only usability. 
@@ -777,6 +777,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
