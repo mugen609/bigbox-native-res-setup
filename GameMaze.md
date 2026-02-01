@@ -3,7 +3,6 @@ Native Resolutions • Seamless Gamepad Control • Console-Like Experience for 
 
 Imagine launching Pac-Man in its original 224p arcade resolution, then switching to The Witcher 3 at 720; all from your couch, using only a gamepad… No keyboard, no fuss. This project is a passion-driven emulation hub that unifies 40+ years of gaming history, from 1980s arcade classics to modern Switch and Steam titles, in their original resolutions. It’s a console-like experience that prioritizes visual fidelity, ease of use, and minimum compromises.
 
-![DQ6](/images/DQ6.jpg)
 
 # Table of Contents
 - [Overview](#overview)
@@ -58,7 +57,10 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
 - [Conclusion](#conclusion)
 
 
-## Overview The idea is to create a unified emulation platform that preserves the authentic visual experience of retro gaming while providing modern convenience: Instead of separate devices for different eras or accepting visual compromises, you get one system that handles everything from 1980s arcade cabinets to current-generation Switch games - all displaying at their original resolutions before being properly upscaled by dedicated hardware. The key breakthrough is outputting true native resolutions (tested from 160p up to 1080p) over HDMI to modern scalers, something most PCs and emulation distributions can't achieve. Combined with gamepad-only operation through BigBox and standardized controls via REWASD, the result feels like using a premium retro console rather than managing a collection of emulators on a computer. The system aims at removing the usual drawbacks of PC emulation: no keyboard/mouse dependency, no resolution mismatches, no juggling between different interfaces. You boot directly into a unified game library, select any title from four decades of gaming, and it launches at the correct resolution with consistent controls - exactly as these games were meant to be experienced, but on modern displays.
+## Overview
+The idea is to create a unified emulation platform that preserves the authentic visual experience of retro gaming while providing modern convenience: Instead of separate devices for different eras or accepting visual compromises, you get one system that handles everything from 1980s arcade cabinets to current-generation Switch games - all displaying at their original resolutions before being properly upscaled by dedicated hardware. The key breakthrough is outputting true native resolutions (tested from 160p up to 1080p) over HDMI to modern scalers, something most PCs and emulation distributions can't achieve. Combined with gamepad-only operation through BigBox and standardized controls via REWASD, the result feels like using a premium retro console rather than managing a collection of emulators on a computer. The system aims at removing the usual drawbacks of PC emulation: no keyboard/mouse dependency, no resolution mismatches, no juggling between different interfaces. You boot directly into a unified game library, select any title from four decades of gaming, and it launches at the correct resolution with consistent controls - exactly as these games were meant to be experienced, but on modern displays.
+
+![DQ6](/images/DQ6.jpg)
 
 ### Key Features 
 - Pixel-Perfect Visuals: Every game runs at its native resolution, upscaled to a modern display with CRT shaders. 
@@ -750,5 +752,6 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
