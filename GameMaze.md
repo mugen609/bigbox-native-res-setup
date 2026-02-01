@@ -1,53 +1,61 @@
 # GameMaze
 Native Resolutions • Seamless Gamepad Control • Console-Like Experience for scalers on modern displays
 
-![DQ6](/images/DQ6.jpg)
-
 Imagine launching Pac-Man in its original 224p arcade resolution, then switching to The Witcher 3 at 720; all from your couch, using only a gamepad… No keyboard, no fuss. This project is a passion-driven emulation hub that unifies 40+ years of gaming history, from 1980s arcade classics to modern Switch and Steam titles, in their original resolutions. It’s a console-like experience that prioritizes visual fidelity, ease of use, and minimum compromises.
 
-
+![DQ6](/images/DQ6.jpg)
 
 # Table of Contents
-  - [Overview](#overview)
-    - [Key Features](#key-features)
-  - [Supported Systems and Resolutions](#supported-systems-and-resolutions)
-
-  - [Why Build It?](#why-build-it)
-  - [Challenges & Constraints](#challenges--constraints)
-  - [Requirements and Software](#requirements-and-software)
-    - [Hardware Requirements](#hardware-requirements)
-    - [Software Requirements](#software-requirements)
-
-  - [Video Signal Chain](#video-signal-chain)
-  - [Setup Process](#setup-process)
-    - [Preparing the PC](#preparing-the-pc)
-    - [GPU and Driver Setup](#gpu-and-driver-setup)
-      - [AMD GPU + Scaler HDCP Fix](#amd-gpu--scaler-hdcp-fix)
-    - [Windows Configuration](#windows-configuration)
-  - [SSH for File Transfers](#ssh-for-file-transfers)
-
-  - [Resolution and Emulator Configuration](#resolution-and-emulator-configuration)
-    - [CRU Setup Steps](#cru-setup-steps)
-
-    - [Emulator Configuration](#emulator-configuration)
-      - [RetroArch Configuration](#retroarch-configuration)
-      - [Standalone Emulator Configuration](#standalone-emulator-configuration)
-      - [Steam](#steam)
-  
-  - [REWASD and LaunchBox Setup](#rewasd-and-launchbox-setup)
-    - [Proposed Controller Mapping](#proposed-controller-mapping)
-
-    - [LaunchBox Configuration](#launchbox-configuration)
-      - [Using Res-O-Matic for Custom Resolutions](#using-res-o-matic-for-custom-resolutions)
-  
-  - [Controller Reordering Workaround](#controller-reordering-workaround)
-  - [Final Touches](#final-touches)
-    - [Debloating Windows](#debloating-windows)
-
-    - [Additional Optimizations](#additional-optimizations)
-
-  - [Conclusion](#conclusion)
-  - [Links Recap](#Links-Recap)
+- [Overview](#overview)
+  - [Key Features](#key-features)
+- [For Digital output (not CRT)](#for-digital-output-not-crt)
+- [Supported Systems and Resolutions](#supported-systems-and-resolutions)
+- [Why Build It?](#why-build-it)
+- [Challenges & Constraints](#challenges--constraints)
+- [Requirements and Software](#requirements-and-software)
+  - [Hardware Requirements](#hardware-requirements)
+  - [Software Requirements](#software-requirements)
+    - [Essential Software](#essential-software)
+    - [Optional Software](#optional-software)
+    - [Troubleshooting Tools](#troubleshooting-tools)
+    - [Additional Recommendations](#additional-recommendations)
+- [Video Signal Chain](#video-signal-chain)
+- [Setup Process](#setup-process)
+  - [Preparing the PC](#preparing-the-pc)
+  - [GPU and Driver Setup](#gpu-and-driver-setup)
+    - [AMD GPU + HDMI Scaler: HDCP fix (if image looks wrong)](#amd-gpu--hdmi-scaler-hdcp-fix-if-image-looks-wrong)
+  - [Windows Configuration](#windows-configuration)
+- [SSH for File Transfers](#ssh-for-file-transfers)
+  - [Why key-based SSH?](#why-key-based-ssh)
+  - [SSH Setup Steps](#ssh-setup-steps)
+  - [Alternative](#alternative)
+  - [SSH Notes](#ssh-notes)
+- [Resolution and Emulator Configuration](#resolution-and-emulator-configuration)
+  - [Resolution Setup with CRU](#resolution-setup-with-cru)
+    - [Resolution Table (CRU)](#resolution-table-cru)
+    - [Resolution Notes](#resolution-notes)
+  - [CRU Setup Steps](#cru-setup-steps)
+  - [Emulator Configuration](#emulator-configuration)
+    - [RetroArch Configuration](#retroarch-configuration)
+    - [Standalone Emulator Configuration](#standalone-emulator-configuration)
+  - [Steam](#steam)
+- [REWASD and LaunchBox Setup](#rewasd-and-launchbox-setup)
+  - [REWASD Setup](#rewasd-setup)
+  - [Proposed Controller Mapping](#proposed-controller-mapping)
+  - [LaunchBox Configuration](#launchbox-configuration)
+- [Using Res-O-Matic for Custom Resolutions](#using-res-o-matic-for-custom-resolutions)
+- [Dismissing Popups (Optional)](#dismissing-popups-optional)
+  - [Try LaunchBox options first](#try-launchbox-options-first)
+  - [Example: closing a stubborn warning (AutoHotkey)](#example-closing-a-stubborn-warning-autohotkey)
+  - [LaunchBox Notes](#launchbox-notes)
+- [Controller Reordering Workaround](#controller-reordering-workaround)
+- [Final Touches](#final-touches)
+  - [Debloating Windows](#debloating-windows)
+    - [Option A, Manual:](#option-a-manual)
+    - [Option B, Automated:](#option-b-automated)
+  - [Additional Optimizations](#additional-optimizations)
+  - [Optimization Notes](#optimization-notes)
+- [Conclusion](#conclusion)
 
 
 ## Overview The idea is to create a unified emulation platform that preserves the authentic visual experience of retro gaming while providing modern convenience: Instead of separate devices for different eras or accepting visual compromises, you get one system that handles everything from 1980s arcade cabinets to current-generation Switch games - all displaying at their original resolutions before being properly upscaled by dedicated hardware. The key breakthrough is outputting true native resolutions (tested from 160p up to 1080p) over HDMI to modern scalers, something most PCs and emulation distributions can't achieve. Combined with gamepad-only operation through BigBox and standardized controls via REWASD, the result feels like using a premium retro console rather than managing a collection of emulators on a computer. The system aims at removing the usual drawbacks of PC emulation: no keyboard/mouse dependency, no resolution mismatches, no juggling between different interfaces. You boot directly into a unified game library, select any title from four decades of gaming, and it launches at the correct resolution with consistent controls - exactly as these games were meant to be experienced, but on modern displays.
@@ -742,4 +750,5 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
