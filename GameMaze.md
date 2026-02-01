@@ -586,7 +586,7 @@ We will create `.bat` launchers in the emulators’ folders and configure these 
     ```
   - In LaunchBox, add as a new emulator (e.g., “RetroArch DS 256p”), target Application path = launch_retroarch_ds_256x2560.bat and associate with Nintendo DS.
 
-![Nintendo DS Emulator](csEmul.png)
+![Nintendo DS Emulator](/images/csEmul.png)
 
 - Example: GameCube (640×480):
   - Create /RetroArch/launch_retroarch_dolphin_640x480.bat, containing:
@@ -756,6 +756,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
