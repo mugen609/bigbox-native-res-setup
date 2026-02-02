@@ -648,7 +648,7 @@ Use Window Spy to identify the popup’s window title/class and adjust the scrip
   ```
 
 Create ForzaPopupKiller.ahk in the same folder:
-#SingleInstance Force
+```#SingleInstance Force
 SetTitleMatchMode, 2
 Run, steam://rungameid/1551360
 Sleep, 10000
@@ -684,6 +684,7 @@ Loop
     if (elapsed >= timeout)
         break
 }
+```
 
 In LaunchBox, set the game’s Application Path to LaunchForza.bat.
 
@@ -778,6 +779,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
