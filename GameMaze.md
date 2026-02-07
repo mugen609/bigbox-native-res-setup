@@ -411,7 +411,8 @@ RetroArch is used for most retro systems, while standalone emulators are preferr
 
 This is safe because the RetroTink 4K profile is set to 4:3, preventing unintended stretching for legacy systems. Standard HD resolutions (720p, 1080p) are hardcoded in RT4K firmware to override to 16:9 regardless of profile settings, which is why Vita (if running at desktop 720p or 1080p) and modern systems display correctly in 16:9 overriding the 4:3 setting.
 
-4. PS1 (Mednafen PSX Core):
+
+3. PS1 (Mednafen PSX Core):
    - Menu → Settings → Video → CRT SwitchRes: Enable, set to 15kHz, 2560 horizontal.
    - Aspect Ratio: Core Provided.
    - Save core overrides.
@@ -781,6 +782,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
