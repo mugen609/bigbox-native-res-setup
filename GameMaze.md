@@ -346,7 +346,7 @@ Use USB drives for file transfers, only recommended if SSH is not feasible.
 
 ## Resolution and Emulator Configuration
 This section covers setting up native low/legacy resolutions (160p–384p) using Custom Resolution Utility (CRU) and configuring emulators to output them correctly, targeting pixel-perfect visuals.
-Even when resolution EDID are created, most emulators will only launch at dekstop resolution requiring Res-O-Matic script in Launchbox or BigBox to work at the desired resolution (it is detailed later with [Res-O-Matic](#using-res-o-matic-for-custom-resolutions)
+Even when resolution EDID are created, most emulators will only launch at dekstop resolution requiring Res-O-Matic script in Launchbox or BigBox to work at the desired resolution (it is detailed later with [Res-O-Matic](#using-res-o-matic-for-custom-resolutions)).
 
 ### Resolution Setup with CRU
 The CRU resolutions below are the *custom* low modes used for retro systems. Standard HDMI modes like 480p and 720p do not require CRU and can be selected normally per emulator/game as needed.
@@ -396,7 +396,7 @@ The CRU resolutions below are the *custom* low modes used for retro systems. Sta
 ### Emulator Configuration
 The goal is to preserve each system’s original signal and let the scaler handle all upscaling and CRT-style processing. Emulators should output native resolutions wherever possible, with no internal filtering or smoothing.
 Use nearest-neighbor scaling and x1 resolution for anything up to the PS1 era to maintain pixel accuracy. For PS2 and newer systems, internal resolution scaling (x2 or x3) can be used selectively when it looks better.
-RetroArch is used for most retro systems, while standalone emulators are preferred for newer platforms. When RetroArch’s CRT SwitchRes isn't suitable (e.g., for vertically stacked DS or 480p+ content), **Res-O-Matic is used to launch games at the desired resolution.**
+RetroArch is used for most retro systems, while standalone emulators are preferred for newer platforms. When RetroArch’s CRT SwitchRes isn't suitable (e.g., for vertically stacked DS or 480p+ content), **[Res-O-Matic](#using-res-o-matic-for-custom-resolutions) is used to launch games at the desired resolution.**
 
 #### RetroArch Configuration
 1. General Settings:
@@ -812,6 +812,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
