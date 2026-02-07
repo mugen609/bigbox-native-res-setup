@@ -424,7 +424,7 @@ This is safe because the RetroTink 4K profile is set to 4:3, preventing unintend
 4. Arcade (FBNeo Core):
    - Same as PS1, plus Quick Menu → Core Options → Vertical Mode: TATE or TATE Alternate (Will only affect vertical games).
    - Aspect Ratio: Core Provided (or Full if stretched).
-   - Save core overrides. If a game needs aspect ratio Full, save as game override.
+   - Save core overrides. If a game needs a specific aspect ratio, save as game override.
 
 5. Nintendo DS (Desmume Core):
    - CRT SwitchRes: Disable (desired 2560×256 is not properly detected by SwitchRes).
@@ -812,6 +812,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
