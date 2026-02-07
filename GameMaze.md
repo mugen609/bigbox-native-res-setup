@@ -346,6 +346,7 @@ Use USB drives for file transfers, only recommended if SSH is not feasible.
 
 ## Resolution and Emulator Configuration
 This section covers setting up native low/legacy resolutions (160p–384p) using Custom Resolution Utility (CRU) and configuring emulators to output them correctly, targeting pixel-perfect visuals.
+Even when resolution EDID are created, most emulators will only launch at dekstop resolution requiring Res-O-Matic script in Launchbox or BigBox to work at the desired resolution (it is detailed later with [Res-O-Matic](#using-res-o-matic-for-custom-resolutions)
 
 ### Resolution Setup with CRU
 The CRU resolutions below are the *custom* low modes used for retro systems. Standard HDMI modes like 480p and 720p do not require CRU and can be selected normally per emulator/game as needed.
@@ -395,7 +396,7 @@ The CRU resolutions below are the *custom* low modes used for retro systems. Sta
 ### Emulator Configuration
 The goal is to preserve each system’s original signal and let the scaler handle all upscaling and CRT-style processing. Emulators should output native resolutions wherever possible, with no internal filtering or smoothing.
 Use nearest-neighbor scaling and x1 resolution for anything up to the PS1 era to maintain pixel accuracy. For PS2 and newer systems, internal resolution scaling (x2 or x3) can be used selectively when it looks better.
-RetroArch is used for most retro systems, while standalone emulators are preferred for newer platforms. When RetroArch’s CRT SwitchRes isn't suitable (e.g., for vertically stacked DS or 480p+ content), Res-O-Matic is used to launch games at the desired resolution.
+RetroArch is used for most retro systems, while standalone emulators are preferred for newer platforms. When RetroArch’s CRT SwitchRes isn't suitable (e.g., for vertically stacked DS or 480p+ content), **Res-O-Matic is used to launch games at the desired resolution.**
 
 #### RetroArch Configuration
 1. General Settings:
@@ -468,10 +469,18 @@ Standalone emulators handle modern systems (PS2, Switch, etc.) and some retro sy
      ```
      FullScreen=1
      Throttle=1
-     XResolution=2560
+     XResolution=2480
      YResolution=384
      Stretch=True
      ```
+*Note: Model 3 games are natively 496×384, which is not 4:3 but a slimmer 1.2917:1 aspect ratio. To preserve this ratio when your scaler forces 4:3:
+-CRU: Create 2560×384 (NOT 2480×384)
+-Supermodel.ini: Set 2480×384 with Stretch = True
+-Scaler: Set to 4:3 aspect mode*
+
+*How it works: Supermodel renders at 2480 wide (the correct pre-compensated width), but outputs to the closest available EDID timing (2560×384), automatically adding 80 pixels of black bars (40 each side). When your scaler applies 4:3 scaling, the active content scales to the original Model 3 ratio.*
+
+*⚠️ Important: This relies on Supermodel's specific behavior (stretch to INI resolution, output to closest EDID with black bars). Do NOT create 2480×384 in CRU—it must remain "unavailable" for this trick to work.*
 
 3. Citra (3DS):
    - Set View → Screen → Rotate Up Right for vertical stacked screens.
@@ -493,9 +502,17 @@ Note: For resolutions different from your desktop resolution, you need to use Re
 
 
 5. PPSSPP (PSP):
-   - Set to 272p (native) or desktop based on preference.
+   - Launch the emulator at 272p using Res-O-Matic in LaunchBox ([See guide](#using-res-o-matic-for-custom-resolutions))
+   - PSP is not exactly 16:9 but 30:17 (1.7647:1). To preserve the perfect ratio, set your scaler to 16:9 and edit ppsspp.ini (typically in C:\Users\<YourAccount>\Documents\PPSSPP\PSP\SYSTEM\):
+```
+[Graphics]
+DisplayAspectRatio = 5.294000
+DisplayStretch = False
+```
+This adds slim black bars on the sides, pre-compensating for the scaler's 16:9 stretch to display the correct PSP aspect ratio.
   
- - Note: If for any reasons you need extra tools to rotate your display for a specific emulator, use iRotate in a LB script:
+6. Vertical Mode:
+   - If for any reasons you need extra tools to rotate your display for a specific emulator, use iRotate in a LB script:
 
 ![irotate](/images/rotate.png)
 ```
@@ -603,13 +620,26 @@ We will create `.bat` launchers in the emulators’ folders and configure these 
 
 - Example: Nintendo DS (2560×256):
   - Create C:/RetroArch/launch_retroarch_ds_256x2560.bat, containing:
-    ```batch
+    ```
     @echo off
     echo start /wait "" "C:\Emulators\RetroArch\retroarch.exe" -L "cores\desmume_libretro.dll" %* > "%TEMP%\launch_ds.bat"
     start /wait "" "C:\YourPath\reso.exe" "%TEMP%\launch_ds.bat" 2560 256 32 60
     del "%TEMP%\launch_ds.bat"
     ```
   - In LaunchBox, add as a new emulator (e.g., “RetroArch DS 256p”), target Application path = launch_retroarch_ds_256x2560.bat and associate with Nintendo DS.
+
+- Example: PPSSPP (2560×272):
+ - PSP_272p.bat:
+```
+@echo off
+echo start /wait "" "C:\YourPath\PPSSPPWindows64.exe" %* > "%TEMP%\launch_psp_new.bat"
+:: Use reso.exe to run at 2560x272
+start /wait "" "C:\...\reso.exe" "%TEMP%\launch_psp_new.bat" 2560 272 32 60
+:: Clean up
+del "%TEMP%\launch_psp_new.bat"
+```
+
+  
 
 ![Nintendo DS Emulator](/images/csEmul.png)
 
@@ -782,6 +812,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
