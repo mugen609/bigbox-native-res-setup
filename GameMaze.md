@@ -436,7 +436,7 @@ This is safe because the RetroTink 4K profile is set to 4:3, preventing unintend
 6. GameCube (Dolphin Core), Dreamcast (Flycast Core):
    - CRT SwitchRes: Disable (RetroArch defaults to desktop resolution).
    - Aspect Ratio: Core Provided (or whatever works best is not good).
-   - Use Res-O-Matic to force 640×480 (480p) in LaunchBox.
+   - Use [Res-O-Matic](#using-res-o-matic-for-custom-resolutions) to force 640×480 (480p) in LaunchBox.
 
 ![FF5GBA](/images/FF5.jpeg)
 *Final Fantasy 5 on GBA at 160p*
@@ -495,7 +495,7 @@ Standalone emulators handle modern systems (PS2, Switch, etc.) and some retro sy
      - Scaling: For PS2, use internal resolution x2/x3 selectively when it looks better; keep nearest-neighbor / minimal filtering to preserve a faithful low-res look.
 
    - **Output resolution:** Set each emulator to output the *native* mode you want (e.g., 480p content at 480p), and only use higher output modes when you have a specific reason (display/scaler preference, performance, or compatibilit)y.
-Note: For resolutions different from your desktop resolution, you need to use Res-O-Matic.
+Note: For resolutions different from your desktop resolution, you need to use [Res-O-Matic](#using-res-o-matic-for-custom-resolutions).
 
    - **Aspect ratios:** PCSX2 can respect 4:3 for 4:3 titles; PS3/Switch/Vita titles are typically 16:9.
 
@@ -812,6 +812,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
