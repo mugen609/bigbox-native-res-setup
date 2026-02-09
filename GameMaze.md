@@ -421,7 +421,7 @@ For each core, load a game, open the menu, and set:
 - Save core overrides: Quick Menu → Overrides → Save Core Overrides.
 - However if a game is strectched with ratio Core Provided and needs Full to look fine, save it as Game Override instead of Core Overrride.
 
-1. Note on Ratio:
+2. Note on Ratio:
    “Core Provided” usually works, but if a game looks stretched—especially vertical ones—switch to “Full.”
 
 This is safe because the RetroTink 4K profile is set to 4:3, preventing unintended stretching for legacy systems. Standard HD resolutions (720p, 1080p) are hardcoded in RT4K firmware to override to 16:9 regardless of profile settings, which is why Vita (if running at desktop 720p or 1080p) and modern systems display correctly in 16:9 overriding the 4:3 setting.
@@ -826,6 +826,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
