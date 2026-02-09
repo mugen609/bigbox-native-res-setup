@@ -419,7 +419,7 @@ The goal is to preserve each system's original signal and let the scaler handle 
 
 Emulators handle resolution in three ways:
 
-**1. RetroArch with CRT SwitchRes** - Automatically switches to 224p/240p (NES, SNES, Genesis, PS1, arcade). No Res-O-Matic needed.
+**1. RetroArch with CRT SwitchRes** - Automatically switches to 224p/240p (NES, SNES,  Megadrive/Genesis, PS1, arcade). No Res-O-Matic needed.
 
 **2. Desktop Resolution Default** - Launches at Windows desktop resolution. Requires Res-O-Matic to force native resolution (RetroArch without SwitchRes, most standalone emulators).
 
@@ -427,8 +427,8 @@ Emulators handle resolution in three ways:
 
 | System | Emulator | Native Res | Method | Notes |
 |--------|----------|------------|--------|-------|
-| NES, SNES, Genesis | RetroArch | 224p/240p | CRT SwitchRes | Automatic resolution switching |
-| PS1 | RetroArch (Mednafen PSX) | 240p | CRT SwitchRes | Automatic resolution switching |
+| NES, SNES, Megadrive | RetroArch | 224p/240p | CRT SwitchRes | Automatic resolution switching |
+| PS1 | RetroArch | 240p | CRT SwitchRes | Automatic resolution switching |
 | Game Boy | RetroArch | 144p | Res-O-Matic | SwitchRes disabled |
 | GBA | RetroArch | 160p | Res-O-Matic | SwitchRes disabled |
 | Nintendo DS | RetroArch (DeSmuME) | 256p | Res-O-Matic | Stacked screens, SwitchRes disabled |
@@ -881,6 +881,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
