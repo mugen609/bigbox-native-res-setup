@@ -440,7 +440,7 @@ Emulators handle resolution in three ways:
 | PS3 | RPCS3 | 720p | Res-O-Matic | Use if desktop ≠ 720p |
 | PS Vita | Vita3K | 544p/720p | Res-O-Matic | Or use desktop resolution |
 | Switch | Ryujinx | 720p | Res-O-Matic | Use if desktop ≠ 720p |
-| Arcade (FBNeo/MAME cores) | RetroArch | 224p–384p | CRT SwitchRes | Automatic, handles TATE |
+| Arcade (FBNeo/MAME cores) | RetroArch | 224p–240p | CRT SwitchRes | Automatic, handles TATE |
 | Arcade (various) | MAME standalone | Varies | Config file | Set per-system in .ini files |
 | Sega Model 3 | Supermodel | 384p | Config file | Set in Supermodel.ini |
 | Steam/PC games | N/A | Varies | In-game settings | Configure in graphics options |
@@ -881,6 +881,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
