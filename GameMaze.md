@@ -417,9 +417,9 @@ RetroArch is used for most retro systems, while standalone emulators are preferr
  - Core options:
 
 For each core, load a game, open the menu, and set:
-     - Video → Scaling → Aspect Ratio: Core Provided (or Full for vertical games if stretched).
-     - Save core overrides: Quick Menu → Overrides → Save Core Overrides.
-     - However if a game is strectched with ratio Core Provided and needs Full to look fine, save it as Game Override instead of Core Overrride.
+- Video → Scaling → Aspect Ratio: Core Provided (or Full for vertical games if stretched).
+- Save core overrides: Quick Menu → Overrides → Save Core Overrides.
+- However if a game is strectched with ratio Core Provided and needs Full to look fine, save it as Game Override instead of Core Overrride.
 
 1. Note on Ratio:
    “Core Provided” usually works, but if a game looks stretched—especially vertical ones—switch to “Full.”
@@ -826,6 +826,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
