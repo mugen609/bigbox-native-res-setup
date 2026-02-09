@@ -402,12 +402,23 @@ RetroArch is used for most retro systems, while standalone emulators are preferr
 1. General Settings:
    - Go to Settings → User Interface → Menu, select rgui.
      This might not be the sexiest skin, but it works best with low resolutions.
+
+ - **Set Controller Drivers (Gamepad Harmonization):**
+     - Main Menu → Settings → Drivers:
+       - **Input:** dinput
+       - **Controller:** dinput
+     - Main Menu → Configuration File → Save Current Configuration
+     
+     **Why dinput:**
+     - **Reconnection reliability:** SDL2 has known Bluetooth reconnection bugs
+     - **Unified hotkeys:** xinput binds the Home button to toggle RetroArch's menu, intercepting it before REWASD can process Home+button combos. This prevents harmonized hotkeys (e.g., Home+Start to quit) from working in RetroArch while they work in all other emulators. dinput treats Home as a regular button, enabling true hotkey consistency across your entire system.
+
    - For each core, load a game, open the menu, and set:
      - Video → Scaling → Aspect Ratio: Core Provided (or Full for vertical games if stretched).
      - Save core overrides: Quick Menu → Overrides → Save Core Overrides.
      - However if a game is strectched with ratio Core Provided and needs Full to look fine, save it as Game Override instead of Core Overrride.
 
-2. Note on Ratio:
+1. Note on Ratio:
    “Core Provided” usually works, but if a game looks stretched—especially vertical ones—switch to “Full.”
 
 This is safe because the RetroTink 4K profile is set to 4:3, preventing unintended stretching for legacy systems. Standard HD resolutions (720p, 1080p) are hardcoded in RT4K firmware to override to 16:9 regardless of profile settings, which is why Vita (if running at desktop 720p or 1080p) and modern systems display correctly in 16:9 overriding the 4:3 setting.
@@ -812,6 +823,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
