@@ -35,7 +35,7 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
     - [Resolution Notes](#resolution-notes)
   - [CRU Setup Steps](#cru-setup-steps)
   - [Emulator Configuration](#emulator-configuration)
-    - [Resolution Handling](#Resolution-Handling).
+    - [Resolution Handling](#Resolution-Handling)
     - [RetroArch Configuration](#retroarch-configuration)
     - [Standalone Emulator Configuration](#standalone-emulator-configuration)
   - [Steam](#steam)
@@ -447,7 +447,7 @@ Emulators handle resolution in three ways:
 
 
 
-**For legacy systems (pre-480p era, before Dreamcast):** ** Use nearest-neighbor filter with no smoothing filters (avoid SuperEagle, 2xBRZ, etc.). Keep internal resolution at x1 for 2D/pixel art to preserve accuracy. For 3D titles (PS1, N64), internal resolution scaling (x2 or x3) with anti-aliasing can improve visual quality while maintaining native output resolution—where emulator cores support it.
+**For legacy systems (pre-480p era, before Dreamcast):** Use nearest-neighbor filter with no smoothing filters (avoid SuperEagle, 2xBRZ, etc.). Keep internal resolution at x1 for 2D/pixel art to preserve accuracy. For 3D titles (PS1, N64), internal resolution scaling (x2 or x3) with anti-aliasing can improve visual quality while maintaining native output resolution—where emulator cores support it.
 
 **For 480p+ systems (Dreamcast onwards):** Internal resolution scaling (x2–x3) and anti-aliasing give great results and won't compromise the authentic look—though visual improvements mainly apply to 3D content. Always output at native resolution (480p, 720p, etc.) thanks to Res-O-Matic.
 
@@ -881,6 +881,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
