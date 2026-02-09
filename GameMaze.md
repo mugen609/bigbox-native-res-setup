@@ -44,7 +44,7 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
   - [Proposed Controller Mapping](#proposed-controller-mapping)
   - [LaunchBox Configuration](#launchbox-configuration)
 - [Using Res-O-Matic for Custom Resolutions](#using-res-o-matic-for-custom-resolutions)
-- [Dismissing Popups (Optional)](#dismissing-popups-optional)
+- [Dismissing Popups (Optional)](#Dismissing-Popups,-WindowSpy-fix)
   - [Try LaunchBox options first](#try-launchbox-options-first)
   - [Example: closing a stubborn warning (AutoHotkey)](#example-closing-a-stubborn-warning-autohotkey)
   - [LaunchBox Notes](#launchbox-notes)
@@ -726,69 +726,47 @@ Tip: Adjust paths and core names to match your setup. Create similar scripts for
 - Note: check the core spelling going to /RetroArch/Cores/ directory
 
 
-## Dismissing Popups (Optional)
-Most setups won’t need this if drivers and games are configured cleanly, but it’s useful to have a fallback when you’re running a gamepad-only box and a dialog steals focus.
+## Dismissing Popups, WindowSpy fix
+
+Any dialogue requiring a mouse click when a game is launching breaks the gamepad-only experience.
+
+This should not happen with an updated system (Windows, drivers, and games current). If you do encounter stuck popups:
 
 ### Try LaunchBox options first
-In LaunchBox, go to **Tools → Manage Emulators → (select emulator) → 
- - Details > You can tick Attempt to hide console window on startup/shutdown
-You also have: 
- - Startup Screen**:
-- **Aggressive Startup Window Hiding** (helps hide/handle transient launcher windows).
-- **Hide All Windows that are not in Exclusive Fullscreen Mode** (can help keep Big Box in focus).
 
-These options can help for some cases, but modal Windows dialogs may still require automation. 
+In LaunchBox, go to Tools → Manage Emulators → select emulator → Details:
+- Tick "Attempt to hide console window on startup/shutdown"
+- **Startup Screen:** "Aggressive Startup Window Hiding" helps hide/handle transient launcher windows
+- "Hide All Windows that are not in Exclusive Fullscreen Mode" can help keep Big Box in focus
 
-### Example: closing a stubborn warning (AutoHotkey)
-This example targets a specific popup I used to get (it should not happen on a properly updated system), where Forza Horizon was showing a warning of obsolete drivers where I had to click OK to dismiss before the game would launch.  
-Use Window Spy to identify the popup’s window title/class and adjust the script for other games. (AutoHotkey supports targeting windows by `ahk_class`, as shown by Window Spy.) 
+These options can help for some cases, but modal Windows dialogs may still require automation.
 
-- Create `ROMs/Steam/LaunchForza.bat`:
+### If LaunchBox options don't work: AutoHotkey + WindowSpy
+
+1. Install AutoHotkey 1.1 and run WindowSpy.ahk (included) to identify the popup's window title and `ahk_class` 
+2. Create a wrapper script that launches the game, waits for the popup, and auto-closes it (Alt+F4, Enter, or coordinate click) 
+3. In LaunchBox, point to your wrapper script instead of the game executable 
+
+**Example structure:** 
+- Create `ROMs/SteamyourGame.bat`:
   ```bat
   @echo off
-  start "" "ForzaPopupKiller.ahk"
+  start "" "YourGamePopupKiller.ahk"
   ```
 
-Create ForzaPopupKiller.ahk in the same folder:
-```#SingleInstance Force
-SetTitleMatchMode, 2
-Run, steam://rungameid/1551360
-Sleep, 10000
-timeout := 90000
-elapsed := 0
-interval := 500
-Loop
-{
-    IfWinExist, Forza Horizon ahk_class #32770
-    {
-        WinActivate
-        Sleep, 300
-        SendInput {Alt down}{F4 down}
-        Sleep, 50
-        SendInput {F4 up}{Alt up}
-        Sleep, 1000
-        IfWinExist, Forza Horizon ahk_class #32770
-        {
-            WinGetPos, X, Y, W, H, Forza Horizon ahk_class #32770
-            XButtonX := X + W - 20
-            XButtonY := Y + 20
-            Click, %XButtonX%, %XButtonY%
-            Sleep, 500
-            IfWinExist, Forza Horizon ahk_class #32770
-            {
-                WinKill
-            }
-        }
-        break
-    }
-    Sleep, %interval%
-    elapsed += interval
-    if (elapsed >= timeout)
-        break
+Create YourGamePopupKiller.ahk in the same folder:
+```ahk 
+Run, steam://rungameid/YOUR_GAME_ID
+Sleep, 5000
+Loop {
+    IfWinExist, Popup Window Title ahk_class YOUR_CLASS
+        WinClose
+    Sleep, 500
 }
 ```
 
-In LaunchBox, set the game’s Application Path to LaunchForza.bat.
+
+In LaunchBox, set the game’s Application Path to YourGame.bat.
 
 
 
@@ -881,6 +859,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
