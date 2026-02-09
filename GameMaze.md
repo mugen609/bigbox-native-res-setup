@@ -25,8 +25,8 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
     - [RetroArch Configuration](#retroarch-configuration)  
     - [Standalone Emulator Configuration](#standalone-emulator-configuration)  
   - [Steam](#steam)
-- [REWASD and LaunchBox Setup](#rewasd-and-launchbox-setup)  
-  - [REWASD Setup](#rewasd-setup)  
+- [reWASD and LaunchBox Setup](#rewasd-and-launchbox-setup)  
+  - [reWASD Setup](#rewasd-setup)  
   - [LaunchBox Configuration](#launchbox-configuration)
 - [Using Res-O-Matic for Custom Resolutions](#using-res-o-matic-for-custom-resolutions)
 - [Dismissing Popups (Optional)](#dismissing-popups-with-windowspy-fix)  
@@ -35,6 +35,8 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
 - [Conclusion](#conclusion)
 
 ---
+![DQ6](/images/DQ6.jpg)  
+*Dragon Quest 6 on SNES in native resolution*
 
 ## Overview
 
@@ -44,8 +46,6 @@ The key idea is to keep the console-accurate signal (resolution, aspect ratio, n
 
  - *Note: This setup assumes you are willing to define custom timings with CRU, rely on an HDMI scaler that accepts low resolutions, and use workarounds for quirks like Windows’ controller ordering. The rest of this guide focuses on providing concrete solutions to those constraints.*
 
-![DQ6](/images/DQ6.jpg)  
-*Dragon Quest 6 on SNES in native resolution*
 
 ### Key Features
 
@@ -56,7 +56,7 @@ The key idea is to keep the console-accurate signal (resolution, aspect ratio, n
 
 The system is designed to output to any HDMI-compatible scaler, supporting up to 4K with a suitable monitor.
 
-In my setup, a RetroTINK 4K scaler upscales the PC’s native inputs to 1440p (limited by an LG 27GS95QE-B OLED monitor), applying CRT shaders for a sharp, scanline-rich image. Vertical arcade games are displayed in TATE mode by physically rotating the monitor on a VESA stand.
+In my setup, a RetroTINK 4K scaler upscales the PC’s native inputs to 1440p (limited by my LG 27GS95QE-B OLED monitor), applying CRT shaders for a sharp, scanline-rich image. Vertical arcade games are displayed in TATE mode by physically rotating the monitor on a VESA stand.
 
 ---
 
@@ -82,7 +82,7 @@ Native resolutions for each platform.
 |------------------------|--------------------------|
 | Game Boy Advance       | 160p                     |
 | NES, SNES, Megadrive   | 224p–240p                |
-| Arcade (MAME, FBNeo)   | 224p–384p                |
+| Arcade (MAME, FBNeo)   | 224p–480p                |
 | Nintendo DS            | 256p (dual screen stack) |
 | PSP                    | 272p                     |
 | Sega Model 3           | 384p                     |
@@ -123,7 +123,7 @@ Examples:
   Excellent cycle-accurate 240p for retro systems (up to PS1) but no support for modern platforms.
 
 - **Batocera/RetroPie/Lakka**:  
-  Very user-friendly but typically upscale retro games to at least 480p, losing native resolution fidelity and struggling to handle a wide range of resolutions cleanly.
+  Very user-friendly but typically upscale retro games to at least 480p, losing native resolution fidelity and struggling to handle a wide range of resolutions (Legacy + modern at the same time).
 
 - **CRT EmuDriver**:  
   Powerful for 240p analog output but limited to older GPUs, outdated drivers, and incompatible with modern APIs (Vulkan, Steam, etc.).
@@ -136,7 +136,7 @@ GameMaze aims to unify the authentic visual experience of original hardware with
 
 ### Before You Start
 
-- **Clean Windows install (recommended)**: This guide assumes a clean Windows 11 install (fresh OS), followed by your preferred GPU driver and core tools before emulator configuration. But feel free to adapt it to an existing install,if you prefer.
+- **Clean Windows install (recommended)**: This guide assumes a clean Windows 11 install (fresh OS), followed by your preferred GPU driver and core tools before emulator configuration. But feel free to adapt it to an existing install, if you prefer.
 - **Network access & SSH**: A basic LAN connection is strongly recommended. Enabling SSH on the emulation PC (e.g., via [OpenSSH](#ssh-for-file-transfers) Server) allows file transfers without USB drives. USB or NAS also work, but SSH is most convenient on a gamepad-only machine.
 - **Secondary PC (optional)**: Helpful for setup tasks like ROM transfers or scripting, but not absolutely required.
 
@@ -158,7 +158,7 @@ The tested configuration can be used as a reference.
 
 - **Scaler/Display**:  
   An HDMI scaler accepting legacy resolution inputs and upscaling to your monitor’s native resolution (1080p or higher), ideally with CRT shader support.  
-  - **Tested**: RetroTINK 4K scaler outputting to a 27" LG ULTRAGEAR OLED monitor on a VESA stand for TATE mode.
+  - **Tested**: RetroTINK 4K scaler outputting 1440p to a 27" LG ULTRAGEAR OLED monitor on a VESA stand for TATE mode.
 
 - **Controllers**: Gamepads (wired or wireless).  
   - **Tested**: Two Sony DualSense, Hori Octa Pro, Xbox Series X controller (four players).
@@ -277,7 +277,7 @@ A GPU that supports EDID overrides/custom resolutions over HDMI (for CRU) and mo
 
 **If custom resolutions don’t show up:**
 
-- Run `restart64.exe` (included with CRU) or reboot to reload the graphics driver.  
+- Run `restart64.exe` (included in CRU directory) or reboot to reload the graphics driver.  
 - If the modes still don’t appear, try a different driver version; CRU depends on driver support for EDID overrides.
 
 
@@ -324,7 +324,7 @@ If your scaler output looks blurred or pixelated, disable HDCP in AMD Software: 
    - Settings → Gaming → Xbox Game Bar → disable controller shortcuts (untick “Open Xbox Game Bar using this button on a controller”).
 
 6. **Install Runtimes**  
-   - Install Visual C++, .NET Framework, DirectX, and (if needed) Vulkan SDK.
+   - Install Visual C++, .NET Framework, DirectX (and if needed Vulkan SDK).
 
 7. **Update Windows**  
    - Run Windows Update, install all available updates, and reboot until no updates remain.
@@ -354,7 +354,7 @@ To solve this, everything can be done on a main PC with keyboard and mouse, then
      ```  
    - Write down the IPv4 address of the active adapter.
 
-1. **On the Emulation PC → Enable OpenSSH Server**
+1. **Still on the Emulation PC → Enable OpenSSH Server**
 
    - Open PowerShell as administrator and run:
      ```powershell
@@ -433,7 +433,7 @@ Even with EDID entries created via CRU, most emulators will still launch at desk
 
 ### Resolution Setup with CRU
 
-The CRU resolutions below are the *custom* low modes used for retro systems. Standard HDMI modes like 480p and 720p do not require CRU and can be selected normally per emulator/game as needed.
+The CRU resolutions below are the *custom* low modes used for retro systems. Standard HDMI modes like 480p and 720p **do not require** CRU and can be selected normally per emulator/game as needed.
 
 #### Resolution Table (CRU)
 
@@ -449,10 +449,10 @@ The CRU resolutions below are the *custom* low modes used for retro systems. Sta
 #### Resolution Notes
 
 - **CRU slot budget**:  
-  CRU slots are limited, so this list prioritizes the modes actually used (160p/224p/240p/256p/272p/384p). If you want pixel-perfect 144p for Game Boy, you may need to sacrifice another mode; otherwise RetroArch CRT SwitchRes will pick the closest available resolution.
+  CRU slots are limited, so this list prioritizes the modes actually used (160p/224p/240p/256p/272p/384p). If you want pixel-perfect 144p for Game Boy, you need to sacrifice another mode; otherwise RetroArch CRT SwitchRes will pick the closest available resolution.
 
 - **Refresh-rate variations (optional)**:  
-  Slight differences (e.g., 59.985 vs 60.000 Hz) *may* help RetroArch CRT SwitchRes consistently select the intended resolution when multiple modes are close (e.g., 224p vs 240p). 
+  Slight differences (e.g., 59.985 vs 60.000 Hz) *seems* to help RetroArch CRT SwitchRes consistently select the intended resolution when multiple modes are close (e.g., 224p vs 240p). 
 
 - **480p/720p/1080p are not CRU topics**:  
   480p and above are standard HDMI modes. Use them normally for systems/emulators that are already 480p+ (e.g., PS2/Dreamcast/3DS stacked layouts) without using CRU slots.
@@ -530,10 +530,10 @@ Emulators handle resolution in three main ways:
 | PS3                         | RPCS3                 | 720p           | Res-O-Matic     | Use if desktop ≠ 720p                              |
 | PS Vita                     | Vita3K                | 544p           | Res-O-Matic     | Or use desktop resolution                          |
 | Switch                      | Ryujinx               | 720p           | Res-O-Matic     | Use if desktop ≠ 720p                              |
-| Arcade (FBNeo/MAME cores)   | RetroArch             | 224p–240p      | CRT SwitchRes   | Automatic, handles TATE                            |
-| Arcade (various)            | MAME standalone       | 224p-480p      | Config file     | Set per-system in `.ini` files                     |
+| Arcade (FBNeo/etc. cores)   | RetroArch             | 224p–240p      | CRT SwitchRes   | Automatic, handles TATE                            |
+| Arcade (various MAME)       | MAME standalone       | 224p-480p      | Config file     | Set per-system in `.ini` files                     |
 | Sega Model 3                | Supermodel            | 384p           | Config file     | Set in `Supermodel.ini`                            |
-| Steam/PC games              | N/A                   | Varies         | In-game settings| Configure in graphics options                      |
+| Steam/PC games              | N/A                   | 720+           | In-game settings| Configure in graphics options                      |
 
 **For legacy systems (pre-480p, before Dreamcast)**:  
 Use nearest-neighbor filtering with no smoothing (avoid SuperEagle, 2xBRZ, etc.). Keep internal resolution at 1× for 2D/pixel art to preserve accuracy. For 3D titles (PS1, N64), internal resolution scaling (2×–3×) with anti-aliasing can improve visuals while maintaining native *output* resolution.
@@ -550,7 +550,7 @@ RetroArch is used for most retro systems, while standalone emulators are preferr
 1. **General Settings**
 
    - Go to Settings → User Interface → Menu → select **rgui**.  
-     It may not the sexiest skin, but works best with low resolutions.
+     It may not be the sexiest skin, but works best with low resolutions.
 
    - **Set Controller Drivers (Gamepad Harmonization)**:  
      - Main Menu → Settings → Drivers:  
@@ -560,25 +560,23 @@ RetroArch is used for most retro systems, while standalone emulators are preferr
 
    **Why dinput?**
 
-   - **Reconnection reliability**: SDL2 has known Bluetooth reconnection issues.  
-   - **Unified hotkeys**: xinput binds the Home button to toggle RetroArch’s menu, intercepting it before REWASD can process Home+button combos. This breaks harmonized hotkeys (e.g., Home+Start to quit) in RetroArch while they work in other emulators. `dinput` treats Home as a regular button, enabling consistent hotkey behavior across the system.
+   - **Reconnection reliability**: `SDL2` has known Bluetooth reconnection issues.  
+   - **Unified hotkeys**: `xinput` binds the Home button to toggle RetroArch’s menu, intercepting it before reWASD can process Home+button combos. This breaks harmonized hotkeys (e.g., Home+Start to quit) in RetroArch while they work in other emulators. `dinput` treats Home as a regular button, enabling consistent hotkey behavior across the system.
 
-2. **Core Options**
+2. **Core Options and Aspect Ratio**
 
-   For each core:
+For each core:
 
-   - Load a game, open the menu, and set:  
-     - Video → Scaling → Aspect Ratio: **Core Provided** (or **Full** if stretched, especially with vertical games).  
-   - Save core overrides:  
-     - Quick Menu → Overrides → **Save Core Overrides**.
+- Load a game, open the menu, and navigate to:  
+  - Video → Scaling → Aspect Ratio: **Core Provided**
+- Save core overrides:  
+  - Quick Menu → Overrides → **Save Core Overrides**
 
-   If a specific game looks stretched with **Core Provided** and needs **Full** to look correct, use **Save Game Overrides** instead of **Save Core Overrides**.
+**When to use "Full" instead or "Core Provided":**
 
-3. **Note on Aspect Ratio**
+If a game looks stretched or incorrect (especially vertical arcade games), switch Aspect Ratio to **Full**. If a specific game needs a different ratio from other games on the same platform, save its ratio as a **Game Override** instead of a Core Override.
 
-   “Core Provided” usually works well, but if a game looks incorrect, especially vertical ones, switch to “Full.”
-
-   This is safe because the RetroTINK 4K profile is set to 4:3, preventing unintended stretching for legacy systems. Standard HD resolutions (720p, 1080p) are hardcoded in the RT4K firmware to force 16:9 regardless of the RT profile settings. This is why Vita (if running at desktop 720p or 1080p) and modern systems display correctly in 16:9 even with a 4:3 profile in the scaler.
+Using "Full" is safe because the RetroTINK 4K profile is set to 4:3, preventing unintended stretching for legacy systems. Standard HD resolutions (720p, 1080p) are hardcoded in the RT4K firmware to force 16:9 regardless of profile settings—this is why Vita (if running at desktop 720p or 1080p) and modern systems display correctly in 16:9, even with a 4:3 scaler profile.
 
 4. **PS1 (Mednafen PSX Core)**
 
@@ -669,7 +667,7 @@ Standalone emulators handle modern systems (PS2, Switch, etc.) and some retro pl
 
    - Set View → Screen → **Rotate Up Right** for vertical stacked screens.  
    - If the screen flips in the wrong direction for your setup, you will have to use iRotate instead (See below image).
-   - By default, Azahar runs at desktop resolution; use Res-O-Matic](#using-res-o-matic-for-custom-resolutions) in LaunchBox for custom resolutions.
+   - By default, Azahar runs at desktop resolution; use [Res-O-Matic](#using-res-o-matic-for-custom-resolutions) in LaunchBox for custom resolutions.
 
 4. **PCSX2 (PS2), RPCS3 (PS3), Ryujinx (Switch), Vita3K (PS Vita)**
 
@@ -696,7 +694,7 @@ Standalone emulators handle modern systems (PS2, Switch, etc.) and some retro pl
        DisplayAspectRatio = 5.294000
        DisplayStretch = False
        ```
-     This adds slim black bars on the sides, pre-compensating for the scaler’s 16:9 stretch to display the correct PSP aspect ratio.
+     This adds *very* slim black bars on the sides, pre-compensating for the scaler’s 16:9 stretch to display the correct PSP aspect ratio.
 
 6. **Vertical Mode (iRotate Example)**
 
@@ -741,15 +739,15 @@ If you want games to install locally on the emulation PC (so they are available 
 
 ---
 
-## REWASD and LaunchBox Setup
+## reWASD and LaunchBox Setup
 
-This section configures REWASD to standardize gamepad inputs across all emulators and LaunchBox/BigBox to unify emulators, Steam, and scripts into a seamless, gamepad-only experience.
+This section configures reWASD to standardize gamepad inputs across all emulators and LaunchBox/BigBox to unify emulators, Steam, and scripts into a seamless, gamepad-only experience.
 
 The reference setup uses a mix of two Sony DualSense, a Hori Octa Pro, and an Xbox Series X controller, but any wired or wireless gamepads will work.
 
-### REWASD Setup
+### reWASD Setup
 
-Connect all controllers and start REWASD.
+Connect all controllers and start reWASD.
 
 - **Profile Creation**  
   - Delete default profiles if you do not need them and create a new one (e.g., “BigBox”).  
@@ -759,7 +757,7 @@ Connect all controllers and start REWASD.
   - Click the Xbox icon (top center, “Output Devices Settings”).  
   - Enable **Virtual Xbox 360** (or the XInput/SDL variant of your choice) and save.
 
-![REWASD Output Settings](/images/rewasdOUT.png)
+![reWASD Output Settings](/images/rewasdOUT.png)
 
 - **Configure Hotkeys**  
   - Click the Home button (PS or Xbox button) on the gamepad schematic.  
@@ -772,8 +770,11 @@ Connect all controllers and start REWASD.
 
 - **Apply to All Gamepads**  
   - Select each gamepad and click **Apply to Slot 1**, **Slot 2**, etc.  
-  - Ensure REWASD starts with Windows: Settings (gear, top right) → General → **Start with Windows**.  
-  - In REWASD settings, you can also tweak **Overlay** options to disable unwanted notifications.
+  
+- **Configure reWASD settings**   
+  - Ensure reWASD starts with Windows: Settings (gear, top right) → General → **Start with Windows**.
+  - Ensure keys remapping is always active: Settings → tray agent → and tick "Restore remap on startup".
+  - In reWASD settings, you can also tweak **Overlay** options to disable unwanted notifications.
 
 - **Test in Emulators**  
   - Open RetroArch and each standalone emulator to verify controls.  
@@ -789,7 +790,7 @@ To ensure consistent controls across all emulators and BigBox:
 | Home + Start     | ESC    | Quits the emulator or game.                     |
 | Standard buttons | Native | Bound to in-game controls (per emulator).       |
 
-You can customize these combos in REWASD (e.g., Home + Select = TAB).  
+You can customize these combos in reWASD (e.g., Home + Select = TAB).  
 Ensure all emulators respond to TAB (menu) and ESC (quit), or use LaunchBox scripts to enforce this where native binding is not available. (See the next part)
 
 ---
@@ -841,7 +842,7 @@ The approach is to create `.bat` launchers in emulator folders and configure the
 **For the following examples:**
 - Adjust paths and core names to match your setup. 
 - Check the exact core naming in `RetroArch\cores\`.  
-- "reso.exe" is the executable of Res-O-Matic found in your installation directory.
+- `reso.exe` is the executable of Res-O-Matic found in your installation directory.
 - Create similar scripts for any system needing a forced resolution.
 
 
@@ -855,7 +856,7 @@ The approach is to create `.bat` launchers in emulator folders and configure the
     del "%TEMP%\launch_ds.bat"
     ```
   - In LaunchBox, add as a new emulator (e.g., “RetroArch DS 256p”), with:
-    - Application path: `launch_retroarch_ds_2560x256.bat`  
+    - Application path: `retroarch_ds_256p.bat`  
     - Associate it with the Nintendo DS platform.
 
 - **Example: PPSSPP (2560×272)**
@@ -869,7 +870,7 @@ The approach is to create `.bat` launchers in emulator folders and configure the
     :: Clean up
     del "%TEMP%\launch_psp_new.bat"
     ```
-  - Add PSP_272p.bat as a new emulator in LaunchBox for the GameCube platform.
+  - Add `PSP_272p.bat` as a new emulator in LaunchBox for the GameCube platform.
 
 ![Nintendo DS Emulator](/images/csEmul.png)
 
@@ -882,7 +883,7 @@ The approach is to create `.bat` launchers in emulator folders and configure the
     start /wait "" "C:\YourPath\reso.exe" "%TEMP%\launch_dl.bat" 640 480 32 60
     del "%TEMP%\launch_dl.bat"
     ```
-  - Add retroarch_dolphin_480p.bat as a new emulator in LaunchBox for the GameCube platform.
+  - Add `retroarch_dolphin_480p.bat` as a new emulator in LaunchBox for the GameCube platform.
 
 
 ---
@@ -1037,7 +1038,7 @@ These tweaks polish the experience, ensuring fast boot into BigBox and clean per
 
 - **Disable Startup Apps**  
   - Task Manager (Ctrl+Shift+Esc) → Startup tab.  
-  - Disable all non-essential apps (e.g., OneDrive, browser updaters), keeping REWASD and LaunchBox if they are set to auto-start.
+  - Disable all non-essential apps (e.g., OneDrive, browser updaters), keeping reWASD and LaunchBox if they are set to auto-start.
 
 - **BigBox as Shell (Optional)**  
   - In BigBox: Options → General → **Enable using as the Windows Shell**.  
@@ -1049,7 +1050,7 @@ These tweaks polish the experience, ensuring fast boot into BigBox and clean per
   - Put ROMs and games on a SSD for reduced load times.
 
 - **Backup Configuration**  
-  - Back up LaunchBox settings (Tools → Backup) and REWASD profiles to a USB drive or network share.  
+  - Back up LaunchBox settings (Tools → Backup) and reWASD profiles to a USB drive or network share.  
   - Save CRU `.bin` congif (export) and emulator config folders for quick restoration.
 
 ### Optimization Notes
