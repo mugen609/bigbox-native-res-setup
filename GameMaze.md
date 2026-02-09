@@ -35,6 +35,7 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
     - [Resolution Notes](#resolution-notes)
   - [CRU Setup Steps](#cru-setup-steps)
   - [Emulator Configuration](#emulator-configuration)
+    - [Resolution Handling](#Resolution-Handling).
     - [RetroArch Configuration](#retroarch-configuration)
     - [Standalone Emulator Configuration](#standalone-emulator-configuration)
   - [Steam](#steam)
@@ -413,6 +414,38 @@ The CRU resolutions below are the *custom* low modes used for retro systems. Sta
 
 ### Emulator Configuration
 The goal is to preserve each system's original signal and let the scaler handle all upscaling and CRT-style processing. Emulators should output native resolutions wherever possible, with no internal filtering or smoothing.
+
+## Resolution Handling
+
+Emulators handle resolution in three ways:
+
+**1. RetroArch with CRT SwitchRes** - Automatically switches to 224p/240p (NES, SNES, Genesis, PS1, arcade). No Res-O-Matic needed.
+
+**2. Desktop Resolution Default** - Launches at Windows desktop resolution. Requires Res-O-Matic to force native resolution (RetroArch without SwitchRes, most standalone emulators).
+
+**3. Internal Configuration** - Resolution set via config files or in-game settings (MAME, Supermodel, Steam games). No Res-O-Matic needed.
+
+| System | Emulator | Native Res | Method | Notes |
+|--------|----------|------------|--------|-------|
+| NES, SNES, Genesis | RetroArch | 224p/240p | CRT SwitchRes | Automatic resolution switching |
+| PS1 | RetroArch (Mednafen PSX) | 240p | CRT SwitchRes | Automatic resolution switching |
+| Game Boy | RetroArch | 144p | Res-O-Matic | SwitchRes disabled |
+| GBA | RetroArch | 160p | Res-O-Matic | SwitchRes disabled |
+| Nintendo DS | RetroArch (DeSmuME) | 256p | Res-O-Matic | Stacked screens, SwitchRes disabled |
+| PSP | PPSSPP | 272p | Res-O-Matic | Use if desktop ≠ 272p |
+| Dreamcast | RetroArch (Flycast) | 480p | Res-O-Matic | SwitchRes disabled |
+| GameCube | RetroArch (Dolphin) | 480p | Res-O-Matic | SwitchRes disabled |
+| PS2 | PCSX2 | 480p | Res-O-Matic | Use if desktop ≠ 480p |
+| 3DS | Citra | 400p/800p | Res-O-Matic | Or use desktop resolution |
+| PS3 | RPCS3 | 720p | Res-O-Matic | Use if desktop ≠ 720p |
+| PS Vita | Vita3K | 544p/720p | Res-O-Matic | Or use desktop resolution |
+| Switch | Ryujinx | 720p | Res-O-Matic | Use if desktop ≠ 720p |
+| Arcade (FBNeo/MAME cores) | RetroArch | 224p–384p | CRT SwitchRes | Automatic, handles TATE |
+| Arcade (various) | MAME standalone | Varies | Config file | Set per-system in .ini files |
+| Sega Model 3 | Supermodel | 384p | Config file | Set in Supermodel.ini |
+| Steam/PC games | N/A | Varies | In-game settings | Configure in graphics options |
+
+
 
 **For legacy systems (pre-480p era, before Dreamcast):** ** Use nearest-neighbor filter with no smoothing filters (avoid SuperEagle, 2xBRZ, etc.). Keep internal resolution at x1 for 2D/pixel art to preserve accuracy. For 3D titles (PS1, N64), internal resolution scaling (x2 or x3) with anti-aliasing can improve visual quality while maintaining native output resolution—where emulator cores support it.
 
@@ -848,6 +881,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
