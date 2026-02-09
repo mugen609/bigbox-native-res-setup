@@ -436,7 +436,7 @@ Emulators handle resolution in three ways:
 | Dreamcast | RetroArch (Flycast) | 480p | Res-O-Matic | SwitchRes disabled |
 | GameCube | RetroArch (Dolphin) | 480p | Res-O-Matic | SwitchRes disabled |
 | PS2 | PCSX2 | 480p | Res-O-Matic | Use if desktop ≠ 480p |
-| 3DS | Citra | 400p/800p | Res-O-Matic | Or use desktop resolution |
+| 3DS | Azahar | 400p/800p | Res-O-Matic | Or use desktop resolution |
 | PS3 | RPCS3 | 720p | Res-O-Matic | Use if desktop ≠ 720p |
 | PS Vita | Vita3K | 544p/720p | Res-O-Matic | Or use desktop resolution |
 | Switch | Ryujinx | 720p | Res-O-Matic | Use if desktop ≠ 720p |
@@ -881,6 +881,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
