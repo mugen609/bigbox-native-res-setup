@@ -1,5 +1,5 @@
 # GameMaze  
-Native Resolutions • Seamless Gamepad Control • Console-Like Experience for scalers on modern displays
+*Native Resolutions • Seamless Gamepad Control • Console-Like Experience for scalers on modern displays*
 
 Imagine launching Pac-Man in its original 224p arcade resolution, then switching to The Witcher 3 at 720p—all from your couch, using only a gamepad. No keyboard, no fuss. This project is a passion-driven emulation hub that unifies 40+ years of gaming history, from 1980s arcade classics to modern Switch and Steam titles, in their original resolutions. It delivers a console-like experience that prioritizes visual fidelity, ease of use, and minimal compromises.
 
@@ -1071,3 +1071,4 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
+
