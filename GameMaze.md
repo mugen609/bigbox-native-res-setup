@@ -504,7 +504,7 @@ This is safe because the RetroTink 4K profile is set to 4:3, preventing unintend
 
 6. GameCube (Dolphin Core), Dreamcast (Flycast Core):
    - CRT SwitchRes: Disable (RetroArch defaults to desktop resolution).
-   - Aspect Ratio: Core Provided (or whatever works best is not good).
+   - Aspect Ratio: Core Provided (or whatever works best if not good).
    - Use [Res-O-Matic](#using-res-o-matic-for-custom-resolutions) to force 640×480 (480p) in LaunchBox.
 
 ![FF5GBA](/images/FF5.jpeg)
@@ -551,7 +551,7 @@ Standalone emulators handle modern systems (PS2, Switch, etc.) and some retro sy
 
 *⚠️ Important: This relies on Supermodel's specific behavior (stretch to INI resolution, output to closest EDID with black bars). Do NOT create 2480×384 in CRU—it must remain "unavailable" for this trick to work.*
 
-3. Citra (3DS):
+3. Azahar (3DS):
    - Set View → Screen → Rotate Up Right for vertical stacked screens.
    - Default runs at desktop resolution so use ResOMatic in LB for customs resolution if preferred.
 
@@ -881,6 +881,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
