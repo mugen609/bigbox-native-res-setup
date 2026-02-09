@@ -44,7 +44,7 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
   - [Proposed Controller Mapping](#proposed-controller-mapping)
   - [LaunchBox Configuration](#launchbox-configuration)
 - [Using Res-O-Matic for Custom Resolutions](#using-res-o-matic-for-custom-resolutions)
-- [Dismissing Popups (Optional)](#Dismissing-Popups,-WindowSpy-fix)
+- [Dismissing Popups (Optional)](#Dismissing-Popups-with-WindowSpy-fix)
   - [Try LaunchBox options first](#try-launchbox-options-first)
   - [Example: closing a stubborn warning (AutoHotkey)](#example-closing-a-stubborn-warning-autohotkey)
   - [LaunchBox Notes](#launchbox-notes)
@@ -726,7 +726,7 @@ Tip: Adjust paths and core names to match your setup. Create similar scripts for
 - Note: check the core spelling going to /RetroArch/Cores/ directory
 
 
-## Dismissing Popups, WindowSpy fix
+## Dismissing Popups with WindowSpy fix
 
 Any dialogue requiring a mouse click when a game is launching breaks the gamepad-only experience.
 
@@ -859,6 +859,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
