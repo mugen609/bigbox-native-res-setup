@@ -104,12 +104,17 @@ Native resolutions for each platform (4:3 and 16:9 depending on the system runni
 
 ## Why Build It?
 **The Discovery**
+
 This project began with a simple observation: games running on my physical SNES or PS1 through my RetroTink 4K looked noticeably better than the same games emulated via Batocera. I initially wondered if original hardware possessed some inherent visual quality that emulation couldn't replicate.
 
+
 The answer was simpler: **resolution**. 
+
 Physical consoles output true 240p signals. Batocera and most emulation setups upscale before sending to the scaler — forcing the RetroTink to process an already-compromised signal. When I configured emulators to output native resolutions, the visual quality matched (and in some cases exceeded) original hardware.
 
+
 **Beyond Hardware Parity**
+
 With proper configuration, emulation can actually improve on original hardware. But we want a clean signal with original look so we have to keep original resolution, aspect ratio and avoid smoothing graphics (choose native or nearest over xbm etc.):
 
 - **2D/Pixel Art Systems** : Native output resolution with nearest-neighbor scaling produces identical quality to original hardware (no SuperEagle, 2xBRZ, or smoothing filters). GBA games particularly benefit from OLED displays, which are dramatically sharper and more color-accurate than the original dim, washed-out screens.
@@ -843,6 +848,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
