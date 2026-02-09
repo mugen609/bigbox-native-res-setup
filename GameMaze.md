@@ -58,7 +58,7 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
 
 
 ## Overview
-The idea is to create a unified emulation platform that preserves the authentic visual experience of retro gaming while providing modern convenience: Instead of separate devices for different eras or accepting visual compromises, you get one system that handles everything from 1980s arcade cabinets to current-generation Switch games - all displaying at their original resolutions before being properly upscaled by dedicated hardware. The key breakthrough is outputting true native resolutions (tested from 160p up to 1080p) over HDMI to modern scalers, something most PCs and emulation distributions can't achieve. Combined with gamepad-only operation through BigBox and standardized controls via REWASD, the result feels like using a premium retro console rather than managing a collection of emulators on a computer. The system aims at removing the usual drawbacks of PC emulation: no keyboard/mouse dependency, no resolution mismatches, no juggling between different interfaces. You boot directly into a unified game library, select any title from four decades of gaming, and it launches at the correct resolution with consistent controls - exactly as these games were meant to be experienced, but on modern displays.
+GameMaze is a unified emulation platform that handles everything from 1980s arcade cabinets to current-generation Switch games—all from a gamepad-only interface outputting native resolutions (160p–1080p) over HDMI to modern scalers. The key breakthrough: true low-resolution output over HDMI (something most emulation systems can't achieve), combined with standardized controls via REWASD and seamless integration through LaunchBox/BigBox. Boot directly into a unified game library spanning four decades, launch any title at its correct resolution with consistent controls, and experience authentic retro gaming on modern displays—without keyboard dependency, resolution compromises, or interface juggling.
 
 
 ![DQ6](/images/DQ6.jpg)
@@ -103,12 +103,25 @@ Native resolutions for each platform (4:3 and 16:9 depending on the system runni
 
 
 ## Why Build It?
-This idea first came when I noticed how better my RetroTink was when fed with original resolution from my physical consoles vs upscaled signals from PC or Batocera systems. This guide focuses on a digital HDMI workflow (PC → HDMI → scaler → display), not analog CRT output.
+**The Discovery**
+This project began with a simple observation: games running on my physical SNES or PS1 through my RetroTink 4K looked noticeably better than the same games emulated via Batocera. I initially wondered if original hardware possessed some inherent visual quality that emulation couldn't replicate.
 
-Existing emulation solutions often fall short of this unified vision:
-- MiSTer/FPGA: Excellent for cycle-accurate 240p retro systems (up to PS1) but lacks support for more modern to this day. 
-- Batocera/RetroPie: User-friendly but typically upscale retro games, losing native resolution fidelity, and struggles with flexible HDMI output. 
-- CRT EmuDriver: Powerful for 240p on older GPUs but outdated, unsigned, and incompatible with modern APIs like Vulkan or Steam. 
+The answer was simpler: **resolution**. 
+Physical consoles output true 240p signals. Batocera and most emulation setups upscale before sending to the scaler — forcing the RetroTink to process an already-compromised signal. When I configured emulators to output native resolutions, the visual quality matched (and in some cases exceeded) original hardware.
+
+**Beyond Hardware Parity**
+With proper configuration, emulation can actually improve on original hardware. But we want a clean signal with original look so we have to keep original resolution, aspect ratio and avoid smoothing graphics (choose native or nearest over xbm etc.):
+
+- **2D/Pixel Art Systems** : Native output resolution with nearest-neighbor scaling produces identical quality to original hardware (no SuperEagle, 2xBRZ, or smoothing filters). GBA games particularly benefit from OLED displays, which are dramatically sharper and more color-accurate than the original dim, washed-out screens.
+
+- **3D Games** : Modern emulators separate *internal rendering resolution* from *output resolution*. You can render at 2x-3x internally (cleaner textures, reduced polygon shimmer) while outputting native 240p/480p to the scaler. Anti-alisasing is also a good option. This removes hardware limitations while preserving authentic signal processing.
+
+**Why Existing Solutions Fall Short**
+- **MiSTer/FPGA**: Excellent cycle-accurate 240p for retro systems (up to PS1), but no support for modern platforms
+- **Batocera/RetroPie/Lakka**: User-friendly but upscale retro games to at least 480p, losing native resolution fidelity and struggle to handle a wide range of resolutions.
+- **CRT EmuDriver**: Powerful for 240p output but limited to older GPUs, outdated drivers, incompatible with modern APIs (Vulkan, Steam)
+
+GameMaze unifies the authentic visual experience of original hardware with the convenience of modern emulation—save states, unified library, TATE support, Steam integration—all from a single gamepad-controlled interface.
 
 ## Challenges & Constraints
 Building a unified, gamepad-only emulation system came with a few key challenges. I spent a full month configuring the setup and invested in several hardware components I didn’t already own. Most notably, Windows lacks native support for consistent controller order, so we'll use a custom Bluetooth toggle workaround. Achieving true native resolutions also meant manually defining custom timings with CRU, validating which resolutions the scaler accepts reliably, and ensuring emulator settings don’t silently override the intended output resolution. 
@@ -394,8 +407,12 @@ The CRU resolutions below are the *custom* low modes used for retro systems. Sta
 
 
 ### Emulator Configuration
-The goal is to preserve each system’s original signal and let the scaler handle all upscaling and CRT-style processing. Emulators should output native resolutions wherever possible, with no internal filtering or smoothing.
-Use nearest-neighbor scaling and x1 resolution for anything up to the PS1 era to maintain pixel accuracy. For PS2 and newer systems, internal resolution scaling (x2 or x3) can be used selectively when it looks better.
+The goal is to preserve each system's original signal and let the scaler handle all upscaling and CRT-style processing. Emulators should output native resolutions wherever possible, with no internal filtering or smoothing.
+
+**For legacy systems (pre-480p era, before Dreamcast):** ** Use nearest-neighbor filter with no smoothing filters (avoid SuperEagle, 2xBRZ, etc.). Keep internal resolution at x1 for 2D/pixel art to preserve accuracy. For 3D titles (PS1, N64), internal resolution scaling (x2 or x3) with anti-aliasing can improve visual quality while maintaining native output resolution—where emulator cores support it.
+
+**For 480p+ systems (Dreamcast onwards):** Internal resolution scaling (x2–x3) and anti-aliasing give great results and won't compromise the authentic look—though visual improvements mainly apply to 3D content. Always output at native resolution (480p, 720p, etc.) thanks to Res-O-Matic.
+
 RetroArch is used for most retro systems, while standalone emulators are preferred for newer platforms. When RetroArch’s CRT SwitchRes isn't suitable (e.g., for vertically stacked DS or 480p+ content), **[Res-O-Matic](#using-res-o-matic-for-custom-resolutions) is used to launch games at the desired resolution.**
 
 #### RetroArch Configuration
@@ -826,6 +843,7 @@ Optional: BCU also includes a Startup manager
 
 ## Conclusion
 We’re done! This project was about more than just running games but rather unifying different generations of hardware and software into a consistent, console-like experience. It’s the result of many small choices and workarounds coming together, and I hope it might be useful to others facing similar challenges.
+
 
 
 
