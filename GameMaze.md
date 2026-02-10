@@ -1,7 +1,7 @@
 # GameMaze  
 *Native Resolutions • Seamless Gamepad Control • Console-Like Experience for scalers on modern displays*
 
-Imagine launching Pac-Man in its original 224p arcade resolution, then switching to The Witcher 3 at 720p—all from your couch, using only a gamepad. No keyboard, no fuss. This project is a passion-driven emulation hub that unifies 40+ years of gaming history, from 1980s arcade classics to modern Switch and Steam titles, in their original resolutions. It delivers a console-like experience that prioritizes visual fidelity, ease of use, and minimal compromises.
+**Imagine launching Pac-Man in its original 224p arcade resolution, then switching to The Witcher 3 at 720p—all from your couch, using only a gamepad. No keyboard, no fuss. This project is a passion-driven emulation hub that unifies 40+ years of gaming history, from 1980s arcade classics to modern Switch and Steam titles, in their original resolutions. It delivers a console-like experience that prioritizes visual fidelity, ease of use, and minimal compromises.**
 
 # Table of Contents
 - [Overview](#overview)  
@@ -153,7 +153,7 @@ CRT EmuDriver restricts analog 240p output to a specific list of older AMD cards
 
     - AMD RX 580 Nitro+ (CRT EmuDriver list)
 
-    - AMD RX 6700 XT (**Not** on CRT EmuDriver list, digital HDMI success)
+    - AMD RX 6700 XT (**Not** on CRT EmuDriver list)
 
  - **Not Working (Feb 2026 drivers, no legacy driver testing):**
 
@@ -161,7 +161,7 @@ CRT EmuDriver restricts analog 240p output to a specific list of older AMD cards
 
     - NVIDIA RTX 3090 (MSI Suprim)
 
-*Note: Any GPU from the CRT EmuDriver list should work. Discrete AMD GPUs from similar architectures (e.g., RX 6600) are likely compatible but untested by me. Integrated graphics and modern NVIDIA cards have shown issues in my tests, but the pool of hardware was very limited.*
+*Note: Any GPU from the CRT EmuDriver list should work. Discrete AMD GPUs from similar architectures (e.g., RX 6600) are likely compatible but untested by me. Integrated graphics and modern NVIDIA cards have shown issues in my tests (NVIDIA's DSC Display Stream Compression may interfere with CRU's custom low-resolution timings), but the pool of hardware was very limited.*
 
 ### Hardware Requirements
 
