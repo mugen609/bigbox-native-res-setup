@@ -75,7 +75,7 @@ This setup has been tested on an AMD RX 6700 XT.
 
 ---
 ## 🕹️
-## Supported Systems and Resolutions
+## Supported Systems and Resolutions 
 
 Native resolutions for each platform.
 
@@ -141,7 +141,8 @@ GameMaze aims to unify the authentic visual experience of original hardware with
 - **Network access & SSH**: A basic LAN connection is strongly recommended. Enabling SSH on the emulation PC (e.g., via [OpenSSH](#ssh-for-file-transfers) Server) allows file transfers without USB drives. USB or NAS also work, but SSH is most convenient on a gamepad-only machine.
 - **Secondary PC (optional)**: Helpful for setup tasks like ROM transfers or scripting, but not absolutely required.
 
-### GPU Compatibility ⚡
+## ⚡
+### GPU Compatibility 
 
 GameMaze expands beyond CRT EmuDriver's GPU limitations:
 
@@ -163,7 +164,8 @@ CRT EmuDriver restricts analog 240p output to a specific list of older AMD cards
 
 *Note: Any GPU from the CRT EmuDriver list should work. Discrete AMD GPUs from similar architectures (e.g., RX 6600) are likely compatible but untested by me. Integrated graphics and modern NVIDIA cards have shown issues in my tests; NVIDIA's DSC (Display Stream Compression) may interfere with CRU's custom low-resolution timings, but the pool of hardware was very limited.*
 
-### Hardware Requirements 💻
+## 💻
+### Hardware Requirements 
 
 The system requires:
 
@@ -186,7 +188,8 @@ The tested configuration can be used as a reference.
 
 ![OCulink RX580](/images/OCulink_RX580.jpeg)
 
-### Software Requirements 🪟
+## 🪟
+### Software Requirements
 
 Some paid and some free components are used. Essential software is required for core functionality; optional tools simplify setup or enhance performance.
 
@@ -259,7 +262,8 @@ In the example configuration:
 
 ---
 
-## Setup Process 📚
+## 📚
+## Setup Process 
 
 Setting up the emulation station involves:
 
@@ -268,7 +272,8 @@ Setting up the emulation station involves:
 3. Optimizing Windows.  
 4. Enabling file transfers.
 
-### Preparing the PC 🖥️
+## 🖥️
+### Preparing the PC 
 
 1. **Gather Files**  
    Collect all required software (emulators, drivers, utilities) on a network drive or USB stick for easy access.
@@ -283,8 +288,8 @@ Setting up the emulation station involves:
    - Skip setting a password to enable auto-login, which is critical for gamepad-only operation (see [SSH section](#ssh-for-file-transfers)).
 
 ---
-
-### GPU and Driver Setup ⚡
+## ⚡
+### GPU and Driver Setup 
 
 A GPU that supports EDID overrides/custom resolutions over HDMI (for CRU) and modern APIs like Vulkan is required for this setup.
 
@@ -302,7 +307,8 @@ A GPU that supports EDID overrides/custom resolutions over HDMI (for CRU) and mo
    - With a stable GameMaze setup, you generally do not need to freeze GPU drivers or block updates.  
    - If Windows Update repeatedly replaces your GPU driver and breaks something, use Microsoft “Show/Hide Updates” to block that specific driver update.
 
-### AMD GPU + HDMI Scaler: HDCP Fix (If Image Looks Wrong) 🖼️
+## 🖼️
+### AMD GPU + HDMI Scaler: HDCP Fix (If Image Looks Wrong)
 
 If your scaler output looks blurred or pixelated, disable HDCP in AMD Software: Adrenalin Edition.
 
@@ -315,7 +321,8 @@ If your scaler output looks blurred or pixelated, disable HDCP in AMD Software: 
 
 ---
 
-### Windows Configuration 🪟
+## 🪟
+### Windows Configuration
 
 1. **Activate Windows**
 
@@ -347,7 +354,8 @@ If your scaler output looks blurred or pixelated, disable HDCP in AMD Software: 
 
 ---
 
-## SSH for File Transfers 🌐
+## 🌐
+## SSH for File Transfers
 
 GameMaze is designed to be gamepad-focused, with no keyboard or mouse attached. This makes local file management (adding ROMs, programs, etc.) inconvenient.
 
@@ -444,7 +452,8 @@ Even with EDID entries created via CRU, most emulators will still launch at desk
 
 ---
 
-### Resolution Setup with CRU 🖥️
+## 🖥️
+### Resolution Setup with CRU
 
 The CRU resolutions below are the *custom* low modes used for retro systems. Standard HDMI modes like 480p and 720p **do not require** CRU and can be selected normally per emulator/game as needed.
 
@@ -501,7 +510,8 @@ The CRU resolutions below are the *custom* low modes used for retro systems. Sta
 
 ---
 
-### Emulator Configuration 📺
+## 📺
+### Emulator Configuration
 
 The goal is to preserve each system’s original signal and let the scaler handle all upscaling and CRT-style processing. Emulators should:
 
@@ -558,7 +568,8 @@ RetroArch is used for most retro systems, while standalone emulators are preferr
 
 ---
 
-#### RetroArch Configuration 📺
+##  📺
+#### RetroArch Configuration
 
 1. **General Settings**
 
@@ -627,7 +638,8 @@ Using "Full" is safe because the RetroTINK 4K profile is set to 4:3, preventing 
 
 ---
 
-#### Standalone Emulator Configuration 🕹️
+## 🕹️
+#### Standalone Emulator Configuration
 
 Standalone emulators handle modern systems (PS2, Switch, etc.) and some retro platforms. Configure them to output native resolutions.
 
@@ -737,7 +749,8 @@ return
 
 ---
 
-### Steam 💻
+## 💻
+### Steam
 
 After installing Steam and logging into your account:
 
@@ -752,7 +765,8 @@ If you want games to install locally on the emulation PC (so they are available 
 
 ---
 
-## reWASD and LaunchBox Setup 🎮
+## 🎮
+## reWASD and LaunchBox Setup
 
 This section configures reWASD to standardize gamepad inputs across all emulators and LaunchBox/BigBox to unify emulators, Steam, and scripts into a seamless, gamepad-only experience.
 
@@ -793,7 +807,8 @@ Connect all controllers and start reWASD.
   - Open RetroArch and each standalone emulator to verify controls.  
   - If needed, rebind in emulator settings, selecting XInput or SDL as input type.
 
-### Proposed Controller Mapping ⌨️
+## ⌨️
+### Proposed Controller Mapping
 
 To ensure consistent controls across all emulators and BigBox:
 
@@ -808,7 +823,8 @@ Ensure all emulators respond to TAB (menu) and ESC (quit), or use LaunchBox scri
 
 ---
 
-### LaunchBox Configuration 📚
+## 📚
+### LaunchBox Configuration
 
 This is not a full LaunchBox tutorial; the focus is on unified quitting, custom resolutions, and popup handling.
 You can easily find general documentation online, eg. [Just Jamie's Tutorial](https://www.youtube.com/watch?v=Z5HNhp4zQsM).  
@@ -842,7 +858,8 @@ You can easily find general documentation online, eg. [Just Jamie's Tutorial](ht
 
 ---
 
-## Using Res-O-Matic for Custom Resolutions 📺
+## 📺
+## Using Res-O-Matic for Custom Resolutions
 
 Res-O-Matic forces a specific launch resolution outside RetroArch’s CRT SwitchRes workflow.
 
@@ -902,7 +919,8 @@ The approach is to create `.bat` launchers in emulator folders and configure the
 
 ---
 
-## Dismissing Popups with WindowSpy Fix 🖱️
+## 🖱️
+## Dismissing Popups with WindowSpy Fix
 
 Any dialog that requires a mouse click when launching a game breaks the gamepad-only experience.
 
@@ -958,7 +976,8 @@ In LaunchBox, set the game’s Application Path to `SteamyourGame.bat`.
 
 ---
 
-## Controller Reordering Workaround 🎮
+## 🎮
+## Controller Reordering Workaround
 
 Windows does not offer native controller reordering. To avoid needing a keyboard/mouse, a Bluetooth toggle script can be used to reset controller order from BigBox.
 
@@ -1005,7 +1024,8 @@ To make it blend into your BigBox theme:
 
 ---
 
-## Final Touches 💎
+## 💎
+## Final Touches
 
 With emulators, resolutions, and gamepad controls configured, the last step is to optimize Windows for maximum performance and a distraction-free, gamepad-only experience, as close as possible to a dedicated gaming console.
 
@@ -1046,7 +1066,7 @@ Tools like O&O ShutUp10 and Winaero Tweaker simplify manual debloating.
 
 ---
 
-### Additional Optimizations 💎
+### Additional Optimizations
 
 These tweaks polish the experience, ensuring fast boot into BigBox and clean performance.
 
@@ -1085,5 +1105,3 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
-
-
