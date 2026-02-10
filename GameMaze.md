@@ -39,6 +39,7 @@
 ![DQ6](/images/DQ6.jpg)  
 *Dragon Quest 6 on SNES in native resolution*
 
+## 👓
 ## Overview
 
 GameMaze is a unified emulation platform for Windows that outputs native resolutions (160p–1080p) over HDMI to a modern scaler, preserving the original look of each system. It focuses on an all-digital signal chain, custom timings via CRU, and a low-latency scaler (e.g., RetroTink 4K) rather than CRT EmuDriver and analog outputs.
@@ -1105,3 +1106,4 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
+
