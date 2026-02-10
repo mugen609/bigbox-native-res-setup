@@ -161,7 +161,7 @@ CRT EmuDriver restricts analog 240p output to a specific list of older AMD cards
 
     - NVIDIA RTX 3090 (MSI Suprim)
 
-*Note: Any GPU from the CRT EmuDriver list should work. Discrete AMD GPUs from similar architectures (e.g., RX 6600) are likely compatible but untested by me. Integrated graphics and modern NVIDIA cards have shown issues in my tests (NVIDIA's DSC Display Stream Compression may interfere with CRU's custom low-resolution timings), but the pool of hardware was very limited.*
+*Note: Any GPU from the CRT EmuDriver list should work. Discrete AMD GPUs from similar architectures (e.g., RX 6600) are likely compatible but untested by me. Integrated graphics and modern NVIDIA cards have shown issues in my tests; NVIDIA's DSC (Display Stream Compression) may interfere with CRU's custom low-resolution timings, but the pool of hardware was very limited.*
 
 ### Hardware Requirements 💻
 
@@ -811,6 +811,7 @@ Ensure all emulators respond to TAB (menu) and ESC (quit), or use LaunchBox scri
 ### LaunchBox Configuration 📚
 
 This is not a full LaunchBox tutorial; the focus is on unified quitting, custom resolutions, and popup handling.
+You can easily find general documentation online, eg. [Just Jamie's Tutorial](https://www.youtube.com/watch?v=Z5HNhp4zQsM).  
 
 - **Install LaunchBox/BigBox**  
   - Download and install LaunchBox with BigBox for gamepad-only navigation.  
