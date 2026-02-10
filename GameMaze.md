@@ -8,7 +8,8 @@ Imagine launching Pac-Man in its original 224p arcade resolution, then switching
   - [Key Features](#key-features)
 - [Supported Systems and Resolutions](#supported-systems-and-resolutions)
 - [Why Build It?](#why-build-it)
-- [Requirements and Software](#requirements-and-software)  
+- [Requirements and Software](#requirements-and-software) 
+  - [GPU Compatibility](#gpu-compatibility) 
   - [Hardware Requirements](#hardware-requirements)  
   - [Software Requirements](#software-requirements)   
 - [Video Signal Chain](#video-signal-chain)
@@ -68,9 +69,9 @@ This is **not** a guide for analog output to CRT TVs/monitors (VGA/SCART/compone
 
 ### Why That Distinction Matters
 
-Most “240p on PC” legacy guides focus on CRT EmuDriver and specific GPU compatibility, because analog output depends heavily on driver + DAC/output constraints. With an all-digital chain, the system instead relies on EDID overrides, custom timings, and “super resolutions” (e.g., 2560 × original height), which are configured at the display-timing level and work across a wider range of modern GPUs.
+Most “240p on PC” legacy guides focus on CRT EmuDriver and specific GPU compatibility, because analog output depends heavily on driver + DAC/output constraints. With an all-digital chain, the system relies on EDID overrides, custom timings, and super resolutions (e.g., 2560 × original height), configured at the display-timing level. 
 
-This setup has been tested on an AMD RX 6700 XT and should work with many newer cards beyond the usual CRT EmuDriver lists.
+This setup has been tested on an AMD RX 6700 XT.
 
 ---
 
@@ -140,6 +141,27 @@ GameMaze aims to unify the authentic visual experience of original hardware with
 - **Network access & SSH**: A basic LAN connection is strongly recommended. Enabling SSH on the emulation PC (e.g., via [OpenSSH](#ssh-for-file-transfers) Server) allows file transfers without USB drives. USB or NAS also work, but SSH is most convenient on a gamepad-only machine.
 - **Secondary PC (optional)**: Helpful for setup tasks like ROM transfers or scripting, but not absolutely required.
 
+### GPU Compatibility
+
+GameMaze expands beyond CRT EmuDriver's GPU limitations:
+
+CRT EmuDriver restricts analog 240p output to a specific list of older AMD cards. GameMaze uses digital HDMI + CRU, which broadens compatibility to include some modern GPUs not on those lists.
+
+ - **Confirmed Working:**
+
+    - AMD Radeon HD 7750 (CRT EmuDriver list)
+
+    - AMD RX 580 Nitro+ (CRT EmuDriver list)
+
+    - AMD RX 6700 XT (**Not** on CRT EmuDriver list, digital HDMI success)
+
+ - **Not Working (Feb 2026 drivers, no legacy driver testing):**
+
+    - AMD 780M integrated GPU (Ryzen 9 8945HS)
+
+    - NVIDIA RTX 3090 (MSI Suprim)
+
+*Note: Any GPU from the CRT EmuDriver list should work. Discrete AMD GPUs from similar architectures (e.g., RX 6600) are likely compatible but untested by me. Integrated graphics and modern NVIDIA cards have shown issues in my tests, but the pool of hardware was very limited.*
 
 ### Hardware Requirements
 
@@ -152,9 +174,8 @@ The system requires:
 
 The tested configuration can be used as a reference.
 
-- **GPU**: Must support EDID overrides/custom resolutions (CRU) and the required timings/pixel clocks.  
-  - Compatibility can vary by driver features (e.g., DSC on NVIDIA) and multi-display setups.  
-  - **Tested**: Radeon HD 7750, RX 580 Nitro+, RX 6700 XT (all as eGPU via OCuLink).
+- **GPU**: Must support EDID overrides/custom resolutions (CRU) and modern APIs (Vulkan). See [GPU Compatibility](#gpu-compatibility) above.
+	- **Tested**: AMD RX 6700 XT 
 
 - **Scaler/Display**:  
   An HDMI scaler accepting legacy resolution inputs and upscaling to your monitor’s native resolution (1080p or higher), ideally with CRT shader support.  
@@ -211,7 +232,7 @@ Video signal
 
 [Mini PC]
 Ryzen 9 8945HS
-780M iGPU
+780M iGPU (Ignored)
 │
 └─[eGPU Dock via OCuLink]
 │
@@ -254,7 +275,7 @@ Setting up the emulation station involves:
 
 2. **BIOS Settings**  
    - Enter the BIOS and set the CPU to performance mode to maximize emulation power.  
-   - Disable Secure Boot (or if you don't, remember to try it later if you run into driver installation or boot issues).
+   - If you later hit driver installation or boot issues, try disabling Secure Boot as a troubleshooting step.
 
 3. **Windows Installation**  
    - Prepare the Windows installer on a bootable drive with Rufus. Enable the “Windows User Experience” options to create a local account and skip privacy / data collection prompts.  
@@ -266,14 +287,6 @@ Setting up the emulation station involves:
 ### GPU and Driver Setup
 
 A GPU that supports EDID overrides/custom resolutions over HDMI (for CRU) and modern APIs like Vulkan is required for this setup.
-
-**Known-working GPUs (tested):**
-
-- AMD Radeon HD 7750  
-- AMD RX 580  
-- AMD RX 6700 XT  
-
-(All were used as eGPU via OCuLink in the reference setup. Other recent AMD cards, and many NVIDIA cards, should behave similarly as long as they respect EDID overrides.)
 
 **If custom resolutions don’t show up:**
 
@@ -427,7 +440,7 @@ This section covers:
 - Setting up native low/legacy resolutions (160p–384p) using Custom Resolution Utility (CRU).  
 - Configuring emulators to output them correctly, targeting pixel-perfect visuals.
 
-Even with EDID entries created via CRU, most emulators will still launch at desktop resolution. For those, [Res-O-Matic](#ssh-for-file-transfers) is used in LaunchBox or BigBox to force the desired resolution.
+Even with EDID entries created via CRU, most emulators will still launch at desktop resolution. For those, [Res-O-Matic](#using-res-o-matic-for-custom-resolutions) is used in LaunchBox or BigBox to force the desired resolution.
 
 ---
 
@@ -452,7 +465,7 @@ The CRU resolutions below are the *custom* low modes used for retro systems. Sta
   CRU slots are limited, so this list prioritizes the modes actually used (160p/224p/240p/256p/272p/384p). If you want pixel-perfect 144p for Game Boy, you need to sacrifice another mode; otherwise RetroArch CRT SwitchRes will pick the closest available resolution.
 
 - **Refresh-rate variations (optional)**:  
-  Slight differences (e.g., 59.985 vs 60.000 Hz) *seems* to help RetroArch CRT SwitchRes consistently select the intended resolution when multiple modes are close (e.g., 224p vs 240p). 
+  Slight differences (e.g., 59.985 vs 60.000 Hz) *seem* to help RetroArch CRT SwitchRes consistently select the intended resolution when multiple modes are close (e.g., 224p vs 240p). 
 
 - **480p/720p/1080p are not CRU topics**:  
   480p and above are standard HDMI modes. Use them normally for systems/emulators that are already 480p+ (e.g., PS2/Dreamcast/3DS stacked layouts) without using CRU slots.
@@ -484,7 +497,7 @@ The CRU resolutions below are the *custom* low modes used for retro systems. Sta
 5. **Verify**  
    - Test 224p and 240p resolution in RetroArch with CRT SwitchRes active:  
      Settings → Video → CRT SwitchRes → 15 kHz / Super resolution 2560.
-   - Other legacy resolution will likely not be recognized by CRT SwitchRes and require [Res-O-Matic](#ssh-for-file-transfers).
+   - Other legacy resolution will likely not be recognized by CRT SwitchRes and require [Res-O-Matic](#using-res-o-matic-for-custom-resolutions).
 
 ---
 
@@ -514,7 +527,7 @@ Emulators handle resolution in three main ways:
    - Resolution set via config files or in-game settings.  
    - No Res-O-Matic needed.
    
-*The following table summurizes the required method to get the right resolutuion per system:*
+*The following table summurizes the required method to get the right resolution per system:*
 | System                      | Emulator              | Native Res     | Method          | Notes                                              |
 |-----------------------------|-----------------------|----------------|-----------------|----------------------------------------------------|
 | NES, SNES, Megadrive        | RetroArch             | 224p-240p      | CRT SwitchRes   | Automatic resolution switching                     |
@@ -601,7 +614,7 @@ Using "Full" is safe because the RetroTINK 4K profile is set to 4:3, preventing 
    - Aspect Ratio: **Full**.  
    - Core Options → Screen Layout: **Bottom/Top** or **Top/Bottom** as preferred.  
    - Save core overrides.  
-   - Use [Res-O-Matic](#ssh-for-file-transfers) in LaunchBox to force 2560×256.
+   - Use [Res-O-Matic](#using-res-o-matic-for-custom-resolutions) in LaunchBox to force 2560×256.
 
 7. **GameCube (Dolphin Core), Dreamcast (Flycast Core)**
 
@@ -842,7 +855,7 @@ The approach is to create `.bat` launchers in emulator folders and configure the
 **For the following examples:**
 - Adjust paths and core names to match your setup. 
 - Check the exact core naming in `RetroArch\cores\`.  
-- `reso.exe` is the executable of Res-O-Matic found in your installation directory.
+- `reso.exe` is the Res-O-Matic executable found in your installation directory.
 - Create similar scripts for any system needing a forced resolution.
 
 
@@ -870,7 +883,7 @@ The approach is to create `.bat` launchers in emulator folders and configure the
     :: Clean up
     del "%TEMP%\launch_psp_new.bat"
     ```
-  - Add `PSP_272p.bat` as a new emulator in LaunchBox for the GameCube platform.
+  - Add `PSP_272p.bat` as a new emulator in LaunchBox for the PSP platform.
 
 ![Nintendo DS Emulator](/images/csEmul.png)
 
@@ -1047,11 +1060,11 @@ These tweaks polish the experience, ensuring fast boot into BigBox and clean per
   
 - **Optimize Storage**  
   - Use **Bulk Crap Uninstaller** (BCU) for bulk uninstalls and leftover cleanup.   
-  - Put ROMs and games on a SSD for reduced load times.
+  - Put ROMs and games on an SSD for reduced load times.
 
 - **Backup Configuration**  
   - Back up LaunchBox settings (Tools → Backup) and reWASD profiles to a USB drive or network share.  
-  - Save CRU `.bin` congif (export) and emulator config folders for quick restoration.
+  - Save CRU `.bin` config (export) and emulator config folders for quick restoration.
 
 ### Optimization Notes
 
@@ -1071,4 +1084,3 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
-
