@@ -143,27 +143,28 @@ GameMaze aims to unify the authentic visual experience of original hardware with
 - **Secondary PC (optional)**: Helpful for setup tasks like ROM transfers or scripting, but not absolutely required.
 
 ## ⚡
-### GPU Compatibility 
+### GPU Compatibility
 
 GameMaze expands beyond CRT EmuDriver's GPU limitations:
 
-**CRT EmuDriver** enables true native resolutions (e.g., 320×240) which require analog output and legacy drivers (frozen at 22.5.1 Adrenalin). **GameMaze uses super resolutions** (e.g., 2560×240) via CRU, which work with digital HDMI and latest drivers.
+| **QUALITY** | **CRT EMUDRIVER** | **GAMEMAZE** |
+|-------------|-------------------|--------------|
+| **1. Works with modern GPUs beyond legacy list** | NO (legacy list only) | YES, SOME (see tested list) |
+| **2. Works through digital HDMI/DP output** | NO | YES |
+| **3. Works with newest drivers** | NO (frozen at 22.5.1, 2022) | YES (tested up to Feb 2026)* |
 
- - **Confirmed Working (latest Feb 2026 drivers, super resolution via CRU + HDMI):**
+CRT EmuDriver enables true native resolutions (e.g., 320×240) via analog output and legacy drivers. GameMaze uses **super resolutions** (e.g., 2560×240) via CRU, which work over digital HDMI/DP with current drivers.
 
-    - AMD Radeon HD 7750 (CRT EmuDriver list)
+#### Confirmed Working (Feb 2026 drivers, super resolution via CRU + HDMI):
+- AMD Radeon HD 7750 (CRT EmuDriver list)
+- AMD RX 580 Nitro+ (CRT EmuDriver list)
+- AMD RX 6700 XT (**Not** on CRT EmuDriver list)
 
-    - AMD RX 580 Nitro+ (CRT EmuDriver list)
+#### Not Working (Feb 2026 drivers):
+- AMD 780M integrated GPU (Ryzen 9 8945HS)
+- NVIDIA RTX 3090 (MSI Suprim)
 
-    - AMD RX 6700 XT (**Not** on CRT EmuDriver list)
-
- - **Not Working (Feb 2026 drivers, no legacy driver testing):**
-
-    - AMD 780M integrated GPU (Ryzen 9 8945HS)
-
-    - NVIDIA RTX 3090 (MSI Suprim)
-
-*Note: Any GPU from the CRT EmuDriver list should work with super resolutions and latest drivers (including via VGA/DVI outputs). Discrete AMD GPUs from similar architectures (e.g., RX 6600) are likely compatible but untested by me. Integrated graphics and modern NVIDIA cards have shown issues in my tests; NVIDIA's DSC (Display Stream Compression) may interfere with CRU's custom low-resolution timings, but the pool of hardware was too limited to conclude.*
+Note: CRT EmuDriver-listed GPUs should work with super resolutions and current drivers. Similar discrete AMD GPUs (e.g., RX 6600) are likely compatible. Integrated graphics and modern NVIDIA cards have shown issues in testing.
 
 ## 💻
 ### Hardware Requirements 
