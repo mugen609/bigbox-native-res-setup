@@ -74,8 +74,8 @@ Most “240p on PC” legacy guides focus on CRT EmuDriver and specific GPU comp
 This setup has been tested on an AMD RX 6700 XT.
 
 ---
-
-## Supported Systems and Resolutions ## 🕹️
+## 🕹️
+## Supported Systems and Resolutions
 
 Native resolutions for each platform.
 
@@ -1085,4 +1085,5 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
+
 
