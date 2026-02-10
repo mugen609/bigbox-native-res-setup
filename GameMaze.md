@@ -147,9 +147,9 @@ GameMaze aims to unify the authentic visual experience of original hardware with
 
 GameMaze expands beyond CRT EmuDriver's GPU limitations:
 
-CRT EmuDriver restricts analog 240p output to a specific list of older AMD cards. GameMaze uses digital HDMI + CRU, which broadens compatibility to include some modern GPUs not on those lists.
+**CRT EmuDriver** enables true native resolutions (e.g., 320×240) which require analog output and legacy drivers (frozen at 22.5.1 Adrenalin). **GameMaze uses super resolutions** (e.g., 2560×240) via CRU, which work with digital HDMI and latest drivers.
 
- - **Confirmed Working (latest drivers):**
+ - **Confirmed Working (latest Feb 2026 drivers, super resolution via CRU + HDMI):**
 
     - AMD Radeon HD 7750 (CRT EmuDriver list)
 
@@ -163,7 +163,7 @@ CRT EmuDriver restricts analog 240p output to a specific list of older AMD cards
 
     - NVIDIA RTX 3090 (MSI Suprim)
 
-*Note: Any GPU from the CRT EmuDriver list should work. Discrete AMD GPUs from similar architectures (e.g., RX 6600) are likely compatible but untested by me. Integrated graphics and modern NVIDIA cards have shown issues in my tests; NVIDIA's DSC (Display Stream Compression) may interfere with CRU's custom low-resolution timings, but the pool of hardware was very limited.*
+*Note: Any GPU from the CRT EmuDriver list should work with super resolutions and latest drivers (including via VGA/DVI outputs). Discrete AMD GPUs from similar architectures (e.g., RX 6600) are likely compatible but untested by me. Integrated graphics and modern NVIDIA cards have shown issues in my tests; NVIDIA's DSC (Display Stream Compression) may interfere with CRU's custom low-resolution timings, but the pool of hardware was too limited to conclude.*
 
 ## 💻
 ### Hardware Requirements 
