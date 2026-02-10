@@ -149,7 +149,7 @@ GameMaze expands beyond CRT EmuDriver's GPU limitations:
 
 CRT EmuDriver restricts analog 240p output to a specific list of older AMD cards. GameMaze uses digital HDMI + CRU, which broadens compatibility to include some modern GPUs not on those lists.
 
- - **Confirmed Working:**
+ - **Confirmed Working (latest drivers):**
 
     - AMD Radeon HD 7750 (CRT EmuDriver list)
 
@@ -1106,4 +1106,3 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
-
