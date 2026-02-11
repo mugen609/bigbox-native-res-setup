@@ -26,15 +26,13 @@
 ## 👓
 ## Overview
 
-GameMaze is a unified emulation platform for Windows that outputs native resolutions (160p–1080p) over HDMI to a modern scaler, preserving the original look of each system. It focuses on an all-digital signal chain, custom timings via CRU, and a low-latency scaler (e.g., RetroTink 4K) rather than CRT EmuDriver and analog outputs.
+GameMaze is a unified emulation platform for Windows that outputs native resolutions (160p–1080p) over HDMI to a modern scaler, preserving the original look of each system. It relies on an all‑digital signal chain, custom timings via CRU, and a low‑latency scaler (e.g., RetroTink 4K) rather than CRT EmuDriver and analog outputs.
 
-The key idea is to keep the console-accurate signal (resolution, aspect ratio, no smoothing) while using modern emulators and hardware with a gamepad-only frontend. True low-resolution output over HDMI, combined with standardized controls via reWASD and seamless LaunchBox/BigBox integration, is what makes the setup different from typical 480p+ emulation builds.
+The key idea is to preserve the console‑accurate signal (resolution, aspect ratio, no smoothing) while using modern emulators and a gamepad‑only frontend. True low‑resolution output capabilities over HDMI, combined with standardized controls via reWASD and seamless LaunchBox/BigBox integration, is what makes the setup different from typical 480p+ emulation builds.
 
  - *Note: This setup assumes you are willing to define custom timings with CRU, rely on an HDMI scaler that accepts low resolutions, and use workarounds for quirks like Windows’ controller ordering. The rest of this guide focuses on providing concrete solutions to those constraints.*
 
-The system is designed to output to any HDMI-compatible scaler, supporting up to 4K with a suitable monitor.
-
-In my setup, a RetroTINK 4K scaler upscales the PC’s native inputs to 1440p (limited by my LG 27GS95QE-B OLED monitor), applying CRT shaders for a sharp, scanline-rich image. Vertical arcade games are displayed in TATE mode by physically rotating the monitor on a VESA stand.
+In my setup, a RetroTINK 4K scaler upscales the PC’s native inputs to 1440p (limited by my LG 27GS95QE-B OLED monitor). Vertical arcade games are displayed in TATE mode by physically rotating the monitor on a VESA stand.
 
 ---
 
