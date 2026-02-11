@@ -451,8 +451,8 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
    - In Supermodel.ini: set `2480×384` with `Stretch=True`.  
    - On the scaler: set aspect mode to **4:3**.
   
-   > Supermodel renders at 2480-wide (the correct pre-compensated width) but outputs to the closest available EDID timing (2560×384), automatically adding 80 pixels of black bars (40 each side). When your scaler applies 4:3 scaling, the active content scales to the original Model 3 ratio.
-   > ⚠️ This relies on Supermodel’s behavior (stretch to INI resolution, output to closest EDID with black bars). Do **not** create 2480×384 in CRU, it must remain “unavailable” for this trick to work.
+ > Supermodel renders at 2480-wide (the correct pre-compensated width) but outputs to the closest available EDID timing (2560×384), automatically adding 80 pixels of black bars (40 each side). When your scaler applies 4:3 scaling, the active content scales to the original Model 3 ratio.
+ > ⚠️ This relies on Supermodel’s behavior (stretch to INI resolution, output to closest EDID with black bars). Do **not** create 2480×384 in CRU, it must remain “unavailable” for this trick to work.
 
 3. **Azahar (3DS)**
 
