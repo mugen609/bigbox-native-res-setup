@@ -112,7 +112,7 @@ CRT EmuDriver enables true native resolutions (e.g., 320×240) via analog output
 **Tested List:**
 
 #### ✅ Confirmed Working (Feb 2026 drivers, super resolution via CRU + HDMI):
-- AMD Radeon HD 7750 (CRT EmuDriver list)
+- AMD Radeon HD 7750 (CRT EmuDriver list, VGA)
 - AMD RX 580 Nitro+ (CRT EmuDriver list)
 - AMD RX 6700 XT (**Not** on CRT EmuDriver list)
 
@@ -815,4 +815,5 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
+
 
