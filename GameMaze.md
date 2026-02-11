@@ -387,11 +387,13 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
 3. **CRT SwitchRes Cores** (224p/240p auto-switching)
  - **PS1 (Mednafen)**: Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal 
  - Settings → Video → Scaling → Aspect: **Core Provided**
+ - Quick Menu → Overrides → **Save Core Override**
 
 4. **Arcade (FBNeo)**:
  - Same CRT SwitchRes as PS1
  - Quick Menu → **Core Options → Vertical Mode**: **TATE** or **TATE Alternate** (Safe, auto-applies to vertical games only)
  - Main menu → Settings → Video → Scaling → Aspect: **Core Provided** (**Full** if stretched)
+ - Core Specific settings = Quick Menu → Overrides → **Save Core Override**, or:
  - Game-specific ratios = Quick Menu → Overrides → **Save Game Override**
 
 5. **Res-O-Matic Cores**:
