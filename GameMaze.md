@@ -300,8 +300,8 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
    In **Detailed Resolutions** (top right), delete existing resolutions to free up three slots.
 
 3. **Add Resolutions (6-slot layout)**  
-   - **Detailed Resolutions** (up to 3 slots): 160p, 224p, 240p  
-   - **Extension Blocks → CTA-861 → Edit**: 256p, 272p, 384p 
+   - **Detailed Resolutions** (3 slots): 160p, 224p, 240p  
+   - **Extension Blocks → CTA-861 → Edit** (And 3 more slots!): 256p, 272p, 384p 
 
 4. **Save and Restart**  
    Click **OK** twice → Run `restart64.exe` **(CRU folder)** or Reboot
@@ -337,7 +337,7 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
 
 ### Resolution Handling
 
-**Emulators handle resolution in 3 ways** (SwitchRes, desktop default, config files). For *desktop default* (Emulator launches at desktop resolution), we will need [Res-O-Matic](#res-o-matic-for-custom-resolutions). The following table shows the method per system:
+**Emulators handle resolution in 3 ways** (SwitchRes, desktop default, config files). For *desktop default* (Emulator launches at desktop resolution), we will need [Res-O-Matic](#res-o-matic-for-custom-resolutions) if we want a different game resolution. The following table shows the method per system:
 
 | System                      | Emulator              | Native Res     | Method          | Notes                                              |
 |-----------------------------|-----------------------|----------------|-----------------|----------------------------------------------------|
@@ -381,11 +381,6 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
 - Load game → Main menu → Settings → Video → Scaling → **Aspect Ratio: Core Provided**  
 - Quick Menu → **Save Core Override**
 
-**Aspect Ratio Troubleshooting**:
- > **If stretched/wrong** (esp. vertical arcades), Aspect Ratio: **Full**  
- > **Per-game exception**: **Game Override** (not Core Override) — saves for *specific game only*  
- > **Safe with 4:3 profile in the scaler**: RT4K forces correct ratio regardless of "Full" ratio setting.
- 
 ![PS1 Example](/images/crono.jpg)  
 *Chrono Trigger PS1*
 
@@ -402,6 +397,12 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
  - **GBA**: SwitchRes **OFF**, 160p via [Res-O-Matic](#res-o-matic-for-custom-resolutions)
  - **DS (DeSmuME)**: SwitchRes **OFF**, Aspect **Full**, Screen Layout **Bottom/Top** or **Top/Bottom** as preferred, 256p via Res-O-Matic
  - **GameCube (Dolphin)/DreamCast (Flycast)**: SwitchRes **OFF**, Aspect **Core Provided**, 480p via Res-O-Matic
+ 
+### Aspect Ratio Troubleshooting For Any Core:
+ > **If stretched/wrong** (esp. vertical arcades), Aspect Ratio: **Full**  
+ > **Per-game exception**: **Game Override** (not Core Override) — saves for *specific game only*  
+ > **Safe with 4:3 profile in the scaler**: RT4K forces correct ratio regardless of "Full" ratio setting.
+ 
 
 ![FF5GBA](/images/FF5.jpeg)  
 *Final Fantasy 5 on GBA at 160p*
