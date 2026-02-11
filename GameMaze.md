@@ -373,30 +373,30 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
 
 - **Menu**: Settings → User Interface → **rgui** (Not the sexiest skin but best for low-res)
 - **Controllers** (for reWASD harmony):  
-  Settings → Drivers → **Input**: `dinput` + **Controller**: `dinput`; → **Save config**
+  Menu → Settings → Drivers → **Input**: `dinput` + **Controller**: `dinput`; → **Save config**
   
 Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home button from reWASD.
 
 2. **Per-Core Setup** (all cores)
 - Load game → Main menu → Settings → Video → Scaling → **Aspect Ratio: Core Provided**  
-- Quick Menu → **Save Core Override**
+- Quick Menu → Overrides → **Save Core Override**
 
 ![PS1 Example](/images/crono.jpg)  
 *Chrono Trigger PS1*
 
 3. **CRT SwitchRes Cores** (224p/240p auto-switching)
- - **PS1 (Mednafen)**: Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal, Aspect: **Core Provided**
+ - **PS1 (Mednafen)**: Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal & Settings → Video → Scaling → Aspect: **Core Provided**
 
 4. **Arcade (FBNeo)**:
  - Same CRT SwitchRes as PS1
- - **Core Options → Vertical Mode**: **TATE** or **TATE Alternate** (Safe, auto-applies to vertical games only)
- - Aspect: **Core Provided** (**Full** if stretched)
- - Game-specific ratios → **Game Override**
+ - Quick Menu → **Core Options → Vertical Mode**: **TATE** or **TATE Alternate** (Safe, auto-applies to vertical games only)
+ - Main menu → Settings → Video → Scaling → Aspect: **Core Provided** (**Full** if stretched)
+ - Game-specific ratios = Quick Menu → Overrides → **Save Game Override**
 
 5. **Res-O-Matic Cores**:
- - **GBA**: SwitchRes **OFF**, 160p via [Res-O-Matic](#res-o-matic-for-custom-resolutions)
- - **DS (DeSmuME)**: SwitchRes **OFF**, Aspect **Full**, Screen Layout **Bottom/Top** or **Top/Bottom** as preferred, 256p via Res-O-Matic
- - **GameCube (Dolphin)/DreamCast (Flycast)**: SwitchRes **OFF**, Aspect **Core Provided**, 480p via Res-O-Matic
+ - **GBA**: Main menu → Settings → Video → CRT SwitchRes **OFF**, 160p via [Res-O-Matic](#res-o-matic-for-custom-resolutions)
+ - **DS (DeSmuME)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Aspect **Full**, Screen Layout **Bottom/Top** or **Top/Bottom** as preferred, 256p via [Res-O-Matic](#res-o-matic-for-custom-resolutions)
+ - **GameCube (Dolphin)/DreamCast (Flycast)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Main menu → Settings → Video → Scaling → Aspect **Core Provided**, 480p via [Res-O-Matic](#res-o-matic-for-custom-resolutions)
  
 ### Aspect Ratio Troubleshooting For Any Core:
  > **If stretched/wrong** (esp. vertical arcades), Aspect Ratio: **Full**  
