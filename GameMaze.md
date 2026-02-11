@@ -32,7 +32,7 @@ The key idea is to preserve the console-accurate signal (resolution, aspect rati
 
  - *Note: This setup assumes you are willing to define custom timings with CRU, rely on an HDMI scaler that accepts low resolutions, and use workarounds for quirks like Windows’ controller ordering. → The rest of this guide focuses on providing concrete solutions to those constraints.*
 
-In my setup, a RetroTINK 4K scaler upscales the PC’s native inputs to 1440p (limited by my LG 27GS95QE-B OLED monitor). Vertical arcade games are displayed in TATE mode by physically rotating the monitor on a VESA stand.
+In my setup, a RetroTINK 4K upscales the PC’s native inputs to 1440p (limited by my LG 27GS95QE-B OLED monitor). Vertical arcade games are displayed in TATE mode by physically rotating the monitor on a VESA stand.
 
 ---
 
@@ -811,3 +811,4 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
+
