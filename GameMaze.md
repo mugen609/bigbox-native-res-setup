@@ -19,7 +19,6 @@
 | [Controller Reorder](#controller-reordering-workaround) | Change Player 1 Controller |
 | [Final Touches](#final-touches) | Debloating, BigBox Shell, backups |
 
----
 ![DQ6](/images/DQ6.jpg)  
 *Dragon Quest 6 on SNES in native resolution*
 
@@ -154,7 +153,10 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 | **Optional** | [7-Zip](https://www.7-zip.org/) | Free | ROM management |
 
 **Troubleshooting (keep handy):**
-[DDU](https://www.wagnardsoft.com/) • [AMD Cleanup](https://www.amd.com/en/resources/support-articles/faqs/GPU-601.html) • [Show/Hide Updates](https://download.microsoft.com/download/f/2/2/f22d5fdb-59cd-4275-8c95-1be17bf70b21/wushowhide.diagcab) • [Vulkan SDK](https://vulkan.lunarg.com/sdk/home)
+- [DDU](https://www.wagnardsoft.com/): Deep GPU driver removal when normal uninstall fails  
+- [AMD Cleanup](https://www.amd.com/en/resources/support-articles/faqs/GPU-601.html): Official AMD driver removal tool  
+- [Show/Hide Updates](https://download.microsoft.com/download/f/2/2/f22d5fdb-59cd-4275-8c95-1be17bf70b21/wushowhide.diagcab): Block specific Windows/driver updates causing regressions  
+- [Vulkan SDK](https://vulkan.lunarg.com/sdk/home): Runtime components (rarely needed with modern drivers)
 
 ---
 
@@ -401,9 +403,8 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
  > **Per-game exception**: **Game Override** (not Core Override) — saves for *specific game only*  
  > **Safe with 4:3 profile in the scaler**: RT4K forces correct ratio regardless of "Full" ratio setting.
  
-
-![FF5GBA](/images/FF5.jpeg)  
 *Final Fantasy 5 on GBA at 160p*
+![FF5GBA](/images/FF5.jpeg)  
 
 ---
 
@@ -509,6 +510,9 @@ return
 
 ![irotate](/images/rotate.png)
 *This script assumes Escape is the emulator shutdown key. Adjust the keybinding if different. Also replace "Azahar.exe" by the executable of your emulator.*
+
+ > ⚠️ When using iRotate automation, **disable all quit keys** (eg. `ESC`) in the emulator's settings (eg. Azahar → Settings → Hotkeys → unbind anything related to `ESC`). 
+ > The LaunchBox script must be the ONLY handler for `ESC`; if Azahar also responds to `ESC`, conflicts may occur.
 
 ---
 
@@ -811,4 +815,3 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
-
