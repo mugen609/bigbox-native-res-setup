@@ -26,9 +26,9 @@
 ## 👓
 ## Overview
 
-GameMaze is a custom configuration framework for Windows that builds on BigBox and your emulators to output native resolutions (160p–1080p) over HDMI to a modern scaler, preserving the original look of each system. It relies on an all‑digital signal chain, custom timings via CRU, and a low‑latency scaler (e.g., RetroTink 4K) rather than CRT EmuDriver and analog outputs.
+GameMaze is a custom configuration framework for Windows that builds on BigBox and your emulators to output native resolutions (160p–1080p) over HDMI to a modern scaler, preserving the original look of each system. It relies on an all‑digital signal chain, custom timings via CRU, and a low-latency scaler rather than CRT EmuDriver and analog outputs.
 
-The key idea is to preserve the console‑accurate signal (resolution, aspect ratio, no smoothing) while using modern emulators and a gamepad‑only frontend. True low‑resolution output capabilities over HDMI, combined with standardized controls via reWASD and seamless LaunchBox/BigBox integration, is what makes the setup different from typical 480p+ emulation builds.
+The key idea is to preserve the console-accurate signal (resolution, aspect ratio, no smoothing) while using modern emulators and a gamepad-only frontend. True low‑resolution output capabilities over HDMI, combined with standardized controls via reWASD and seamless LaunchBox/BigBox integration, is what makes the setup different from typical 480p+ emulation builds.
 
  - *Note: This setup assumes you are willing to define custom timings with CRU, rely on an HDMI scaler that accepts low resolutions, and use workarounds for quirks like Windows’ controller ordering. The rest of this guide focuses on providing concrete solutions to those constraints.*
 
