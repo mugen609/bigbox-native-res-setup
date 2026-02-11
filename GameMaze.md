@@ -30,7 +30,7 @@ GameMaze is a custom configuration framework for Windows that builds on BigBox a
 
 The key idea is to preserve the console-accurate signal (resolution, aspect ratio, no smoothing) while using modern emulators and a gamepad-only frontend. True low‑resolution output capabilities over HDMI, combined with standardized controls via reWASD and seamless LaunchBox/BigBox integration, is what makes the setup different from typical 480p+ emulation builds.
 
- - *Note: This setup assumes you are willing to define custom timings with CRU, rely on an HDMI scaler that accepts low resolutions, and use workarounds for quirks like Windows’ controller ordering. The rest of this guide focuses on providing concrete solutions to those constraints.*
+ - *Note: This setup assumes you are willing to define custom timings with CRU, rely on an HDMI scaler that accepts low resolutions, and use workarounds for quirks like Windows’ controller ordering. → The rest of this guide focuses on providing concrete solutions to those constraints.*
 
 In my setup, a RetroTINK 4K scaler upscales the PC’s native inputs to 1440p (limited by my LG 27GS95QE-B OLED monitor). Vertical arcade games are displayed in TATE mode by physically rotating the monitor on a VESA stand.
 
