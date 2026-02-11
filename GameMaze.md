@@ -65,7 +65,7 @@ Tested on AMD RX 6700 XT.
 
 ## Why GameMaze?
 
-**The Discovery**: This project started with a simple observation: games running on my physical SNES or PS1 hardware through my RetroTINK 4K looked noticeably better than the same games emulated via Batocera. At first, it was tempting to think original hardware had some inherent visual magic that emulation could not replicate.
+**The Discovery**: This project started with a simple observation: games running on my physical SNES or PS1 hardware through my RetroTINK 4K looked noticeably better than the same games on emulators. At first, it was tempting to think original hardware had some inherent visual magic that emulation could not replicate.
 
 But the answer was simpler: **Resolution**. Consoles output true 240p; most emulation upscale first, compromising the signal sent to the scaler.
 
