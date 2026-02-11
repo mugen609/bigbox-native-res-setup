@@ -69,7 +69,7 @@ This project started with a simple observation: games running on my physical SNE
 
 But the answer was simpler: **Resolution**. Consoles output true 240p; most emulation upscale first, compromising the signal sent to the scaler.
 
-**The Fix**: Configure emulators for **native output** → HDMI → scaler. Result: visual parity with original hardware, plus emulation conveniences (save states, modern titles).
+**The Fix**: Configure emulators for **native output** → HDMI → scaler. Result: visual as good as original hardware, plus emulation conveniences (save states, modern titles).
 
 **Design Rules**:
 - Original resolution + aspect ratio  
@@ -815,4 +815,3 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
-
