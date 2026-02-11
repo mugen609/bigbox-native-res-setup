@@ -8,7 +8,7 @@
 |---------|-------------|
 | [Overview](#overview) | Vision, supported systems, why GameMaze |
 | [Requirements](#requirements-and-software) | Hardware, GPU compatibility, software list |
-| [Requirements](#AMD-GPU-&-HDMI-Scaler-HDCP-Fix) | Fix DRM on AMD + scaler |
+| [AMD Blurred Screen](#AMD-GPU-HDMI-Scaler-HDCP-Fix) | Fix DRM on AMD + scaler |
 | [SSH Setup](#SSH-Setup) | Allow file transfer + config file edit |
 | [CRU Timings](#CRU-Timings) | Allow custom resolutions via HDMI |
 | [Emulator Config](#emulator-configuration) | RetroArch cores, standalone (MAME/Supermodel) |
@@ -174,7 +174,7 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
 
 
 ## 🖼️
-### AMD GPU & HDMI Scaler HDCP Fix
+### AMD GPU HDMI Scaler HDCP Fix
 
 **Symptom**: Scaler image blurred/pixelated (*DRM blocking content*).
 
