@@ -118,7 +118,7 @@ CRT EmuDriver enables true native resolutions (e.g., 320×240) via analog output
 - AMD 780M integrated GPU (Ryzen 9 8945HS)
 - NVIDIA RTX 3090 (MSI Suprim)
 
-Note: CRT EmuDriver-listed GPUs should work with super resolutions and current drivers. Similar discrete AMD GPUs (e.g., RX 6600) are likely compatible. Integrated graphics and modern NVIDIA cards have shown issues in testing.
+Note: CRT EmuDriver-listed GPUs should work with super resolutions and current drivers. Similar discrete AMD GPUs (e.g., RX 6600) are likely compatible. Integrated graphics and modern NVIDIA cards have shown issues in testing. (But my pool of harware was limited)
 
 ## Reference Setup & Signal Chain
 
@@ -162,7 +162,7 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 ## System Preparation 
 
 **Quick checklist** (before CRU setup):
-- Update Windows + install GPU drivers (latest) + required software
+- Update Windows + install GPU drivers (latest) + required softwares /emulators
 - BIOS: CPU performance mode  
 - **Fast Startup**: OFF (preserves emulator save files): 
 Control Panel → Hardware and Sound → Power Options → Choose what the power buttons do → Change settings that are currently unavailable → Shutdown settings → uncheck Turn on fast startup (recommended) → Save changes
@@ -189,7 +189,7 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
 ## SSH Setup 
 *(Gamepad-Only Essential)*
 
-**Why**: Manage files/configs **remotely** — no keyboard/mouse needed on emulation PC after setup.
+**Why**: Manage files and edit config files **remotely** — no keyboard/mouse needed on emulation PC after setup.
 
 **Benefits**:
 - Add ROMs without USB  
@@ -386,6 +386,9 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
  > **If stretched/wrong** (esp. vertical arcades), Aspect Ratio: **Full**  
  > **Per-game exception**: **Game Override** (not Core Override) — saves for *specific game only*  
  > **Safe with 4:3 profile in the scaler**: RT4K forces correct ratio regardless of "Full" ratio setting.
+ 
+![PS1 Example](/images/crono.jpg)  
+*Chrono Trigger PS1*
 
 3. **CRT SwitchRes Cores** (224p/240p auto-switching)
  - **PS1 (Mednafen)**: CRT SwitchRes **ON**, 15kHz, 2560 horizontal, Aspect: **Core Provided**
@@ -395,9 +398,6 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
  - **Core Options → Vertical Mode**: **TATE** or **TATE Alternate** (Safe, auto-applies to vertical games only)
  - Aspect: **Core Provided** (**Full** if stretched)
  - Game-specific ratios → **Game Override**
-
-![PS1 Example](/images/crono.jpg)  
-*Chrono Trigger PS1*
 
 5. **Res-O-Matic Cores**:
  - **GBA**: SwitchRes **OFF**, 160p via [Res-O-Matic](#res-o-matic-for-custom-resolutions)
@@ -451,9 +451,8 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
    - In Supermodel.ini: set `2480×384` with `Stretch=True`.  
    - On the scaler: set aspect mode to **4:3**.
   
-   Supermodel renders at 2480-wide (the correct pre-compensated width) but outputs to the closest available EDID timing (2560×384), automatically adding 80 pixels of black bars (40 each side). When your scaler applies 4:3 scaling, the active content scales to the original Model 3 ratio.
-
-   ⚠️ This relies on Supermodel’s behavior (stretch to INI resolution, output to closest EDID with black bars). Do **not** create 2480×384 in CRU, it must remain “unavailable” for this trick to work.
+   > Supermodel renders at 2480-wide (the correct pre-compensated width) but outputs to the closest available EDID timing (2560×384), automatically adding 80 pixels of black bars (40 each side). When your scaler applies 4:3 scaling, the active content scales to the original Model 3 ratio.
+   > ⚠️ This relies on Supermodel’s behavior (stretch to INI resolution, output to closest EDID with black bars). Do **not** create 2480×384 in CRU, it must remain “unavailable” for this trick to work.
 
 3. **Azahar (3DS)**
 
@@ -492,8 +491,6 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
 
    If you need to rotate your display for a specific emulator that doesn't allow it in settings, you can use iRotate in a LaunchBox script:
 
-![irotate](/images/rotate.png)
-
 ```autohotkey
 ; Rotate to portrait when emulator starts
 Send ^!{Left}   ; Ctrl + Alt + Left for portrait rotation
@@ -512,6 +509,7 @@ return
 #IfWinActive
 ```
 
+![irotate](/images/rotate.png)
 *This script assumes Escape is the emulator shutdown key. Adjust the keybinding if different. Also replace "Azahar.exe" by the executable of your emulator.*
 
 ---
