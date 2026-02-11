@@ -65,7 +65,9 @@ Tested on AMD RX 6700 XT.
 
 ## Why GameMaze?
 
-**The Discovery**: My physical SNES/PS1 through RetroTINK 4K looked better than Batocera emulation. Why? **Resolution**. Consoles output true 240p; most emulation distros upscale first, compromising the scaler input.
+**The Discovery**: This project started with a simple observation: games running on my physical SNES or PS1 hardware through my RetroTINK 4K looked noticeably better than the same games emulated via Batocera. At first, it was tempting to think original hardware had some inherent visual magic that emulation could not replicate.
+
+But the answer was simpler: **Resolution**. Consoles output true 240p; most emulation upscale first, compromising the signal sent to the scaler.
 
 **The Fix**: Configure emulators for **native output** → HDMI → scaler. Result: visual parity with original hardware, plus emulation conveniences (save states, modern titles).
 
@@ -118,7 +120,7 @@ CRT EmuDriver enables true native resolutions (e.g., 320×240) via analog output
 - AMD 780M integrated GPU (Ryzen 9 8945HS)
 - NVIDIA RTX 3090 (MSI Suprim)
 
-Note: CRT EmuDriver-listed GPUs should work with super resolutions and current drivers. Similar discrete AMD GPUs (e.g., RX 6600) are likely compatible. Integrated graphics and modern NVIDIA cards have shown issues in testing. (But my pool of harware was limited)
+Note: CRT EmuDriver-listed GPUs should work with super resolutions and current drivers. Similar discrete AMD GPUs (e.g., RX 6600) are likely compatible. Integrated graphics and modern NVIDIA cards have shown issues in testing. (But my pool of hardware was limited)
 
 ## Reference Setup & Signal Chain
 
@@ -639,7 +641,6 @@ You can easily find general documentation online, eg. [Just Jamie's Tutorial](ht
 ```batch
 @echo off
 start "" "SteamGameWrapper.ahk"
-}
 ```
 
 SteamGameWrapper.ahk (same folder):
