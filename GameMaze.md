@@ -128,7 +128,7 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 
 
 **Key components:**
-- **GPU**: RX 6700 XT (others confirmed: HD 7750, RX 580). See [GPU Compatibility](#gpu-compatibility).
+- **GPU**: RX 6700 XT. See [GPU Compatibility](#gpu-compatibility).
 - **Scaler**: HDMI scaler accepting 160p–384p inputs (RetroTINK 4K tested).
 - **Controllers**: DualSense ×2, Hori Octa Pro, Xbox Series X (4-player).
 
@@ -193,12 +193,10 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
 
 **Why**: Manage files and edit config files **remotely** — no keyboard/mouse needed on emulation PC after setup.
 
-**Benefits**:
-- Add ROMs without USB  
-- Edit configs files remotely  
-- Transfer profiles backups (CRU, LaunchBox, Emulators, etc.) 
-
-### Quick Setup
+ > **Benefits**:
+ > - Add ROMs without USB  
+ > - Edit configs files remotely  
+ > - Transfer profiles backups (CRU, LaunchBox, Emulators, etc.) 
 
 0. **Note the Emulation PC’s IP Address**  
    - Open Terminal/CMD and run:  
@@ -263,11 +261,10 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
    - Username: emulation PC’s Windows admin user  
    - In **Advanced → SSH → Authentication**, set *Private key file* to the `.ppk` you saved.
 
-### SSH Notes
-
- - *No screen passwords — Windows stays auto-login*
- - *USB fallback available but less convenient*
- - *CRU bonus: Export .bin → WinSCP → main PC backup*
+ > SSH Notes
+ > - *No screen passwords — Windows stays auto-login*
+ > - *USB fallback available but less convenient*
+ > - *CRU bonus: Export .bin → WinSCP → main PC backup*
 
 ---
 
@@ -815,5 +812,3 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
-
-
