@@ -385,7 +385,8 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
 *Chrono Trigger PS1*
 
 3. **CRT SwitchRes Cores** (224p/240p auto-switching)
- - **PS1 (Mednafen)**: Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal & Settings → Video → Scaling → Aspect: **Core Provided**
+ - **PS1 (Mednafen)**: Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal 
+ - Settings → Video → Scaling → Aspect: **Core Provided**
 
 4. **Arcade (FBNeo)**:
  - Same CRT SwitchRes as PS1
