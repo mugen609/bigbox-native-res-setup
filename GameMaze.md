@@ -8,13 +8,15 @@
 |---------|-------------|
 | [Overview](#overview) | Vision, supported systems, why GameMaze |
 | [Requirements](#requirements-and-software) | Hardware, GPU compatibility, software list |
-| [Setup Process](#setup-process) | Windows prep, SSH, CRU timings |
+| [Requirements](#AMD-GPU-&-HDMI-Scaler-HDCP-Fix) | Fix DRM on AMD + scaler |
+| [SSH Setup](#SSH-Setup) | Allow file transfer + config file edit |
+| [CRU Timings](#CRU-Timings) | Allow custom resolutions via HDMI |
 | [Emulator Config](#emulator-configuration) | RetroArch cores, standalone (MAME/Supermodel) |
-| [Steam](#steam) | Controller/notification fixes |
-| [reWASD Setup](#rewasd-setup) | Virtual Xbox, shift layer (TAB/ESC) |
-| [LaunchBox](#launchbox-configuration) | Quit scripts, **Gamepad Popups Killer** (WindowSpy) |
-| [Res-O-Matic](#res-o-matic-for-custom-resolutions) | DS/PSP/GameCube BAT wrappers |
-| [Controller Reorder](#controller-reordering-workaround) | BT toggle fake ROM (4-player tested) |
+| [Steam](#steam) | Recommended Settings |
+| [reWASD Setup](#rewasd-setup) | Gamepad Harmonization |
+| [LaunchBox](#launchbox-configuration) | Global Unification |
+| [Res-O-Matic](#res-o-matic-for-custom-resolutions) | Forcing Resolution |
+| [Controller Reorder](#controller-reordering-workaround) | Change Player 1 Controller |
 | [Final Touches](#final-touches) | Debloating, BigBox Shell, backups |
 
 ---
@@ -50,12 +52,14 @@ Tested on AMD RX 6700 XT.
 
 | Category              | Native Res  |
 |----------------------|-------------|
-| Handhelds (GBA, DS)  | 160p–256p  |
-| 16-bit + Arcade      | 224p–240p  |
-| Oddballs (PSP, Model 3) | 272p–384p |
-| Modern (DC/PS2+)     | 480p+      |
+| **Handhelds** (GBA, DS)     | 160p–256p  |
+| **Retro 8/16-bit + Arcade** | 224p–240p  |
+| **Oddballs** (PSP, Model 3) | 272p–384p  |
+| **Gen 5** (PS1, N64)        | 240p       |
+| **Gen 6** (DC, PS2)         | 480p+      |
+| **Gen 7** (PS3, Wii)        | 720p+      |
 
-*All → HDMI → scaler for pixel-perfect output.*
+*All → HDMI → scaler (CRU super-res + RetroTINK 4K)*
 
 ---
 
@@ -79,13 +83,14 @@ Tested on AMD RX 6700 XT.
 | **GameMaze** | **Excellent** | **Yes**    | **Yes**        |
 
 GameMaze = authentic visuals + modern convenience + gamepad-only interface.
+
 ---
 
 ## Requirements and Software
 
 ### Before You Start
 
- - **SSH** (Recommended for gamepad-only workflow): Enable on emulation PC for keyboardless file transfers. See [SSH setup](#ssh-for-file-transfers).
+ - **SSH** (Recommended for gamepad-only workflow): Enable on emulation PC for keyboardless file transfers. See [SSH Setup](#SSH-Setup).
  - **Secondary PC** (optional): Helps with initial setup/ROMs.
 
 
@@ -94,7 +99,7 @@ GameMaze = authentic visuals + modern convenience + gamepad-only interface.
 
 GameMaze expands beyond CRT EmuDriver's GPU limitations:
 
-| **QUALITY** | **CRT EMUDRIVER** | **GAMEMAZE** |
+| **FEATURE** | **CRT EMUDRIVER** | **GAMEMAZE** |
 |-------------|-------------------|--------------|
 | **1. Works with modern GPUs beyond legacy list** | NO (legacy list only) | YES, SOME (see tested list) |
 | **2. Works through digital HDMI/DP output** | NO | YES |
@@ -102,12 +107,14 @@ GameMaze expands beyond CRT EmuDriver's GPU limitations:
 
 CRT EmuDriver enables true native resolutions (e.g., 320×240) via analog output and legacy drivers. GameMaze uses **super resolutions** (e.g., 2560×240) via CRU, which work over digital HDMI/DP with current drivers.
 
-#### Confirmed Working (Feb 2026 drivers, super resolution via CRU + HDMI):
+**Tested List:**
+
+#### ✅ Confirmed Working (Feb 2026 drivers, super resolution via CRU + HDMI):
 - AMD Radeon HD 7750 (CRT EmuDriver list)
 - AMD RX 580 Nitro+ (CRT EmuDriver list)
 - AMD RX 6700 XT (**Not** on CRT EmuDriver list)
 
-#### Not Working (Feb 2026 drivers):
+#### ❌ Not Working (Feb 2026 drivers, no legacy drivers test):
 - AMD 780M integrated GPU (Ryzen 9 8945HS)
 - NVIDIA RTX 3090 (MSI Suprim)
 
@@ -148,6 +155,7 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 
 **Troubleshooting (keep handy):**
 [DDU](https://www.wagnardsoft.com/) • [AMD Cleanup](https://www.amd.com/en/resources/support-articles/faqs/GPU-601.html) • [Show/Hide Updates](https://download.microsoft.com/download/f/2/2/f22d5fdb-59cd-4275-8c95-1be17bf70b21/wushowhide.diagcab) • [Vulkan SDK](https://vulkan.lunarg.com/sdk/home)
+
 ---
 
 ## 📚
@@ -156,7 +164,9 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 **Quick checklist** (before CRU setup):
 - Update Windows + install GPU drivers (latest) + required software
 - BIOS: CPU performance mode  
-- **Fast Startup**: OFF (preserves emulator save files)
+- **Fast Startup**: OFF (preserves emulator save files): 
+Control Panel → Hardware and Sound → Power Options → Choose what the power buttons do → Change settings that are currently unavailable → Shutdown settings → uncheck Turn on fast startup (recommended) → Save changes
+- System → Power & battery → Power mode → **Best performance**
 - **Game Bar**: Disable controller shortcuts (windows Settings → Gaming)
 - **Desktop**: 1280×720 *or higher* (scaler/BigBox friendly)
 
@@ -164,7 +174,7 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 
 
 ## 🖼️
-### AMD GPU + HDMI Scaler: HDCP Fix
+### AMD GPU & HDMI Scaler HDCP Fix
 
 **Symptom**: Scaler image blurred/pixelated (*DRM blocking content*).
 
@@ -176,14 +186,15 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 ---
 
 ## 🌐
-## SSH Setup (Gamepad-Only Essential)
+## SSH Setup 
+*(Gamepad-Only Essential)*
 
 **Why**: Manage files/configs **remotely** — no keyboard/mouse needed on emulation PC after setup.
 
 **Benefits**:
-- Transfer profiles backups (CRU, LaunchBox, Emulators, etc.)  
-- Edit configs remotely  
 - Add ROMs without USB  
+- Edit configs files remotely  
+- Transfer profiles backups (CRU, LaunchBox, Emulators, etc.) 
 
 ### Quick Setup
 
@@ -252,16 +263,16 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 
 ### SSH Notes
 
- *- No screen passwords — Windows stays auto-login*
- *- USB fallback available but less convenient*
- *- CRU bonus: Export .bin → WinSCP → main PC backup*
+ - *No screen passwords — Windows stays auto-login*
+ - *USB fallback available but less convenient*
+ - *CRU bonus: Export .bin → WinSCP → main PC backup*
 
 ---
 
 ## 🖥️
 ## CRU Setup (Custom Resolutions)
 
-**Goal**: Add 160p–384p timings for pixel-perfect scaler input. Standard 480p+ HDMI modes need no CRU.
+**Goal**: Add 160p–384p timings for pixel-perfect scaler input. Standard 480p+ HDMI modes need **NO** CRU.
 
 #### CRU Timings
 
@@ -303,31 +314,31 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
    
 ### CRU Troubleshooting 
  
-	**If game doesn't launch at 240p**:
-	1. **Check**: Timings exist in CRU + values match table
-	2. **Run**: `restart64.exe` (CRU folder) → Test RetroArch
-	3. **Reboot** → Test RetroArch  
-	4. **Verify**: Custom resolutions appear in Windows Display Settings
-	5. **If all fail**: GPU likely incompatible
+6. **If game doesn't launch at 240p**:
+	- **Check**: Timings exist in CRU + values match table
+	- **Run**: `restart64.exe` (CRU folder) → Test RetroArch
+	- **Reboot** → Test RetroArch  
+	- **Verify**: Custom resolutions appear in Windows Display Settings
+	- **If all fail**: GPU likely incompatible
    
 ---
 
 ## 📺
 ## Emulator Configuration
 
-**Goal**: Native resolution output → scaler does upscaling/CRT effects.
+**Goal**: Native resolution output → leave the upscaling/CRT effects job to the scaler!
 
 **Core rules**:
  - Output at native resolution  
  - Maintain original aspect ratio
  - No smoothing (nearest-neighbor only)  
- - Internal upscale (2-3×) OK for 3D games, native output required  
+ - Internal upscale (2-3×) OK for 3D games, native output 
 
 ---
 
 ### Resolution Handling
 
-**Emulators handle resolution in 3 ways** (SwitchRes, desktop default, config files). Table shows method per system:
+**Emulators handle resolution in 3 ways** (SwitchRes, desktop default, config files). For *desktop default* (Emulator launches at desktop resolution), we will need [Res-O-Matic](#res-o-matic-for-custom-resolutions). The following table shows the method per system:
 
 | System                      | Emulator              | Native Res     | Method          | Notes                                              |
 |-----------------------------|-----------------------|----------------|-----------------|----------------------------------------------------|
@@ -363,18 +374,18 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 
 - **Menu**: Settings → User Interface → **rgui** (Not the sexiest skin but best for low-res)
 - **Controllers** (for reWASD harmony):  
-  Settings → Drivers → **Input: dinput**, **Controller: dinput** → **Save config**
+  Settings → Drivers → **Input**: `dinput` + **Controller**: `dinput`; → **Save config**
   
-*Why dinput? SDL2 = Bluetooth issues, xinput in RetroArch steals Home button from reWASD.*
+Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home button from reWASD.
 
 2. **Per-Core Setup** (all cores)
 - Load game → Main menu → Settings → Video → Scaling → **Aspect Ratio: Core Provided**  
 - Quick Menu → **Save Core Override**
 
 **Aspect Ratio Troubleshooting**:
- > **If stretched/wrong** (esp. vertical arcades): **Full** aspect  
+ > **If stretched/wrong** (esp. vertical arcades), Aspect Ratio: **Full**  
  > **Per-game exception**: **Game Override** (not Core Override) — saves for *specific game only*  
- > **Safe with 4:3 scaler**: RT4K forces correct ratio regardless of "Full" ratio setting.
+ > **Safe with 4:3 profile in the scaler**: RT4K forces correct ratio regardless of "Full" ratio setting.
 
 3. **CRT SwitchRes Cores** (224p/240p auto-switching)
  - **PS1 (Mednafen)**: CRT SwitchRes **ON**, 15kHz, 2560 horizontal, Aspect: **Core Provided**
@@ -389,7 +400,7 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 *Chrono Trigger PS1*
 
 5. **Res-O-Matic Cores**:
- - **GBA**: SwitchRes **OFF**, 160p via Res-O-Matic
+ - **GBA**: SwitchRes **OFF**, 160p via [Res-O-Matic](#res-o-matic-for-custom-resolutions)
  - **DS (DeSmuME)**: SwitchRes **OFF**, Aspect **Full**, Screen Layout **Bottom/Top** or **Top/Bottom** as preferred, 256p via Res-O-Matic
  - **GameCube (Dolphin)/DreamCast (Flycast)**: SwitchRes **OFF**, Aspect **Core Provided**, 480p via Res-O-Matic
 
@@ -448,7 +459,7 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 
    - Set View → Screen → **Rotate Up Right** for vertical stacked screens.  
    - If the screen flips in the wrong direction for your setup, you will have to use iRotate instead (See below image).
-   - By default, Azahar runs at desktop resolution; use [Res-O-Matic](#using-res-o-matic-for-custom-resolutions) in LaunchBox for custom resolutions.
+   - By default, Azahar runs at desktop resolution; use [Res-O-Matic](#res-o-matic-for-custom-resolutions) in LaunchBox for custom resolutions.
 
 4. **PCSX2 (PS2), RPCS3 (PS3), Ryujinx (Switch), Vita3K (PS Vita)**
 
@@ -462,11 +473,11 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 
    - **Output Resolution**:  
      - Set each emulator to output the native mode you want (e.g., 480p content at 480p), and only use higher output modes when you have a specific reason (compatibility or CRU slot limit reached).  
-     - For resolutions different from your desktop resolution, use [Res-O-Matic](#using-res-o-matic-for-custom-resolutions).
+     - For resolutions different from your desktop resolution, use [Res-O-Matic](#res-o-matic-for-custom-resolutions).
 
 5. **PPSSPP (PSP)**
 
-   - Launch the emulator at 272p using Res-O-Matic in LaunchBox (see [Using Res-O-Matic](#using-res-o-matic-for-custom-resolutions)).  
+   - Launch the emulator at 272p using [Res-O-Matic](#res-o-matic-for-custom-resolutions) in LaunchBox.  
    - PSP’s native aspect ratio is 30:17 (≈1.7647:1), slightly off from 16:9. To preserve this perfectly:  
      - Set your scaler to 16:9.  
      - Edit `ppsspp.ini` (typically in `C:\Users\<YourAccount>\Documents\PPSSPP\PSP\SYSTEM\`):
@@ -520,6 +531,7 @@ return
 
 **Local installs only**:
  - Steam → Settings → Remote Play → **OFF**
+ 
  *Prevents streaming to main PC when both are online*
 
 ---
@@ -603,11 +615,11 @@ You can easily find general documentation online, eg. [Just Jamie's Tutorial](ht
       }
       Return
       ```
-    - Repeat for other emulators (replacing `rpcs3.exe` with the emulator executable name and ESC with your preferred quit key).
+    - Repeat for other emulators (replacing `rpcs3.exe` with the emulator executable name and `ESC` with your preferred quit key).
 
 ![LaunchBox Quit Script](/images/close.png)
 
-	**Optional Extra polish:**
+- **Optional Extra polish:**
 	- Tools → Manage Emulators → select emulator → Details:  
 	  - Enable **Attempt to hide console window on startup/shutdown**.  
 	  - Under **Startup Screen**:  
@@ -646,7 +658,7 @@ Sleep, 500
 
 LaunchBox: Set Application Path to SteamGame.bat (not Steam launcher).
 
-Additional documentation:
+WindowSpy additional documentation:
 [WindowSpy Tutorial by TAB NATION](https://www.youtube.com/watch?v=_vnmuQV6_cM)
 
 ---
@@ -654,7 +666,7 @@ Additional documentation:
 ## 📺
 ## Res-O-Matic for Custom Resolutions
 
-Res-O-Matic forces a specific desktop resolution, useful **When CRT SwitchRes fails or "desktop-res-based standalones" need a different res:**
+Res-O-Matic forces a specific desktop resolution, useful **When CRT SwitchRes fails or "desktop-res-based standalone emulators" need a different res:**
 
 The approach is to create `.bat` launchers in emulator folders and configure these as alternative “emulators” in LaunchBox.
 
@@ -678,6 +690,8 @@ The approach is to create `.bat` launchers in emulator folders and configure the
     - Application path: `retroarch_ds_256p.bat`  
     - Associate it with the Nintendo DS platform.
 
+![Nintendo DS Emulator](/images/csEmul.png)
+
 - **Example: PPSSPP (2560×272)**
 
   - Create `PSP_272p.bat`:
@@ -691,7 +705,6 @@ The approach is to create `.bat` launchers in emulator folders and configure the
     ```
   - Add `PSP_272p.bat` as a new emulator in LaunchBox for the PSP platform.
 
-![Nintendo DS Emulator](/images/csEmul.png)
 
 - **Example: GameCube (640×480)**
 
@@ -762,6 +775,7 @@ To make it blend into your BigBox theme:
 ### Debloating Windows
 
 **Windows Settings** (Settings app):
+- **Startup Apps**: Task Manager (Ctrl+Shift+Esc) → Startup → **disable OneDrive/bloat** *(keep reWASD/LaunchBox)*
 - Privacy → **Disable telemetry** 
 - System → **Turn off notifications/Action Center**
 - Update → **Pause updates** + disable notifications
@@ -777,7 +791,6 @@ To make it blend into your BigBox theme:
 
 ### Additional Optimizations
 
- - **Startup Apps**: Task Manager (Ctrl+Shift+Esc) → Startup → **disable OneDrive/bloat** *(keep reWASD/LaunchBox)*
  - **BigBox Shell** (optional): 
    - Options → General → **Enable using as the Windows Shell**.
    - *This replaces Explorer (no standard desktop), ideal for pure console-like experience but inconvenient if you frequently use Explorer, browsers, keyboard, or mouse.*
