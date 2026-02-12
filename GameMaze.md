@@ -1,7 +1,11 @@
 # GameMaze  
 *Native Resolutions • Seamless Gamepad Control • Console-Like Experience for scalers on modern displays*
 
+---
+
 🎮**Imagine launching Pac-Man in its original 224p arcade resolution, then switching to The Witcher 3 at 720p—all from your couch, using only a gamepad. No keyboard, no fuss. This project is a passion-driven emulation hub that unifies 40+ years of gaming history, from 1980s arcade classics to modern Switch and Steam titles, in their original resolutions. It delivers a console-like experience that prioritizes visual fidelity, ease of use, and minimal compromises.**
+
+---
 
 # Table of Contents
 | Section | Description |
@@ -18,6 +22,9 @@
 | [Res-O-Matic](#res-o-matic-for-custom-resolutions) | Forcing Resolution |
 | [Controller Reorder](#controller-reordering-workaround) | Change Player 1 Controller |
 | [Final Touches](#final-touches) | Debloating, BigBox Shell, backups |
+Annexes:
+ - [SSH Setup](SSH_NoPassword.md) 
+ - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
 
 ![DQ6](/images/DQ6.jpg)  
 *Dragon Quest 6 on SNES in native resolution*
@@ -47,14 +54,14 @@ Tested on AMD RX 6700 XT.
 ## 🕹️
 ## Supported Systems and Resolutions 
 
-| Category              | Native Res  |
-|----------------------|-------------|
-| **Handhelds** (GBA, DS)     | 160p–256p  |
-| **Retro 8/16-bit + Arcade** | 224p–240p  |
-| **Oddballs** (PSP, Model 3) | 272p–384p  |
+| Category                    | Native Res |
+|-----------------------------|------------|
+| **Handhelds** (GB, DS)      | 144p–256p  |
+| **Retro 8/16-bit + Arcade** | 224p–384p  |
+| **Oddballs** (PSP, 3DS)     | 272p–544p  |
 | **Gen 5** (PS1, N64)        | 240p       |
 | **Gen 6** (DC, PS2)         | 480p+      |
-| **Gen 7** (PS3, Wii)        | 720p+      |
+| **Gen 7** (PS3, Wii, PC)    | 720p+      |
 
 *All → HDMI → scaler (CRU super-res + RetroTINK 4K)*
 
@@ -105,6 +112,9 @@ GameMaze expands beyond CRT EmuDriver's GPU limitations:
 | **3. Works with newest drivers** | NO (frozen at 22.5.1, 2022) | YES (tested up to Feb 2026) |
 
 CRT EmuDriver enables true native resolutions (e.g., 320×240) via analog output and legacy drivers. GameMaze uses **super resolutions** (e.g., 2560×240) via CRU, which work over digital HDMI/DP with current drivers.
+
+*Super Mario Land running at native 144p via HDMI → RetroTink 4K with scanlines*
+![GameBoy144p](/images/GBMario.jpg) 
 
 **Tested List:**
 
@@ -174,7 +184,6 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
 
 *Choose based on your scaler/monitor. Example: 720p → clean x2.0 RetroTINK scaling on 1440p.*
 
-
 ## 🖼️
 ### AMD GPU HDMI Scaler HDCP Fix
 
@@ -191,101 +200,45 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
 ## SSH Setup 
 *(Gamepad-Only Essential)*
 
-**Why**: Manage files and edit config files **remotely** — no keyboard/mouse needed on emulation PC after setup.
+ If your emulation PC is separate from your main machine, **SSH setup will save you hours of hassle** during configuration.
 
- > **Benefits**:
- > - Add ROMs without USB  
- > - Edit configs files remotely  
- > - Transfer profiles backups (CRU, LaunchBox, Emulators, etc.) 
+ With SSH, you can:
+ - Edit config files from your main PC's comfortable setup
+ - Transfer ROMs, installers, and backups seamlessly
+ - Move LaunchBox saves and configs between machines
+ - Manage everything without hunching over the gaming PC
 
-0. **Note the Emulation PC’s IP Address**  
-   - Open Terminal/CMD and run:  
-     ```cmd
-     ipconfig
-     ```  
-   - Write down the IPv4 address of the active adapter.
+I am deporting this section as it is a little long. **→ [SSH Remote Access Guide](SSH_NoPassword.md)**
 
-1. **Still on the Emulation PC → Enable OpenSSH Server**
+This is **highly recommended if you have two PCs**, but perfectly optional if working locally.
 
-   - Open PowerShell as administrator and run:
-     ```powershell
-     Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
-     ```
-   - Verify installation:
-     ```powershell
-     Get-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
-     ```
-
-2. **Configure SSH Service**
-
-   - Run `services.msc`.  
-   - Find **OpenSSH SSH Server (sshd)**, set Startup type to **Automatic**, and click **Start**.  
-   - Reboot.
-
-3. **On Your Main PC → Generate a Key with WinSCP**
-
-   - Open WinSCP → create/edit a session → click **Advanced…**  
-   - Go to: SSH → Authentication.  
-   - Click **Tools → Generate New Key Pair with PuTTYgen**.  
-   - In PuTTYgen, choose **EdDSA (Ed25519)**, generate the key, and save the private key (`.ppk` file) somewhere safe.  
-   - Back in WinSCP, click **Display Public Key** and copy the public key text (OpenSSH `authorized_keys` format).
-
-4. **On the Emulation PC → Install the Public Key (Admin)**
-
-   - Create a blank file named `administrators_authorized_keys` in the folder  
-     `C:\ProgramData\ssh\`
- 
-   - Paste the public key as a single line into the file (one key per line) and save.
-
-5. **Fix Permissions**
-
-   - Open PowerShell as Administrator and run:
-     ```powershell
-     icacls.exe "C:\ProgramData\ssh\administrators_authorized_keys" /inheritance:r /grant "Administrators:F" /grant "SYSTEM:F"
-     ```
-
-6. **Configure SSH to Use Keys**
-
-   - Edit `C:\ProgramData\ssh\sshd_config` and ensure:
-     ```text
-     PubkeyAuthentication yes
-     PasswordAuthentication no
-     ```
-   - Restart the **OpenSSH SSH Server (sshd)** service in `services.msc` or reboot.
-
-7. **On Your Main PC → Set up WinSCP Connection**
-
-   - File protocol: **SFTP**  
-   - Hostname: emulation PC IP  
-   - Port: 22  
-   - Username: emulation PC’s Windows admin user  
-   - In **Advanced → SSH → Authentication**, set *Private key file* to the `.ppk` you saved.
-
- > SSH Notes
- > - *No screen passwords — Windows stays auto-login*
- > - *USB fallback available but less convenient*
- > - *CRU bonus: Export .bin → WinSCP → main PC backup*
+> Better set this up **now**, (before CRU and emulator configuration) so you can do all subsequent work remotely.
 
 ---
 
 ## 🖥️
 ## CRU Setup (Custom Resolutions)
 
-**Goal**: Add 160p–384p timings for pixel-perfect scaler input. Standard 480p+ HDMI modes need **NO** CRU.
+**Goal**: Add 144p–544p timings for pixel-perfect scaler input. Standard 480p+ HDMI modes need **NO** CRU.
 
 #### CRU Timings
 
 | Resolution | Active (H×V) | Front Porch (H/V) | Sync Width (H/V) | Blanking (H/V) | Polarity | Refresh Rate |
 |:----------:|:------------:|:-----------------:|:----------------:|:--------------:|:--------:|:------------:|
+| 144p       | 2560×144     | 16/3              | 32/4             | 80/9           | -/-      | 60.054       |
 | 160p       | 2560×160     | 16/3              | 32/4             | 80/12          | -/-      | 60.011       |
 | 224p       | 2560×224     | 16/3              | 32/4             | 80/14          | -/-      | 59.985       |
 | 240p       | 2560×240     | 16/3              | 32/4             | 80/15          | -/-      | 60.011       |
 | 256p       | 2560×256     | 16/3              | 32/4             | 80/16          | -/-      | 59.840       |
 | 272p       | 2560×272     | 16/3              | 32/4             | 80/17          | -/-      | 60.003       |
-| 384p       | 2560×384     | 16/5              | 32/6             | 80/24          | -/-      | 60.002       |
+| 384p       | 2560×384     | 16/3              | 32/4             | 80/24          | -/-      | 60.002       |
+| 400p       | 2560×400     | 16/3              | 32/4             | 80/25          | -/-      | 60.000       |
+| 544p       | 2560×544     | 16/3              | 32/4             | 80/34          | -/-      | 60.000       |
+
+
 
 **Notes**:
- - **CRU slot budget**: CRU slots are limited, so this list prioritizes the modes actually used (160p/224p/240p/256p/272p/384p). If you want pixel-perfect 144p for Game Boy, you need to sacrifice another mode; otherwise RetroArch CRT SwitchRes will pick the closest available resolution.
+ - **CRU slot budget**: - **CRU slots**: Since CRU 1.5.3, slot limits have been removed (previously capped at 6). I've tested 9 custom timings successfully; feel free to add more if needed, CRU changelog claims it will work.
  - **480p/720p/1080p**: Standard HDMI modes, no CRU needed.
  - **Horizontal timings**: All share Active: 2560, Front Porch: 16, Sync Width: 32, Blanking: 80, Polarity: -.
 
@@ -299,9 +252,10 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
 2. **Clear Defaults**  
    In **Detailed Resolutions** (top right), delete existing resolutions to free up three slots.
 
-3. **Add Resolutions (6-slot layout)**  
+3. **Add Resolutions (9-slot layout)**  
    - **Detailed Resolutions** (3 slots): 160p, 224p, 240p  
-   - **Extension Blocks → CTA-861 → Edit** (And 3 more slots!): 256p, 272p, 384p 
+   - **Extension Blocks → CTA-861 → Edit** (3 more slots): 256p, 272p, 384p 
+   - **Extension Blocks → add a new CTA-861 → Edit** (And 3 more slots!): 144p, 400p, 544p  
 
 4. **Save and Restart**  
    Click **OK** twice → Run `restart64.exe` **(CRU folder)** or Reboot
@@ -319,6 +273,9 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
 	- **Reboot** → Test RetroArch  
 	- **Verify**: Custom resolutions appear in Windows Display Settings
 	- **If all fail**: GPU likely incompatible
+
+*3DS in original 400p, Dragon Ball Z:Extreme Butoden
+![400p3DS](/images/3DSDBZ.PNG)
    
 ---
 
@@ -332,12 +289,14 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
  - Maintain original aspect ratio
  - No smoothing (nearest-neighbor only)  
  - Internal upscale (2-3×) OK for 3D games, native output 
+ 
+ > **Note:** This section mostly treats aspect ratio correction lightly (stretch-to-fit, basic settings). For pixel-perfect geometry with mathematical precision, see the **[Perfect Aspect Ratio Guide](PerfectAspectRatio.md)**.
 
 ---
 
 ### Resolution Handling
 
-**Emulators handle resolution in 3 ways** (SwitchRes, desktop default, config files). For *desktop default* (Emulator launches at desktop resolution), we will need [Res-O-Matic](#res-o-matic-for-custom-resolutions) if we want a different game resolution. The following table shows the method per system:
+**Emulators handle resolution in 3 ways** (SwitchRes in Retroarch for 224p & 240p, desktop default, config files). For *desktop default* (Emulator launches at desktop resolution), we will need [Res-O-Matic](#res-o-matic-for-custom-resolutions) if we want a different game resolution. The following table shows the method per system:
 
 | System                      | Emulator              | Native Res     | Method          | Notes                                              |
 |-----------------------------|-----------------------|----------------|-----------------|----------------------------------------------------|
@@ -350,9 +309,9 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
 | Dreamcast                   | RetroArch (Flycast)   | 480p           | Res-O-Matic     | SwitchRes disabled                                 |
 | GameCube                    | RetroArch (Dolphin)   | 480p           | Res-O-Matic     | SwitchRes disabled                                 |
 | PS2                         | PCSX2                 | 480p           | Res-O-Matic     | Use if desktop ≠ 480p                              |
-| 3DS                         | Azahar                | 400p/800p      | Res-O-Matic     | Or use desktop resolution                          |
+| 3DS                         | Azahar                | 400p/800p      | Res-O-Matic     | Stacked screens,                                   |
 | PS3                         | RPCS3                 | 720p           | Res-O-Matic     | Use if desktop ≠ 720p                              |
-| PS Vita                     | Vita3K                | 544p           | Res-O-Matic     | Or use desktop resolution                          |
+| PS Vita                     | Vita3K                | 544p           | Res-O-Matic     | Use if desktop ≠ 544p                              |
 | Switch                      | Ryujinx               | 720p           | Res-O-Matic     | Use if desktop ≠ 720p                              |
 | Arcade (FBNeo/etc. cores)   | RetroArch             | 224p–240p      | CRT SwitchRes   | Automatic, handles TATE                            |
 | Arcade (various MAME)       | MAME standalone       | 224p-480p      | Config file     | Set per-system in `.ini` files                     |
@@ -402,12 +361,13 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
  - **GameCube (Dolphin)/DreamCast (Flycast)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Main menu → Settings → Video → Scaling → Aspect **Core Provided**, 480p via [Res-O-Matic](#res-o-matic-for-custom-resolutions)
  
 ### Aspect Ratio Troubleshooting For Any Core:
+ > **Quick fixes for stretched/wrong displays.** For mathematically correct ratios, see [Perfect Aspect Ratio Guide](PerfectAspectRatio.md).
  > **If stretched/wrong** (esp. vertical arcades), Aspect Ratio: **Full**  
  > **Per-game exception**: **Game Override** (not Core Override) — saves for *specific game only*  
- > **Safe with 4:3 profile in the scaler**: RT4K forces correct ratio regardless of "Full" ratio setting.
+ > **Safe with 4:3 profile in the scaler**: RT4K enforces target ratio regardless of "Full" ratio setting.
  
-*Final Fantasy 5 on GBA at 160p*
-![FF5GBA](/images/FF5.jpeg)  
+*Final Fantasy 5 Advance at 160p*
+![FF5GBA](/images/GBAFF5.jpeg)  
 
 ---
 
@@ -460,7 +420,7 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
 
    - Set View → Screen → **Rotate Up Right** for vertical stacked screens.  
    - If the screen flips in the wrong direction for your setup, you will have to use iRotate instead (See below image).
-   - By default, Azahar runs at desktop resolution; use [Res-O-Matic](#res-o-matic-for-custom-resolutions) in LaunchBox for custom resolutions.
+   - By default, Azahar runs at desktop resolution; use [Res-O-Matic](#res-o-matic-for-custom-resolutions) in LaunchBox for native 400p.
 
 4. **PCSX2 (PS2), RPCS3 (PS3), Ryujinx (Switch), Vita3K (PS Vita)**
 
@@ -473,7 +433,7 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
      - Scaling: Use 2×–3× internal resolution selectively when it improves image quality. Keep filtering minimal to preserve a faithful low-res look.
 
    - **Output Resolution**:  
-     - Set each emulator to output the native mode you want (e.g., 480p content at 480p), and only use higher output modes when you have a specific reason (compatibility or CRU slot limit reached).  
+     - Set each emulator to output the native mode (e.g., 480p content at 480p), and only use higher output modes when you have a specific reason (compatibility with your scaler etc.).  
      - For resolutions different from your desktop resolution, use [Res-O-Matic](#res-o-matic-for-custom-resolutions).
 
 5. **PPSSPP (PSP)**
@@ -793,6 +753,7 @@ To make it blend into your BigBox theme:
 
 ### Additional Optimizations
 
+ - Check the [Perfect Ratio Guide](PerfectAspectRatio.md) for in-depth correct ratio settings!
  - **BigBox Shell** (optional): 
    - Options → General → **Enable using as the Windows Shell**.
    - *This replaces Explorer (no standard desktop), ideal for pure console-like experience but inconvenient if you frequently use Explorer, browsers, keyboard, or mouse.*
