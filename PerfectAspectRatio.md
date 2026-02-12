@@ -9,7 +9,7 @@
 | [General Logic](#general-logic) | Output resolution, stretch mechanics, compensation formula |
 | [PSP (30:17)](#psp-3017--ppsspp-at-272p) | PPSSPP config file aspect ratio adjustment |
 | [Sega Model 3 (1.29:1)](#sega-model-3-1291--supermodel-at-384p) | Supermodel letterbox trick with CRU fallback |
-| [Game Boy (10:9)](#game-boy-109--retroarch-sameboy-core-at-144p) | RetroArch custom viewport for 144p |
+| [Game Boy (10:9)](#game-boy-109-retroarch-sameboy-core-at-144p) | RetroArch custom viewport for 144p |
 | [GBA & DS (3:2)](#game-boy-advance--nintendo-ds---32-ratio-at-169) | RetroArch viewport for 160p and 256p |
 | [Nintendo 3DS (5:3)](#nintendo-3ds-53-azahar-at-400p) | Custom layout coordinates for dual screens |
 | [PS Vita (30:17)](#ps-vita-3017-vita3k-544p) | ReShade aspect correction shader setup |
@@ -66,7 +66,7 @@ What makes this harder is that every system handles ratio compensation different
 
 ---
 
-**Compensation Formula**:
+**Compensation Formula (the modifier $m$)**:
 
 $$
 m = \frac{\text{original ratio}}{\text{scaler ratio}}
@@ -218,6 +218,7 @@ Stretch = 1
 ```
 
 **How It Works**
+
 Important: Do not create a 2480×384 timing in CRU. Only 2560×384 should exist.
 
 When you launch a game:
@@ -233,7 +234,7 @@ When you launch a game:
  *Result:* Authentic Model 3 aspect ratio using only standard 4:3 scaler settings.
  
 # 🕹️
-## Game Boy (10:9) — RetroArch SameBoy Core at 144p
+## Game Boy (10:9) - RetroArch SameBoy Core at 144p
 
 With Retroarch the challenges is again entirely different and we won't be able to manipulate ratio with presets in this case.
 
@@ -309,7 +310,7 @@ RetroArch's custom viewport system lets you define the active image area within 
 
 ### The Math
 
-Both systems display at **3:2 aspect ratio** (1.5:1), which is narrower than 16:9 but wider than 4:3. We'll use a 16:9 scaler profile.
+Both systems display at **3:2 aspect ratio**, which is narrower than 16:9 but wider than 4:3. We'll use a 16:9 scaler profile.
 
 ---
 
@@ -423,9 +424,9 @@ $$
 
 This tells us the horizontal relationship, but Azahar positions screens with absolute pixel coordinates. To find the correct vertical stretch:
 
-1. The horizontal super resolution stretch: $ \frac{2560}{400} = 6.4 \times $
-2. After the scaler applies 4:3, the effective horizontal scale becomes: $ 6.4 \times \frac{3}{4} = 4.8 \times $
-3. To maintain the correct aspect ratio, the vertical dimension must match this scale: $ 240 \times 4.8 = 1152 \text{ pixels per screen} $
+1. The horizontal super resolution stretch: $\frac{2560}{400} = 6.4 \times$
+2. After the scaler applies 4:3, the effective horizontal scale becomes: $6.4 \times \frac{3}{4} = 4.8 \times$
+3. To maintain the correct aspect ratio, the vertical dimension must match this scale: $240 \times 4.8 = 1152 \text{ pixels per screen}$
 
 So each 240px-tall screen must be stretched to **1152px** in Azahar's coordinate system to display correctly after the scaler's 4:3 compression.
 
