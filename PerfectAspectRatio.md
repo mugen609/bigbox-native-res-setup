@@ -75,16 +75,17 @@ The compensation factor $m$ tells you what percentage of the 2560-pixel width sh
 **Example**: 4:3 content on a 16:9 scaler
 
 1. Calculate $m$:
+   
    $$
    m = \frac{4/3}{16/9} = \frac{4}{3} \times \frac{9}{16} = \frac{3}{4} = 0.75
    $$
 
-2. Active width:
+3. Active width:
    $$
    2560 \times 0.75 = 1920 \text{ pixels}
    $$
 
-3. Black bars (total):
+4. Black bars (total):
    $$
    2560 - 1920 = 640 \text{ pixels} \quad (320 \text{ left} + 320 \text{ right})
    $$
@@ -573,3 +574,4 @@ technique VitaAspectFix
 ###Result
 Vita games now display in perfect native 30:17 aspect ratio with imperceptible black bars compensating for the difference from 16:9. Circles are perfectly round, UI elements match hardware proportions, etc..
 From now on: Just launch Vita3K normally and the correction applies silently every time.
+
