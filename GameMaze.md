@@ -22,6 +22,7 @@
 | [Res-O-Matic](#res-o-matic-for-custom-resolutions) | Forcing Resolution |
 | [Controller Reorder](#controller-reordering-workaround) | Change Player 1 Controller |
 | [Final Touches](#final-touches) | Debloating, BigBox Shell, backups |
+
 Annexes:
  - [SSH Setup](SSH_NoPassword.md) 
  - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
