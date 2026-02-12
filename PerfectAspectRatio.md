@@ -534,7 +534,7 @@ KeyOverlay=36,0,0,0
 In your Vita3K folder (alongside Vita3k.exe), create this folder structure if it doesn't exist:
 
 ```text
-Vita3K/
+Vita/
 ├── Vita3k.exe
 ├── opengl32.dll
 ├── ReShade.ini
@@ -594,25 +594,23 @@ technique VitaAspectFix
 	
 ### **6. Enable the Shader (One-Time Setup)**	
 
- 1. Launch Vita3K
+ 1. Launch a game with Vita3K
 
-     - You should see a brief "ReShade" banner at the top of the screen for ~1 second (this is normal and unavoidable)
+     - You should see a brief "ReShade" banner at the top of the screen for ~1 second, confirming reShade is on.
 
- 2. Boot any Vita game (You should see the reShade splashscreen)
-
- 3. Press the Home key on your keyboard (yes, needs a keyboard for this first-time setup)
+ 2. Press the Home key on your keyboard (yes, needs a keyboard for this first-time setup)
 
      -  The ReShade overlay menu appears
 
- 4. In the "Home" tab, find VitaAspectFix in the techniques list
+ 3. In the "Home" tab, find VitaAspectFix in the techniques list
 
- 5. Click the checkbox next to VitaAspectFix to enable it
+ 4. Click the checkbox next to VitaAspectFix to enable it
 
      - The image should immediately narrow slightly with thin black bars appearing on the sides
 
- 6. Press Home again to close the ReShade interface
+ 5. Press Home again to close the ReShade interface
 
- 7. Done! ReShade will remember this setting and the shader auto-enables on every future launch
+ 6. Done! ReShade will remember this setting and the shader auto-enables on every future launch
 
 ### Result
 Vita games now display in perfect native 30:17 aspect ratio with imperceptible black bars compensating for the difference from 16:9. Circles are perfectly round, UI elements match hardware proportions, etc..
