@@ -48,7 +48,7 @@ In my setup, a RetroTINK 4K upscales the PC’s native inputs to 1440p (limited 
 
 ## For Digital Output (Not CRT 📺)
 
-This guide covers **digital output** (HDMI/DP → scaler → modern display), **not** analog CRT setups (VGA/SCART → EmuDriver). 
+This guide covers **digital output** (HDMI/DP → scaler → modern display), **not** analog CRT setups (VGA/SCART). 
 
 Most 240p PC guides target CRT EmuDriver + analog constraints. GameMaze uses **CRU super resolutions** (2560×240 etc.) over digital HDMI with modern drivers.
 
@@ -100,7 +100,7 @@ GameMaze = authentic visuals + modern convenience + gamepad-only interface.
 
 ### Before You Start
 
- - **SSH** (Recommended for gamepad-only workflow): Enable on emulation PC for keyboardless file transfers. See [SSH Setup](#SSH-Setup).
+ - **SSH** (Recommended for gamepad-only workflow): Enable on emulation PC for keyboardless file transfers. See [SSH Setup](SSH_NoPassword.md).
  - **Secondary PC** (optional): Helps with initial setup/ROMs.
 
 
@@ -118,7 +118,7 @@ GameMaze expands beyond CRT EmuDriver's GPU limitations:
 CRT EmuDriver enables true native resolutions (e.g., 320×240) via analog output and legacy drivers. GameMaze uses **super resolutions** (e.g., 2560×240) via CRU, which work over digital HDMI/DP with current drivers.
 
 *Super Mario Land running at native 144p via HDMI → RetroTink 4K with scanlines*
-![GameBoy144p](/images/GBMario.jpg) 
+![GameBoy144p](/images/GBMario.jpeg) 
 
 **Tested List:**
 
@@ -279,7 +279,7 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 	- **If all fail**: GPU likely incompatible
 
 *3DS in original 400p, Dragon Ball Z:Extreme Butoden
-![400p3DS](/images/3DSDBZ.PNG)
+![400p3DS](/images/3DSDBZ.jpeg)
    
 ---
 
