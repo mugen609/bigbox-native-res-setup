@@ -18,6 +18,8 @@
 | [Nintendo 3DS (5:3)](#nintendo-3ds-53---azahar-at-400p) | Custom layout coordinates for dual screens |
 | [PS Vita (30:17)](#ps-vita-3017-vita3k-544p) | ReShade aspect correction shader setup |
 
+---
+
 ## The Two-Profile Approach
 
 The RetroTINK 4K can trim images to exact ratios and save it per profiles, which is fine for physical consoles (eg 5 consoles → 5 RT4K profiles). But for a single emulation box like GameMaze outputting everything over one HDMI connection, I feel that constantly switching scaler profiles between systems would break the seamless experience.
@@ -36,20 +38,20 @@ The RetroTINK 4K can trim images to exact ratios and save it per profiles, which
 What makes this harder is that every system handles ratio compensation differently. RetroArch viewport configs, standalone emulator INI values, or even ReShade scripts. The following sections provide exact settings for several platform. I can't test all existing systems but this should give you a framework.
 
 *Compensation chart*
-| System                                | Native Res | Ratio | Scaler ratio | Compensation   |
-|---------------------------------------|------------|-------|--------------|----------------|
-| **8-bit** (NES, SMS)                  | 256×240    | 8:7   | 4:3          | No             |
-| **16-bit** (SNES, Megadrive)          | 256×224    | 8:7   | 4:3          | No             |
-| **32-bit** (PS1, Saturn)              | 320×240    | 4:3   | 4:3          | No             |
-| **Gen 6** (PS2, Dreamcast)            | 640×480    | 4:3   | 4:3          | No             |
-| **Modern 720p+** (PS3, Switch, Steam) | 720p+      | 16:9  | 16:9         | No             |
-| **Sega Model 3**                      | 496×384    | 1.29:1| 4:3          | Supermodel ini |
-| **Game Boy**                          | 160×144    | 10:9  | 4:3          | RA core cfg    |
-| **Nintendo DS** (vertical, on top)    | 384×256    | 4:3   | 4:3          | RA core cfg    | 
-| **PSP**                               | 480×272    | 30:17 | 16:9         | PPSSPP cfg     |
-| **GBA**                               | 240×160    | 3:2   | 16:9         | RA core cfg    |
-| **3DS** (vertical, on top)            | 480×400    | 5:3   | 16:9         | Custom Layout  |
-| **PS Vita**                           | 960×544    | 30:17 | 16:9         | ReShade cfg    |
+| System                                | Native Res | Ratio | Scaler ratio | Compensation       |
+|---------------------------------------|------------|-------|--------------|--------------------|
+| **8-bit** (NES, SMS)                  | 256×240    | 8:7   | 4:3          | No (4:3 CRT design)|
+| **16-bit** (SNES, Megadrive)          | 256×224    | 8:7   | 4:3          | No (4:3 CRT design)|
+| **32-bit** (PS1, Saturn)              | 320×240    | 4:3   | 4:3          | No                 |
+| **Gen 6** (PS2, Dreamcast)            | 640×480    | 4:3   | 4:3          | No                 |
+| **Modern 720p+** (PS3, Switch, Steam) | 720p+      | 16:9  | 16:9         | No                 |
+| **Sega Model 3**                      | 496×384    | 1.29:1| 4:3          | Supermodel ini     |
+| **Game Boy**                          | 160×144    | 10:9  | 4:3          | RA core cfg        |
+| **Nintendo DS** (vertical, on top)    | 384×256    | 4:3   | 4:3          | RA core cfg        | 
+| **PSP**                               | 480×272    | 30:17 | 16:9         | PPSSPP cfg         |
+| **GBA**                               | 240×160    | 3:2   | 16:9         | RA core cfg        |
+| **3DS** (vertical, on top)            | 480×400    | 5:3   | 16:9         | Custom Layout      |
+| **PS Vita**                           | 960×544    | 30:17 | 16:9         | ReShade cfg        |
 
 ## General Logic
 
@@ -619,5 +621,3 @@ technique VitaAspectFix
 ### Result
 Vita games now display in perfect native 30:17 aspect ratio with imperceptible black bars compensating for the difference from 16:9. Circles are perfectly round, UI elements match hardware proportions, etc..
 From now on: Just launch Vita3K normally and the correction applies silently every time.
-
-
