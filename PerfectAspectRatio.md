@@ -1,6 +1,8 @@
-# 🎯 Perfect Aspect Ratios (GameMaze Annexe, → [Base Setup Guide here](GameMaze.md))
+# 🎯 Perfect Aspect Ratios
 
-*Getting perfect ratios can be tricky depending on the system and what controls the emulator gives you. This topic is moved here to keep the Emulator Configuration chapter lighter.*
+*A GameMaze annexe covering mathematically correct geometry for non-standard aspect ratios.*
+
+**← [Back to Main Setup Guide](GameMaze.md)**
 
 ---
 
@@ -617,4 +619,5 @@ technique VitaAspectFix
 ### Result
 Vita games now display in perfect native 30:17 aspect ratio with imperceptible black bars compensating for the difference from 16:9. Circles are perfectly round, UI elements match hardware proportions, etc..
 From now on: Just launch Vita3K normally and the correction applies silently every time.
+
 
