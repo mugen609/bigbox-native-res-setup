@@ -37,10 +37,10 @@ The RetroTINK 4K can trim images to exact ratios and save it per profiles, which
 
 What makes this harder is that every system handles ratio compensation differently. RetroArch viewport configs, standalone emulator INI values, or even ReShade scripts. The following sections provide exact settings for several platform. I can't test all existing systems but this should give you a framework.
 
-*Compensation chart*
+*Compensation chart*:
 | System                                | Native Res | Ratio | Scaler ratio | Compensation       |
 |---------------------------------------|------------|-------|--------------|--------------------|
-| **8-bit** (NES, SMS)                  | 256×240    | 8:7   | 4:3          | No (4:3 CRT design)|
+| **8-bit** (NES, Master System)        | 256×240    | 8:7   | 4:3          | No (4:3 CRT design)|
 | **16-bit** (SNES, Megadrive)          | 256×224    | 8:7   | 4:3          | No (4:3 CRT design)|
 | **32-bit** (PS1, Saturn)              | 320×240    | 4:3   | 4:3          | No                 |
 | **Gen 6** (PS2, Dreamcast)            | 640×480    | 4:3   | 4:3          | No                 |
@@ -242,9 +242,7 @@ When you launch a game:
 # 🕹️
 ## Game Boy (10:9) - RetroArch SameBoy Core at 144p
 
-With Retroarch the challenges is again entirely different and we won't be able to manipulate ratio with presets in this case.
-
-> **Successfully tested with**: SameBoy libretro core
+*Successfully tested with: SameBoy libretro core*
 
 ### The RetroArch Viewport Challenge
 
@@ -266,9 +264,9 @@ $$
 2560 \times 0.8333 = 2133.33 \approx 2134 \text{ pixels}
 $$
 
----
+> **Rounded up to 2134 (not down to 2133)** to get an even number: this ensures symmetrical centering with whole-pixel black bars on each side.
 
-So the active Game Boy image should be **2134×144**, centered in a 2560×144 canvas with 426 pixels of black bars (213 per side).
+So the active Game Boy image should be **2134×144**, centered in a 2560×144 canvas with 426 pixels of black bars (213 per side)..
 
 ### Configuration
 
@@ -310,7 +308,7 @@ Both GBA and DS require custom viewport configuration in RetroArch to achieve pr
 
 ### The RetroArch Viewport Challenge
 
-RetroArch's custom viewport system lets you define the active image area within the output canvas. While you *can* adjust this through the UI (Quick Menu → Settings → Video → Scaling), it's tedious and doesn't persist reliably. Direct config file editing is highly preferred.
+RetroArch's custom viewport system lets you define the active image area within the output canvas. While it is possible to adjust it through the UI (Quick Menu → Settings → Video → Scaling), it's really tedious and direct config file editing is much easier!
 
 ---
 
@@ -418,21 +416,12 @@ Unlike previous systems, Azahar works with **pixel coordinates** rather than rat
 
 The 3DS content at 400×480 needs to fit in a 2560×400 canvas and display correctly when the scaler applies 4:3.
 
----
-
-First, find the compensation factor:
-
-$$
-m = \frac{5/6}{4/3} = \frac{5}{6} \times \frac{3}{4} = 0.625
-$$
-
----
-
-This tells us the horizontal relationship, but Azahar positions screens with absolute pixel coordinates. To find the correct vertical stretch:
+**Finding the correct vertical stretch:**
 
 1. The horizontal super resolution stretch: $\frac{2560}{400} = 6.4 \times$
 2. After the scaler applies 4:3, the effective horizontal scale becomes: $6.4 \times \frac{3}{4} = 4.8 \times$
 3. To maintain the correct aspect ratio, the vertical dimension must match this scale: $240 \times 4.8 = 1152 \text{ pixels per screen}$
+
 
 So each 240px-tall screen must be stretched to **1152px** in Azahar's coordinate system to display correctly after the scaler's 4:3 compression.
 
