@@ -17,7 +17,7 @@ High-quality HDMI scalers with CRT shader support achieve their best results whe
 
 Most emulation boxes cut corners, either sacrificing visual accuracy or ignoring modern systems. This build aims higher:
 
-- **Native resolution output** (160p–720p) via HDMI for pixel-perfect fidelity  
+- **Native resolution output** (144p–720p+) via HDMI for pixel-perfect fidelity  
 - **Gamepad-only operation** from boot to gameplay  
 - **Support for rotated (TATE) and horizontal displays**  
 - **Integration of standalone emulators, RetroArch, Steam etc.**, in one artwork-rich library that feels like a jukebox!
@@ -30,7 +30,7 @@ It’s not just an emulation setup. It’s a reimagined console.
 |-----------------------|-----------------------------------------------------|
 | **Frontend**          | LaunchBox / BigBox (fully gamepad-navigable)       |
 | **Supported Systems** | NES, SNES, PS1, Dreamcast, Switch, Steam & more    |
-| **Display Output**    | True native 160p to 720p over HDMI to a scaler     |
+| **Display Output**    | True native 144p to 720p+ over HDMI to a scaler     |
 | **Scaler Used**       | Tested with RetroTink 4K for CRT-style upscaling   |
 | **Controllers**       | Tested with DualSense, Xbox, Hori — up to 4 players|
 
@@ -45,4 +45,13 @@ From hardware to hotkeys—everything you need to turn Windows into a console.
 
 Feel free to use, adapt, or share this project. All referenced tools and emulators remain under their original licenses.
 
+---
+
 **📖 [Full guide here!](GameMaze.md)**
+
+---
+
+**Advanced Guides:**
+ - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
+ - [SSH Setup For Gamepad Only](SSH_NoPassword.md) 
+ 
