@@ -70,6 +70,8 @@ $$
 m = \frac{\text{original ratio}}{\text{scaler ratio}}
 $$
 
+---
+
 The compensation factor $m$ tells you what percentage of the 2560-pixel width should contain active image vs. black bars.
 
 **Example**: 4:3 content on a 16:9 scaler
@@ -80,17 +82,23 @@ $$
 m = \frac{4/3}{16/9} = \frac{4}{3} \times \frac{9}{16} = \frac{3}{4} = 0.75
 $$
 
+---
+
 2. Active width:
 
 $$
 2560 \times 0.75 = 1920 \text{ pixels}
 $$
 
+---
+
 3. Black bars (total):
 
-   $$
-   2560 - 1920 = 640 \text{ pixels} \quad (320 \text{ left} + 320 \text{ right})
-   $$
+$$
+2560 - 1920 = 640 \text{ pixels} \quad (320 \text{ left} + 320 \text{ right})
+$$
+
+---
 
 **Result**: Configure the emulator to output 2560×H letterboxed, with 1920×H active content centered and 320 pixels of black bars on each side.
 
@@ -125,6 +133,8 @@ $$
 \frac{2560}{480} = 5.333333
 $$
 
+---
+
 Setting `DisplayAspectRatio = 5.333333` would give us proper 16:9.
 
 **Step 2: Compensate from 16:9 down to 30:17**
@@ -135,11 +145,15 @@ $$
 m = \frac{30/17}{16/9} = \frac{30}{17} \times \frac{9}{16} = 0.9926
 $$
 
+---
+
 Multiply the 16:9 value by the compensation factor:
 
 $$
 5.333333 \times 0.9926 = 5.294
 $$
+
+---
 
 ### Configuration
 
@@ -174,9 +188,13 @@ $$
 m = \frac{496/384}{4/3} = 0.96875
 $$
 
+---
+
 $$
 2560 \times 0.96875 = 2480 \text{ pixels}
 $$
+
+---
 
 So the active content should be **2480×384**, which will generate 80 pixels of black bars (40 per side) when the nearest working resolution is **2560×384**.
 
@@ -228,9 +246,13 @@ $$
 m = \frac{10/9}{4/3} = \frac{10}{9} \times \frac{3}{4} = 0.8333
 $$
 
+---
+
 $$
 2560 \times 0.8333 = 2133.33 \approx 2134 \text{ pixels}
 $$
+
+---
 
 So the active Game Boy image should be **2134×144**, centered in a 2560×144 canvas with 426 pixels of black bars (213 per side).
 
@@ -287,9 +309,13 @@ $$
 m = \frac{3/2}{16/9} = \frac{3}{2} \times \frac{9}{16} = 0.84375
 $$
 
+---
+
 $$
 2560 \times 0.84375 = 2160 \text{ pixels}
 $$
+
+---
 
 So the active image should be **2160 pixels wide**, centered in a 2560-wide canvas with 400 pixels of black bars (200 per side).
 
@@ -381,6 +407,8 @@ First, find the compensation factor:
 $$
 m = \frac{5/6}{4/3} = \frac{5}{6} \times \frac{3}{4} = 0.625
 $$
+
+---
 
 This tells us the horizontal relationship, but Azahar positions screens with absolute pixel coordinates. To find the correct vertical stretch:
 
