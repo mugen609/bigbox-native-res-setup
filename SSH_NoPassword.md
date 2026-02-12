@@ -9,6 +9,8 @@
 ### Gamepad-Only Essential
 *With passworless SSH, manage files and edit config files **remotely** — no keyboard/mouse needed on emulation PC after setup.*
 
+---
+
 0. **Note the Emulation PC’s IP Address**  
    - Open Terminal/CMD and run:  
      ```cmd
