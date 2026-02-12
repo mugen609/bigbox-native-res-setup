@@ -2,6 +2,10 @@
 
 *Getting perfect ratios can be tricky depending on the system and what controls the emulator gives you. This topic is moved here to keep the Emulator Configuration chapter lighter.*
 
+## GameMaze Annexe, [Base Setup Guide here](GameMaze.md)
+
+---
+
 # Table of Contents
 | Section | Description |
 |---------|-------------|
