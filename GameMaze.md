@@ -27,8 +27,11 @@ Annexes:
  - [SSH Setup](SSH_NoPassword.md) 
  - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
 
-![DQ6](/images/DQ6.jpg)  
+---
+
 *Dragon Quest 6 on SNES in native resolution*
+![DQ6](/images/DQ6.jpg)  
+
 
 ## 👓
 ## Overview
