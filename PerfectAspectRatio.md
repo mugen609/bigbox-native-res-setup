@@ -110,6 +110,7 @@ The following sections detail how to achieve this for different systems, as emul
  > **Note**: All calculations in this annexe assume a 2560-pixel super resolution width.
 
 #🕹️ 
+
 ## PSP (30:17) — PPSSPP at 272p
 
 I shared the magic numbers in [Standalone Emulator Configuration](GameMaze.md#standalone-emulator-configuration), but here's the derivation.
@@ -172,6 +173,7 @@ DisplayStretch = False
 Result: With your scaler set to 16:9, PSP content displays at its native 30:17 ratio with slim pillarbox bars.
 
 #🕹️
+
 ## Sega Model 3 (1.29:1) — Supermodel at 384p
 
 This was briefly covered in [Standalone Emulator Configuration](GameMaze.md#standalone-emulator-configuration); here's the full derivation.
@@ -229,6 +231,7 @@ When you launch a game:
  *Result:* Authentic Model 3 aspect ratio using only standard 4:3 scaler settings.
  
 #🕹️
+
 ## Game Boy (10:9) — RetroArch SameBoy Core at 144p
 
 With Retroarch the challenges is again entirely different and we won't be able to manipulate ratio with presets in this case.
@@ -289,6 +292,7 @@ x = "0" and y = "0" center the viewport automatically when smaller than fullscre
 Result: With your scaler set to 4:3, Game Boy games display at their native 10:9 ratio with slim lateral pillarbox bars.
 
 #🕹️
+
 ## Game Boy Advance & Nintendo DS - 3:2 Ratio at 16:9
 
 Both GBA and DS require custom viewport configuration in RetroArch to achieve proper geometry when using a 16:9 scaler profile.
@@ -387,6 +391,7 @@ video_rotation = "1"
  - **Result**: With your scaler set to 16:9, both GBA and DS games display at their native 3:2 ratio with slim lateral pillarbox bars.
 
 #🕹️ 
+
 ## Nintendo 3DS (5:3) — Azahar at 400p
 
 Once you've created the 2560×400 timing in CRU, Azahar is surprisingly straightforward! It skips most formulas and uses direct coordinate positioning, but gets a dedicated section because the settings aren't exactly obvious.
@@ -454,6 +459,7 @@ Navigate to **Emulation → Configure → Graphics → Layout** and follow the s
 **Result**: With your scaler set to 4:3, 3DS games display in vertical orientation with both screens at their correct aspect ratios (or optionally uniform sizes).
 
 #🕹️ 
+
 ## PS Vita 30:17 Vita3K 544p
 
 Vita3K is quite the pain for aspect ratio perfection. Despite real efforts, I couldn't find any settings to correct the Vita's 30:17 aspect ratio (960×544 native). 
@@ -610,4 +616,3 @@ technique VitaAspectFix
 ###Result
 Vita games now display in perfect native 30:17 aspect ratio with imperceptible black bars compensating for the difference from 16:9. Circles are perfectly round, UI elements match hardware proportions, etc..
 From now on: Just launch Vita3K normally and the correction applies silently every time.
-
