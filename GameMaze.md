@@ -13,7 +13,7 @@
 | [Overview](#overview) | Vision, supported systems, why GameMaze |
 | [Requirements](#requirements-and-software) | Hardware, GPU compatibility, software list |
 | [AMD Blurred Screen](#AMD-GPU-HDMI-Scaler-HDCP-Fix) | Fix DRM on AMD + scaler |
-| [SSH Setup](#SSH-Setup) | Allow file transfer + config file edit |
+| [SSH for file transfer](#SSH-Setup) | Allow file transfer + config file edit |
 | [CRU Timings](#CRU-Timings) | Allow custom resolutions via HDMI |
 | [Emulator Config](#emulator-configuration) | RetroArch cores, standalone (MAME/Supermodel) |
 | [Steam](#steam) | Recommended Settings |
@@ -24,7 +24,7 @@
 | [Final Touches](#final-touches) | Debloating, BigBox Shell, backups |
 
 Annexes:
- - [SSH Setup](SSH_NoPassword.md) 
+ - [SSH Detailed Setup](SSH_NoPassword.md) 
  - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
 
 ---
