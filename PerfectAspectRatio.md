@@ -70,7 +70,7 @@ $$
 m = \frac{\text{original ratio}}{\text{scaler ratio}}
 $$
 
-The compensation factor \( m \) tells you what percentage of the 2560-pixel width should contain active image vs. black bars.
+The compensation factor $m$ tells you what percentage of the 2560-pixel width should contain active image vs. black bars.
 
 **Example**: 4:3 content on a 16:9 scaler
 
