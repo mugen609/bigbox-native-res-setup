@@ -117,6 +117,8 @@ GameMaze expands beyond CRT EmuDriver's GPU limitations:
 
 CRT EmuDriver enables true native resolutions (e.g., 320×240) via analog output and legacy drivers. GameMaze uses **super resolutions** (e.g., 2560×240) via CRU, which work over digital HDMI/DP with current drivers.
 
+---
+
 *Super Mario Land running at native 144p via HDMI → RetroTink 4K with scanlines*
 ![GameBoy144p](/images/GBMario.jpeg) 
 
@@ -184,9 +186,7 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 Control Panel → Hardware and Sound → Power Options → Choose what the power buttons do → Change settings that are currently unavailable → Shutdown settings → uncheck Turn on fast startup (recommended) → Save changes
 - System → Power & battery → Power mode → **Best performance**
 - **Game Bar**: Disable controller shortcuts (windows Settings → Gaming)
-- **Desktop**: 1280×720 *or higher* (scaler/BigBox friendly)
-
-*Choose based on your scaler/monitor. Example: 720p → clean x2.0 RetroTINK scaling on 1440p.*
+- **Desktop**: 1280×720 *or higher* (Choose based on your scaler/monitor. Example: 720p → clean x2.0 RetroTINK scaling on 1440p.)
 
 ## 🖼️
 ### AMD GPU HDMI Scaler HDCP Fix
@@ -242,7 +242,7 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 
 
 **Notes**:
- - **CRU slot budget**: - **CRU slots**: Since CRU 1.5.3, slot limits have been removed (previously capped at 6). I've tested 9 custom timings successfully; feel free to add more if needed, CRU changelog claims it will work.
+ - **CRU slot budget**: Since CRU 1.5.3, slot limits have been removed (previously capped at 6). I've tested 9 custom timings successfully; feel free to add more if needed, CRU changelog claims it will work.
  - **480p/720p/1080p**: Standard HDMI modes, no CRU needed.
  - **Horizontal timings**: All share Active: 2560, Front Porch: 16, Sync Width: 32, Blanking: 80, Polarity: -.
 
@@ -278,7 +278,9 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 	- **Verify**: Custom resolutions appear in Windows Display Settings
 	- **If all fail**: GPU likely incompatible
 
-*3DS in original 400p, Dragon Ball Z:Extreme Butoden
+---
+
+*3DS in original 400p, Dragon Ball Z:Extreme Butoden*
 ![400p3DS](/images/3DSDBZ.jpeg)
    
 ---
@@ -344,8 +346,10 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
 - Load game → Main menu → Settings → Video → Scaling → **Aspect Ratio: Core Provided**  
 - Quick Menu → Overrides → **Save Core Override**
 
-![PS1 Example](/images/crono.jpg)  
+---
+
 *Chrono Trigger PS1*
+![PS1 Example](/images/crono.jpg)  
 
 3. **CRT SwitchRes Cores** (224p/240p auto-switching)
  - **PS1 (Mednafen)**: Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal 
@@ -353,27 +357,28 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
  - Quick Menu → Overrides → **Save Core Override**
 
 4. **Arcade (FBNeo)**:
- - Same CRT SwitchRes as PS1
+ - Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal
  - Quick Menu → **Core Options → Vertical Mode**: **TATE** or **TATE Alternate** (Safe, auto-applies to vertical games only)
  - Main menu → Settings → Video → Scaling → Aspect: **Core Provided** (**Full** if stretched)
  - Core Specific settings = Quick Menu → Overrides → **Save Core Override**, or:
  - Game-specific ratios = Quick Menu → Overrides → **Save Game Override**
 
-5. **Res-O-Matic Cores**:
- - **GBA**: Main menu → Settings → Video → CRT SwitchRes **OFF**, 160p via [Res-O-Matic](#res-o-matic-for-custom-resolutions)
- - **DS (DeSmuME)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Aspect **Full**, Screen Layout **Bottom/Top** or **Top/Bottom** as preferred, 256p via [Res-O-Matic](#res-o-matic-for-custom-resolutions)
- - **GameCube (Dolphin)/DreamCast (Flycast)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Main menu → Settings → Video → Scaling → Aspect **Core Provided**, 480p via [Res-O-Matic](#res-o-matic-for-custom-resolutions)
+5. **[Res-O-Matic Cores](#res-o-matic-for-custom-resolutions)**:
+ - **GBA**: Main menu → Settings → Video → CRT SwitchRes **OFF**, 160p via Res-O-Matic
+ - **DS (DeSmuME)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Aspect **Full**, Screen Layout **Bottom/Top** or **Top/Bottom** as preferred, 256p via Res-O-Matic
+ - **GameCube (Dolphin)/DreamCast (Flycast)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Main menu → Settings → Video → Scaling → Aspect **Core Provided**, 480p via Res-O-Matic
  
 ### Aspect Ratio Troubleshooting For Any Core:
- > **Quick fixes for stretched/wrong displays.** For mathematically correct ratios, see [Perfect Aspect Ratio Guide](PerfectAspectRatio.md).
- > **If stretched/wrong** (esp. vertical arcades), Aspect Ratio: **Full**  
- > **Per-game exception**: **Game Override** (not Core Override) — saves for *specific game only*  
- > **Safe with 4:3 profile in the scaler**: RT4K enforces target ratio regardless of "Full" ratio setting.
+ > For mathematically correct ratios, see [Perfect Aspect Ratio Guide](PerfectAspectRatio.md).
+ > **Here, quick fixes for stretched/wrong displays:**
+ >  - **If stretched/wrong** (esp. vertical arcades), Aspect Ratio: **Full**  
+ >  - **Per-game exception**: **Game Override** (not Core Override) — saves for *specific game only*  
+ >  - **Safe with 4:3 profile in the scaler**: RT4K enforces target ratio regardless of "Full" ratio setting.
+ 
+---
  
 *Final Fantasy 5 Advance at 160p*
 ![FF5GBA](/images/GBAFF5.jpeg)  
-
----
 
 ## 🕹️
 ### Standalone Emulator Configuration
@@ -429,11 +434,11 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
 4. **PCSX2 (PS2), RPCS3 (PS3), Ryujinx (Switch), Vita3K (PS Vita)**
 
    - **RPCS3**: On Windows 11 with recent GPU drivers, current RPCS3 builds should work well.  
-     - Prefer **Vulkan** when available (often best-performing), unless per-game settings suggest otherwise.
+     - Prefer **Vulkan** (often best-performing), unless per-game settings suggest otherwise.
 
    - **PCSX2**:  
      - Use the latest builds.  
-     - Renderer: Vulkan (if supported by your GPU/driver; otherwise D3D11/D3D12 or OpenGL).  
+     - Renderer: Prefer Vulkan (often best-performing).  
      - Scaling: Use 2×–3× internal resolution selectively when it improves image quality. Keep filtering minimal to preserve a faithful low-res look.
 
    - **Output Resolution**:  
@@ -492,14 +497,10 @@ return
    - **Disable** Enable Guide Button Chord
 
 - (Optional) Steam → Settings → **Notifications**:
-  - **Disable** "When a friend requests Chat connection"
-  - **Disable** "When a friend comes online"
-  - **Disable** "When a friend sends you a message"
+  - **Disable** any uneeded notifications
 
 **Local installs only**:
- - Steam → Settings → Remote Play → **OFF**
- 
- *Prevents streaming to main PC when both are online*
+ - Steam → Settings → Remote Play → **OFF** *(Prevents streaming to main PC when both are online)*
 
 ---
 
@@ -586,23 +587,28 @@ You can easily find general documentation online, eg. [Just Jamie's Tutorial](ht
 
 ![LaunchBox Quit Script](/images/close.png)
 
-- **Optional Extra polish:**
+- **Optional Extra polish** *(Mostly if popup windows bother you)*:
 	- Tools → Manage Emulators → select emulator → Details:  
 	  - Enable **Attempt to hide console window on startup/shutdown**.  
 	  - Under **Startup Screen**:  
 		- Enable **Aggressive Startup Window Hiding** (helps hide transient launcher windows).  
 	  - Enable **Hide All Windows that are not in Exclusive Fullscreen Mode** to help keep BigBox in focus.
+
+---
 	  
  ### Gamepad-Only Popups Killer (Rare but Critical)
 
 **Problem**: Mouse-only dialogs blocking gamepad flow. (eg. Windows warnings etc.)
 
-**GameMaze Workflow**:
+If a game triggers such clickable messages:
+
 1. Run **WindowSpy.ahk** (included with AutoHotkey 1.1) → hover popup → copy `ahk_class` + `title`
 2. Create **wrapper script** that launches game → waits for popup → auto-closes (Enter/Alt+F4)
 3. **LaunchBox**: Point game's Application Path to **wrapper .bat** (not executable)
 
-**Example structure**:
+*Note: Launchbox can't launch .ahk scripts but it can launch .bat scripts. So we use a .bat wrapper in Launchbox that will trigger our .ahk script.*
+
+### Example structure:
 
 **ROMs/SteamGame.bat:**
 ```batch
@@ -622,10 +628,9 @@ Sleep, 500
 }
 ```
 
-LaunchBox: Set Application Path to SteamGame.bat (not Steam launcher).
+LaunchBox: Set game/ application path to SteamGame.bat (not Steam launcher).
 
-WindowSpy additional documentation:
-[WindowSpy Tutorial by TAB NATION](https://www.youtube.com/watch?v=_vnmuQV6_cM)
+WindowSpy additional documentation: [WindowSpy Tutorial by TAB NATION](https://www.youtube.com/watch?v=_vnmuQV6_cM)
 
 ---
 
@@ -738,7 +743,7 @@ To make it blend into your BigBox theme:
 
 **Goal**: Console-like experience — No distraction, no telemetry, no notifications, fast BigBox boot.
 
-### Debloating Windows
+### Debloating Windows (Optional)
 
 **Windows Settings** (Settings app):
 - **Startup Apps**: Task Manager (Ctrl+Shift+Esc) → Startup → **disable OneDrive/bloat** *(keep reWASD/LaunchBox)*
@@ -746,10 +751,10 @@ To make it blend into your BigBox theme:
 - System → **Turn off notifications/Action Center**
 - Update → **Pause updates** + disable notifications
 
-**Third-party Tools** (one-click):
+**Third-party Tools**:
 - **O&O ShutUp10**: Recommended settings (telemetry + notifications)
 - **Winaero Tweaker**: Lockscreen OFF, Action Center OFF, SmartScreen OFF
-- **Optional - Chris Titus WinUtil**: `irm christitus.com/win | iex` → debloat preset
+- **All-in-One alternative - Chris Titus WinUtil**'s script: Powershell with admin rights → `irm christitus.com/win | iex` → debloat preset
 
 *Reboot after changes.*
 
@@ -765,11 +770,8 @@ To make it blend into your BigBox theme:
  - **Alternative**: Hide desktop icons  
   *Right-click Desktop → View → **Uncheck "Show desktop icons"***  
   *Get a cool wallpaper... Clean console look without replacing Explorer!*
- - **AutoHotkey + WindowSpy**: 
-  - **AHK** powers scripts (LaunchBox, quit scripts with ESC, launch bat files, resolution etc.)
-  - **WindowSpy** (included with AHK) identifies popup titles/classes to dismiss warning with an OK button without a mouse.
- - **Storage**: ROMs/games → put on an SSD, use **BCU** for cleanup
- - **Backup**: LaunchBox Tools→Backup, reWASD profiles, save CRU `.bin` export
+- **Storage**: ROMs/games → put on an SSD, use **BCU** for cleanup
+ - **Backup**: Save all your configs! LaunchBox Tools→Backup, reWASD profiles, save CRU `.bin` export; and store them somewhere safe.
  
 ---
 
