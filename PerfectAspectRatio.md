@@ -11,7 +11,7 @@
 | [Sega Model 3 (1.29:1)](#sega-model-3-1291--supermodel-at-384p) | Supermodel letterbox trick with CRU fallback |
 | [Game Boy (10:9)](#game-boy-109--retroarch-sameboy-core-at-144p) | RetroArch custom viewport for 144p |
 | [GBA & DS (3:2)](#game-boy-advance--nintendo-ds---32-ratio-at-169) | RetroArch viewport for 160p and 256p |
-| [Nintendo 3DS (5:3)](#nintendo-3ds-53--azahar-at-400p) | Custom layout coordinates for dual screens |
+| [Nintendo 3DS (5:3)](#nintendo-3ds-53-azahar-at-400p) | Custom layout coordinates for dual screens |
 | [PS Vita (30:17)](#ps-vita-3017-vita3k-544p) | ReShade aspect correction shader setup |
 
 ## The Two-Profile Approach
@@ -130,7 +130,11 @@ Most emulators stretch content to fullscreen (2560×272), then you add letterbox
 
 **Step 1: Expand from squished to 16:9**
 
-PPSSPP renders at 480×272 but outputs it in a 2560×272 canvas, leaving the image horizontally severely compressed, with massive black bars. First, we need to stretch it horizontally to fill 16:9:
+PPSSPP renders at 480×272 but outputs it in a 2560×272 canvas, leaving the image horizontally severely compressed, with massive black bars. 
+
+---
+
+First, we need to stretch it horizontally to fill 16:9:
 
 $$
 \frac{2560}{480} = 5.333333
@@ -186,13 +190,13 @@ Model 3 games render at **496×384** (1.29:1), which is narrower than 4:3. We'll
 
 If we set Supermodel to output 2560×384 and force 4:3 in the scaler, we'd get perfect 4:3—slightly wider than the original 1.29:1. We need to pre-narrow the image.
 
+---
+
 Apply the compensation formula to the output width:
 
 $$
 m = \frac{496/384}{4/3} = 0.96875
 $$
-
----
 
 $$
 2560 \times 0.96875 = 2480 \text{ pixels}
@@ -243,13 +247,13 @@ With RetroArch, the challenge is entirely different. We can't manipulate aspect 
 
 Game Boy displays at **160×144** (10:9 = 1.111:1), which is narrower than 4:3. We'll use a 4:3 scaler profile.
 
+---
+
 Apply the compensation formula:
 
 $$
 m = \frac{10/9}{4/3} = \frac{10}{9} \times \frac{3}{4} = 0.8333
 $$
-
----
 
 $$
 2560 \times 0.8333 = 2133.33 \approx 2134 \text{ pixels}
@@ -307,13 +311,13 @@ RetroArch's custom viewport system lets you define the active image area within 
 
 Both systems display at **3:2 aspect ratio** (1.5:1), which is narrower than 16:9 but wider than 4:3. We'll use a 16:9 scaler profile.
 
+---
+
 Apply the compensation formula:
 
 $$
 m = \frac{3/2}{16/9} = \frac{3}{2} \times \frac{9}{16} = 0.84375
 $$
-
----
 
 $$
 2560 \times 0.84375 = 2160 \text{ pixels}
@@ -406,6 +410,8 @@ When stacked vertically, the combined output is **400×480** (5:6 ratio), which 
 Unlike previous systems, Azahar works with **pixel coordinates** rather than ratio modifiers, so we calculate the final stretched dimensions directly.
 
 The 3DS content at 400×480 needs to fit in a 2560×400 canvas and display correctly when the scaler applies 4:3.
+
+---
 
 First, find the compensation factor:
 
@@ -538,7 +544,7 @@ Vita3K/
 
 ### **5. Create Custom Aspect Correction Shader**
 
-Inside reshade-shaders/Shaders/, create a new text file named `VitaAspect.fx` and containing:
+Inside `reshade-shaders/Shaders/`, create a new text file named `VitaAspect.fx` and containing:
 
 ```
 #include "ReShade.fxh"
@@ -607,6 +613,6 @@ technique VitaAspectFix
 
  7. Done! ReShade will remember this setting and the shader auto-enables on every future launch
 
-###Result
+### Result
 Vita games now display in perfect native 30:17 aspect ratio with imperceptible black bars compensating for the difference from 16:9. Circles are perfectly round, UI elements match hardware proportions, etc..
 From now on: Just launch Vita3K normally and the correction applies silently every time.
