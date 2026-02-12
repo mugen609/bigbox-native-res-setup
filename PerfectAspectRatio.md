@@ -351,7 +351,7 @@ custom_viewport_y = "0"
 ```
 
 *Black Sigil (Nintendo DS) at 256p with TATE rotation*
-![BlackSigilDS](/images/DSBS.jpg)  
+![BlackSigilDS](/images/DSBS.jpeg)  
 
 ### Configuration: Nintendo DS 
 **DS native resolution**: 256×192 per screen 
@@ -387,7 +387,7 @@ video_rotation = "1"
  - **Result**: With your scaler set to 16:9, both GBA and DS games display at their native 3:2 ratio with slim lateral pillarbox bars.
 
 # 🕹️ 
-## Nintendo 3DS (5:3) — Azahar at 400p
+## Nintendo 3DS (5:3) - Azahar at 400p
 
 Once you've created the 2560×400 timing in CRU, Azahar is surprisingly straightforward! It skips most formulas and uses direct coordinate positioning, but gets a dedicated section because the settings aren't exactly obvious.
 
