@@ -24,10 +24,10 @@ The RetroTINK 4K can trim images to exact ratios and save it per profiles, which
 
  Which profile and whether compensation is needed depends on the system's native ratio:
  
-> - **Native ratio = 4:3** → Use 4:3 scaler profile, no compensation needed (e.g., PS1, SNES)
-> - **Native ratio < 4:3** → Use 4:3 scaler profile, compensation required (e.g., Game Boy 10:9)
-> - **Native ratio = 16:9** → Use 16:9 scaler profile, no compensation needed (e.g., PS3, Switch)
-> - **Native ratio between 4:3 and 16:9** → Use 16:9 scaler profile, compensation required (e.g., GBA 3:2, PSP 30:17)
+> - **Native ratio = 4:3** → Use 4:3 scaler profile, no compensation needed (PS1, SNES)
+> - **Native ratio < 4:3** → Use 4:3 scaler profile, compensation required (Game Boy 10:9)
+> - **Native ratio = 16:9** → Use 16:9 scaler profile, no compensation needed (PS3, Switch)
+> - **Native ratio between 4:3 and 16:9** → Use 16:9 scaler profile, compensation required (GBA 3:2, PSP 30:17)
 
 What makes this harder is that every system handles ratio compensation differently. RetroArch viewport configs, standalone emulator INI values, or even ReShade scripts. The following sections provide exact settings for several platform. I can't test all existing systems but this should give you a framework.
 
@@ -74,20 +74,20 @@ The compensation factor $m$ tells you what percentage of the 2560-pixel width sh
 
 **Example**: 4:3 content on a 16:9 scaler
 
-1. Calculate \( m \):
-   \[
+1. Calculate $m$:
+   $$
    m = \frac{4/3}{16/9} = \frac{4}{3} \times \frac{9}{16} = \frac{3}{4} = 0.75
-   \]
+   $$
 
 2. Active width:
-   \[
+   $$
    2560 \times 0.75 = 1920 \text{ pixels}
-   \]
+   $$
 
 3. Black bars (total):
-   \[
+   $$
    2560 - 1920 = 640 \text{ pixels} \quad (320 \text{ left} + 320 \text{ right})
-   \]
+   $$
 
 **Result**: Configure the emulator to output 2560×H letterboxed, with 1920×H active content centered and 320 pixels of black bars on each side.
 
@@ -118,9 +118,9 @@ Most emulators stretch content to fullscreen (2560×272), then you add letterbox
 
 PPSSPP renders at 480×272 but outputs it in a 2560×272 canvas, leaving the image horizontally severely compressed, with massive black bars. First, we need to stretch it horizontally to fill 16:9:
 
-\[
+$$
 \frac{2560}{480} = 5.333333
-\]
+$$
 
 Setting `DisplayAspectRatio = 5.333333` would give us proper 16:9.
 
@@ -128,15 +128,15 @@ Setting `DisplayAspectRatio = 5.333333` would give us proper 16:9.
 
 Now apply our compensation formula:
 
-\[
+$$
 m = \frac{30/17}{16/9} = \frac{30}{17} \times \frac{9}{16} = 0.9926
-\]
+$$
 
 Multiply the 16:9 value by the compensation factor:
 
-\[
+$$
 5.333333 \times 0.9926 = 5.294
-\]
+$$
 
 ### Configuration
 
@@ -167,13 +167,13 @@ If we set Supermodel to output 2560×384 and force 4:3 in the scaler, we'd get p
 
 Apply the compensation formula to the output width:
 
-\[
+$$
 m = \frac{496/384}{4/3} = 0.96875
-\]
+$$
 
-\[
+$$
 2560 \times 0.96875 = 2480 \text{ pixels}
-\]
+$$
 
 So the active content should be **2480×384**, which will generate 80 pixels of black bars (40 per side) when the nearest working resolution is **2560×384**.
 
@@ -221,13 +221,13 @@ Game Boy displays at **160×144** (10:9 = 1.111:1), which is narrower than 4:3. 
 
 Apply the compensation formula:
 
-\[
+$$
 m = \frac{10/9}{4/3} = \frac{10}{9} \times \frac{3}{4} = 0.8333
-\]
+$$
 
-\[
+$$
 2560 \times 0.8333 = 2133.33 \approx 2134 \text{ pixels}
-\]
+$$
 
 So the active Game Boy image should be **2134×144**, centered in a 2560×144 canvas with 426 pixels of black bars (213 per side).
 
@@ -280,13 +280,13 @@ Both systems display at **3:2 aspect ratio** (1.5:1), which is narrower than 16:
 
 Apply the compensation formula:
 
-\[
+$$
 m = \frac{3/2}{16/9} = \frac{3}{2} \times \frac{9}{16} = 0.84375
-\]
+$$
 
-\[
+$$
 2560 \times 0.84375 = 2160 \text{ pixels}
-\]
+$$
 
 So the active image should be **2160 pixels wide**, centered in a 2560-wide canvas with 400 pixels of black bars (200 per side).
 
@@ -375,15 +375,15 @@ The 3DS content at 400×480 needs to fit in a 2560×400 canvas and display corre
 
 First, find the compensation factor:
 
-\[
+$$
 m = \frac{5/6}{4/3} = \frac{5}{6} \times \frac{3}{4} = 0.625
-\]
+$$
 
 This tells us the horizontal relationship, but Azahar positions screens with absolute pixel coordinates. To find the correct vertical stretch:
 
-1. The horizontal super resolution stretch: \( \frac{2560}{400} = 6.4 \times \)
-2. After the scaler applies 4:3, the effective horizontal scale becomes: \( 6.4 \times \frac{3}{4} = 4.8 \times \)
-3. To maintain the correct aspect ratio, the vertical dimension must match this scale: \( 240 \times 4.8 = 1152 \text{ pixels per screen} \)
+1. The horizontal super resolution stretch: $ \frac{2560}{400} = 6.4 \times $
+2. After the scaler applies 4:3, the effective horizontal scale becomes: $ 6.4 \times \frac{3}{4} = 4.8 \times $
+3. To maintain the correct aspect ratio, the vertical dimension must match this scale: $ 240 \times 4.8 = 1152 \text{ pixels per screen} $
 
 So each 240px-tall screen must be stretched to **1152px** in Azahar's coordinate system to display correctly after the scaler's 4:3 compression.
 
