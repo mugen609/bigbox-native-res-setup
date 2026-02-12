@@ -11,7 +11,7 @@
 | [Sega Model 3 (1.29:1)](#sega-model-3-1291--supermodel-at-384p) | Supermodel letterbox trick with CRU fallback |
 | [Game Boy (10:9)](#game-boy-109-retroarch-sameboy-core-at-144p) | RetroArch custom viewport for 144p |
 | [GBA & DS (3:2)](#game-boy-advance--nintendo-ds---32-ratio-at-169) | RetroArch viewport for 160p and 256p |
-| [Nintendo 3DS (5:3)](#nintendo-3ds-53-azahar-at-400p) | Custom layout coordinates for dual screens |
+| [Nintendo 3DS (5:3)](#nintendo-3ds-53---azahar-at-400p) | Custom layout coordinates for dual screens |
 | [PS Vita (30:17)](#ps-vita-3017-vita3k-544p) | ReShade aspect correction shader setup |
 
 ## The Two-Profile Approach
