@@ -81,11 +81,13 @@ m = \frac{4/3}{16/9} = \frac{4}{3} \times \frac{9}{16} = \frac{3}{4} = 0.75
 $$
 
 2. Active width:
+
 $$
 2560 \times 0.75 = 1920 \text{ pixels}
 $$
 
 3. Black bars (total):
+
    $$
    2560 - 1920 = 640 \text{ pixels} \quad (320 \text{ left} + 320 \text{ right})
    $$
