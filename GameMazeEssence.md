@@ -22,6 +22,8 @@
 ---
 
  *It’s not just an emulation setup... It’s a reimagined console.*
+ 
+---
 
 ## Project Genesis (Why this exists)
 
