@@ -32,7 +32,7 @@ GameMaze started as a practical quality problem: games running on my physical SN
 It was first tempting to wonder if original hardware could have any intrinsic qualities that emulator couldn't replicate.
 But the missing ingredient wasn’t actually “hardware magic.” It was the *signal* being sent into the scaler. In a word... **Resolution**.
 
-Most PC setups deliver a pre-upscaled desktop-style frame, which prevents the scaler from doing what it does best: treat the input like at native resolution and apply its processing (scaling, masks/scanlines, geometry) in the intended domain.
+Most PC setups deliver a pre-upscaled desktop-style frame, which prevents the scaler from doing what it does best: treat the input at native resolution and apply its processing (scaling, masks/scanlines, geometry) in the intended domain.
 
 GameMaze is an attempt to let your scaler perform at its best, no matter what you launch on PC.
 
@@ -268,3 +268,4 @@ The project's value lies in **extending the solution space**: demonstrating that
 **Advanced Guides:**
  - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
  - [SSH Setup For Gamepad Only](SSH_NoPassword.md) 
+
