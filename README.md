@@ -63,7 +63,3 @@ Feel free to use, adapt, or share this project. All referenced tools and emulato
 **Advanced Guides:**
  - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
  - [SSH Setup For Gamepad Only](SSH_NoPassword.md) 
-
----
-
- *It’s not just an emulation setup... It’s a reimagined console.*
