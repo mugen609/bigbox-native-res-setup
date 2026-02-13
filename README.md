@@ -19,13 +19,10 @@ Some players don’t notice. If you do, GameMaze focuses on fixing that digital 
 
  **It aims to:**
 
-​ - Feed your scaler low, native output (144p–720p+) over HDMI/DP. 
-
-​ - Keep a couch-based, gamepad-only flow from boot → play → quit. 
-
-​ - Support both horizontal and TATE setups. 
-
-​ - Unify RetroArch, standalone emulators, and Steam/PC games into one library. 
+​- Feed your scaler low, native output (144p–720p+) over HDMI/DP. 
+​- Keep a couch-based, gamepad-only flow from boot → play → quit. 
+​- Support both horizontal and TATE setups. 
+​- Unify RetroArch, standalone emulators, and Steam/PC games into one library. 
 
    → Deeper rationale **[explained here!](GameMazeEssence.md)**
 
