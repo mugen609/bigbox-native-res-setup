@@ -34,7 +34,7 @@ But the missing ingredient wasn’t actually “hardware magic.” It was the *s
 
 Most PC setups deliver a pre-upscaled desktop-style frame, which prevents the scaler from doing what it does best: treat the input at native resolution and apply its processing (scaling, masks/scanlines, geometry) in the intended domain.
 
-GameMaze is an attempt to let your scaler perform at its best, no matter what you launch on PC.
+GameMaze is an attempt to let your scaler perform at its best, no matter what you launch on your PC.
 
 ---
 
@@ -268,4 +268,5 @@ The project's value lies in **extending the solution space**: demonstrating that
 **Advanced Guides:**
  - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
  - [SSH Setup For Gamepad Only](SSH_NoPassword.md) 
+
 
