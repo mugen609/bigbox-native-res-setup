@@ -10,14 +10,14 @@
 
 | Section | Description |
 |---------|-------------|
-| [Project Genesis](#project-genesis) | Origin, motivation, and quality hypothesis |
+| [Project Genesis](#project-genesis-why-it-exists) | Origin, motivation, and quality hypothesis |
 | [Design Constraints](#design-constraints) | Non-negotiable requirements that shaped architecture |
-| [Evolutionary Path](#evolutionary-path) | From v1.0 to v4.1: discovered vs. assumed solutions |
+| [Evolutionary Path](#changelog) | From v1.0 to v4.1: discovered vs. assumed solutions |
 | [Differentiation](#differentiation) | How GameMaze relates to existing solutions |
 | [Technical Contributions](#technical-contributions) | Specific advances in timing, hardware, and integration |
 | [Resolution Philosophy](#resolution-philosophy) | Native output vs. upscaling trade-offs |
 | [Hardware Strategy](#hardware-strategy) | Modern GPU compatibility and driver approach |
-| [User Experience Model](#user-experience-model) | Gamepad-only operation and interface unification |
+| [User Experience Model](#user-experience-model-how-its-achieved) | Gamepad-only operation and interface unification |
 
 ---
 
