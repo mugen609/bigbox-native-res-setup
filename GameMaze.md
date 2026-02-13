@@ -70,15 +70,13 @@ GameMaze’s approach is to output those low resolutions directly, while keeping
 ## ⚡
 ### GPU Compatibility
 
-GameMaze expands beyond CRT EmuDriver's GPU limitations:
-
-| **FEATURE** | **CRT EMUDRIVER** | **GAMEMAZE** |
-|-------------|-------------------|--------------|
-| **1. Works with modern GPUs beyond legacy list** | NO (legacy list only) | Sometimes (see tested list) |
-| **2. Works through digital HDMI/DP output** | NO | YES |
-| **3. Works with newest drivers** | NO (frozen at 22.5.1, 2022) | tested OK on my setup (up to Feb 2026) |
-
-CRT EmuDriver enables true native resolutions (e.g., 320×240) via analog output and legacy drivers. GameMaze uses **super resolutions** (e.g., 2560×240) via CRU, which work over digital HDMI/DP with current drivers.
+GameMaze relies on CRU **super resolutions** (e.g., 2560×240) over HDMI/DP with current drivers 
+ 
+ What this implies:
+ 
+- No analog/VGA requirement (digital chain). 
+- No “frozen driver” requirement (in my tests Feb 2026).
+- A GPU/driver stack that accepts CRU EDID overrides + custom timings (see below)
 
 ---
 
