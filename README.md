@@ -5,15 +5,14 @@
 **One gamepad. Four decades of games. Zero compromises.**
 - **📖 [Jump to the full setup guide](GameMaze.md)** 
 
-This project turns a Windows PC into a unified emulation console—boot straight into a gamepad-only interface, spanning everything from 1980s arcade machines to modern Switch and Steam titles. No stretched pixels. No desktop clutter. Just the games, the way they were meant to be seen and played but on modern flat panel.
+This project turns a Windows PC into a unified emulation console—boot straight into a gamepad-only interface, spanning everything from 1980s arcade machines to modern Switch and Steam titles. No stretched pixels. No desktop clutter. Just the games, the way they were meant to be seen and played... But on modern flat panel!
 
 > **works with digital video chain / Relies on HDMI scaler**  
  
 
 ## Why It Exists
 
-Most emulation setups work—but on a modern HDMI chain they can still look “off”: softened scaling, incorrect geometry/aspect, and a pre-upscaled desktop frame feeding a scaler that tends to shine on native-like inputs.
-​
+Most emulation setups “work,” but over HDMI they can still look a bit off -- Soft scaling, weird stretching, and a pre-upscaled image going into a scaler that actually prefers native-like signals.
 Some players don’t notice; if you do, GameMaze focuses on fixing that digital pipeline without giving up modern PC compatibility.
 ​
 GameMaze aims to:
@@ -23,7 +22,7 @@ GameMaze aims to:
 ​ - Support both horizontal and TATE setups.
 ​ - Unify RetroArch, standalone emulators, and Steam/PC games into one library.
 ​
-[(Deeper rationale / history:](GameMazeEssence.md)
+[(Deeper rationale / history)](GameMazeEssence.md)
 
 ## At a Glance
 
