@@ -53,6 +53,8 @@ What makes this harder is that every system handles ratio compensation different
 | **3DS** (vertical, on top)            | 480×400    | 5:3   | 16:9         | Custom Layout      |
 | **PS Vita**                           | 960×544    | 30:17 | 16:9         | ReShade cfg        |
 
+### **Important Note**: examples below use a 2560-wide super-resolution canvas; if your width differs, recompute the active width / black bars with the same ratios.
+
 ## General Logic
 
  - **Output resolution**: 2560 (super resolution width) × native height (e.g., 2560×240 for SNES)
@@ -113,7 +115,6 @@ $$
 
 The following sections detail how to achieve this for different systems, as emulators handle letterboxing differently.
 
- > **Note**: All calculations in this annexe assume a 2560-pixel super resolution width.
 
 # 🕹️ 
 ## PSP (30:17) — PPSSPP at 272p
@@ -610,3 +611,5 @@ technique VitaAspectFix
 ### Result
 Vita games now display in perfect native 30:17 aspect ratio with imperceptible black bars compensating for the difference from 16:9. Circles are perfectly round, UI elements match hardware proportions, etc..
 From now on: Just launch Vita3K normally and the correction applies silently every time.
+
+**← [Back to Main Setup Guide](GameMaze.md)**
