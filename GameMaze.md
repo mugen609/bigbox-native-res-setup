@@ -3,7 +3,7 @@
 
 ---
 
-🎮 *Imagine launching Street Fighter II at its original 224p arcade resolution, then switching to Elden Ring at 1080p—on the same box, from your couch, using only a gamepad.* 
+🎮 Imagine launching Street Fighter II at its original 224p arcade resolution, then switching to Elden Ring at 1080p—on the same box, from your couch, using only a gamepad.
 This guide is a step-by-step recipe to make that real.
 
 ---
