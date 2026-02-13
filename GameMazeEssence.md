@@ -30,7 +30,7 @@
 GameMaze started as a practical quality problem: games running on my physical SNES or PS1 hardware looked *better* than the same games on emulators, despite using the same scaler.
 
 It was first tempting to wonder if original hardware could have any intrinsic qualities that emulator couldn't replicate.
-But the missing ingredient wasn’t actually “hardware magic.” It was the *signal* being sent into the scaler.
+But the missing ingredient wasn’t actually “hardware magic.” It was the *signal* being sent into the scaler. In a word... **Resolution**.
 
 Most PC setups deliver a pre-upscaled desktop-style frame, which prevents the scaler from doing what it does best: treat the input like at native resolution and apply its processing (scaling, masks/scanlines, geometry) in the intended domain.
 
