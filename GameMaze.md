@@ -25,8 +25,8 @@ This guide is a step-by-step recipe to make that real.
 | [Final Touches](#final-touches) | Debloating, BigBox Shell, backups |
 
 Annexes:
- - [SSH Detailed Setup](SSH_NoPassword.md) 
  - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
+ - [SSH Detailed Setup](SSH_NoPassword.md) 
  - [GameMaze Philosophy](GameMazeEssence.md)
 
 ---
