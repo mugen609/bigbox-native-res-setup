@@ -10,7 +10,7 @@
 
 | Section | Description |
 |---------|-------------|
-| [Project Genesis](#project-genesis-why-it-exists) | Origin, motivation, and quality hypothesis |
+| [Project Genesis](#project-genesis-why-this-exists) | Origin, motivation, and quality hypothesis |
 | [Design Constraints](#design-constraints) | Non-negotiable requirements that shaped architecture |
 | [Evolutionary Path](#changelog) | From v1.0 to v4.1: discovered vs. assumed solutions |
 | [Differentiation](#differentiation) | How GameMaze relates to existing solutions |
