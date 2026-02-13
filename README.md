@@ -31,6 +31,7 @@ Some players don’t notice. If you do, GameMaze focuses on fixing that digital 
 ​
 Deeper rationale and history **[explained here!](GameMazeEssence.md)**
 
+## 🔎
 ## At a Glance
 
 | Feature               | Details                                             |
