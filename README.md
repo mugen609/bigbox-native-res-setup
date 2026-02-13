@@ -27,9 +27,9 @@ Some players don’t notice. If you do, GameMaze focuses on fixing that digital 
 
 ​ - Unify RetroArch, standalone emulators, and Steam/PC games into one library. 
 
+   → Deeper rationale **[explained here!](GameMazeEssence.md)**
+
 ---
-​
-Deeper rationale and history **[explained here!](GameMazeEssence.md)**
 
  
 ## 🔎 At a Glance
