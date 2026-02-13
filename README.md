@@ -12,16 +12,20 @@ This project turns a Windows PC into a unified emulation console—boot straight
 
 ## Why It Exists
 
-Most emulation setups “work,” but over HDMI they can still look a bit off -- Soft scaling, weird stretching, and a pre-upscaled image going into a scaler that actually prefers native-like signals.
+Most emulation setups “work,” but over HDMI they can still look a bit off -- Soft scaling, weird stretching, and a pre-upscaled image going into a scaler that actually prefers native-like signals. 
 
-Some players don’t notice; if you do, GameMaze focuses on fixing that digital pipeline without giving up modern PC compatibility.
+Some players don’t notice; if you do, GameMaze focuses on fixing that digital pipeline without giving up modern PC compatibility. 
 ​
 GameMaze aims to:
 
 ​ - Feed your scaler low, native output (144p–720p+) over HDMI/DP. 
+
 ​ - Keep a couch-based, gamepad-only flow from boot → play → quit. 
+
 ​ - Support both horizontal and TATE setups. 
+
 ​ - Unify RetroArch, standalone emulators, and Steam/PC games into one library. 
+
 ​
 Deeper rationale and history **[explained here!](GameMazeEssence.md)**
 
