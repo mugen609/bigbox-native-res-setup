@@ -21,6 +21,8 @@
 
 ---
 
+ *It’s not just an emulation setup... It’s a reimagined console.*
+
 ## Project Genesis (Why this exists)
 
 GameMaze started as a practical quality problem: games running on my physical SNES or PS1 hardware looked *better* than the same games on emulators, despite using the same scaler.
