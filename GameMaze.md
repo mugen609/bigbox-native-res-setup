@@ -258,6 +258,7 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
  > **If all fail** → GPU likely incompatible
 
 🎮
+
 *3DS in original 400p, Dragon Ball Z:Extreme Butoden*
 ![400p3DS](/images/3DSDBZ.jpeg)
    
