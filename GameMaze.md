@@ -94,16 +94,16 @@ GameMaze relies on CRU **super resolutions** (e.g., 2560×240) over HDMI/DP with
 - AMD 780M integrated GPU (Ryzen 9 8945HS)
 - NVIDIA RTX 3090 (MSI Suprim)
 
-Note: [CRT EmuDriver-listed GPUs](https://geedorah.com/eiusdemmodi/forum/viewtopic.php?id=295) should work with super resolutions and current drivers. Similar discrete AMD GPUs (e.g., RX 6600) are likely compatible. Integrated graphics and modern NVIDIA cards have shown issues in my limited tests, treat it as empirical. 
+Note: [CRT EmuDriver-listed GPUs](https://geedorah.com/eiusdemmodi/forum/viewtopic.php?id=295) should work with super resolutions and current drivers. Similar discrete AMD GPUs (e.g., RX 6600) are likely compatible. Integrated graphics and modern NVIDIA cards have shown issues in my limited tests, but treat it as empirical. 
 
-## Reference Setup & Signal Chain
+## My Setup & Signal Chain (as example only)
 
 [Mini PC: Ryzen 9 8945HS] ──[eGPU: OCuLink]── [RX 6700 XT] ──[HDMI: CRU super-res]── [RetroTINK 4K] ──[CRT shaders → 1440p]── [LG OLED: 1440p 60Hz, VESA TATE]
 
 
 **Key components:**
 - **GPU**: RX 6700 XT. See [GPU Compatibility](#gpu-compatibility).
-- **Scaler**: HDMI scaler accepting 160p–384p inputs (RetroTINK 4K tested).
+- **Scaler**: HDMI scaler accepting 144p–544p inputs (RetroTINK 4K tested).
 - **Controllers**: DualSense ×2, Hori Octa Pro, Xbox Series X (4-player).
 
 *60Hz preferred for 2D retro motion clarity.*
@@ -257,7 +257,7 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 	
  > **If all fail** → GPU likely incompatible
 
-
+🎮
 *3DS in original 400p, Dragon Ball Z:Extreme Butoden*
 ![400p3DS](/images/3DSDBZ.jpeg)
    
