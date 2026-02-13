@@ -3,7 +3,8 @@
 
 ---
 
-### 🎮 Imagine launching Pac-Man in its original 224p arcade resolution, then switching to The Witcher 3 at 720p—all from your couch, using only a gamepad. No keyboard, no fuss. This project is a passion-driven emulation hub that unifies 40+ years of gaming history, from 1980s arcade classics to modern Switch and Steam titles, in their original resolutions. It delivers a console-like experience that prioritizes visual fidelity, ease of use, and minimal compromises.
+🎮 *Imagine launching Street Fighter II at its original 224p arcade resolution, then switching to Elden Ring at 1080p—on the same box, from your couch, using only a gamepad.* 
+This guide is a step-by-step recipe to make that real.
 
 ---
 
@@ -26,72 +27,35 @@
 Annexes:
  - [SSH Detailed Setup](SSH_NoPassword.md) 
  - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
+ - [GameMaze Philosophy](GameMazeEssence.md)
 
 ---
 
 *Dragon Quest 6 on SNES in native resolution*
 ![DQ6](/images/DQ6.jpg)  
 
+
 ## 👓
-##  Overview
+## Overview
 
-GameMaze is a custom configuration framework for Windows that builds on BigBox and your emulators to output native resolutions (160p–1080p) over HDMI to a modern scaler, preserving the original look of each system. It relies on an all‑digital signal chain, custom timings via CRU, and a low-latency scaler rather than CRT EmuDriver and analog outputs.
+GameMaze is a Windows configuration framework built around LaunchBox/BigBox that outputs low, console-like resolutions over HDMI/DisplayPort into a modern scaler (and uses standard 480p/720p+ modes for modern systems).
 
-The key idea is to preserve the console-accurate signal (resolution, aspect ratio, no smoothing) while using modern emulators and a gamepad-only frontend. True low‑resolution output capabilities over HDMI, combined with standardized controls via reWASD and seamless LaunchBox/BigBox integration, is what makes the setup different from typical 480p+ emulation builds.
+It optimizes for:
+- Native-resolution output discipline into the scaler (CRU + resolution forcing; RetroArch CRT SwitchRes where applicable).
+- A living-room, gamepad-only flow (boot → browse → play → quit).
+- Modern compatibility (current drivers, Vulkan-era emulators, PS3/Switch/PC titles in the same box).
 
- - *Note: This setup assumes you are willing to define custom timings with CRU, rely on an HDMI scaler that accepts low resolutions, and use workarounds for quirks like Windows’ controller ordering. → The rest of this guide focuses on providing concrete solutions to those constraints.*
-
-In my setup, a RetroTINK 4K upscales the PC’s native inputs to 1440p (limited by my LG 27GS95QE-B OLED monitor). Vertical arcade games are displayed in TATE mode by physically rotating the monitor on a VESA stand.
-
----
-
-## For Digital Output (Not CRT 📺)
-
-This guide covers **digital output** (HDMI/DP → scaler → modern display), **not** analog CRT setups (VGA/SCART). 
-
-Most 240p PC guides target CRT EmuDriver + analog constraints. GameMaze uses **CRU super resolutions** (2560×240 etc.) over digital HDMI with modern drivers.
-
-Tested on AMD RX 6700 XT.
-
----
-## 🕹️
-## Supported Systems and Resolutions 
-
-| Category                    | Native Res |
-|-----------------------------|------------|
-| **Handhelds** (GB, DS)      | 144p–256p  |
-| **Retro 8/16-bit + Arcade** | 224p–384p  |
-| **Oddballs** (PSP, 3DS)     | 272p–544p  |
-| **Gen 5** (PS1, N64)        | 240p       |
-| **Gen 6** (DC, PS2)         | 480p+      |
-| **Gen 7** (PS3, Wii, PC)    | 720p+      |
-
-*All → HDMI → scaler (CRU super-res + RetroTINK 4K)*
+### 📺
+> Digital-focus pipeline: HDMI/DP → scaler → modern display. This is not a CRT / analog-output (VGA/SCART) guide.
 
 ---
 
 ## Why GameMaze?
 
-This project started with a simple observation: games running on my physical SNES or PS1 hardware through my RetroTINK 4K looked noticeably better than the same games on emulators. At first, it was tempting to think original hardware had some inherent visual magic that emulation could not replicate.
+In many setups, a scaler looks best when it receives a native low-resolution signal, not a pre-upscaled desktop frame.
+GameMaze’s approach is to output those low resolutions directly, while keeping the convenience and performance of a modern Windows emulation + PC gaming setup.
 
-But the answer was simpler: **Resolution**. Consoles output true 240p; most emulation upscale first, compromising the signal sent to the scaler.
-
-**The Fix**: Configure emulators for **native output** → HDMI → scaler. Result: visually as good as original hardware, plus emulation conveniences (save states, modern titles).
-
-**Design Rules**:
-- Original resolution + aspect ratio  
-- No smoothing (nearest-neighbor only)  
-- Scaler handles upscaling/CRT effects  
-
-**Why others fall short**:
-| Solution | 240p Quality | Modern Titles | Digital Output |
-|----------|--------------|---------------|----------------|
-| MiSTer   | Excellent    | No            | No             |
-| Batocera | Upscaled     | Partial       | Yes            |
-| CRT EmuDriver | Excellent | No         | No             |
-| **GameMaze** | **Excellent** | **Yes**    | **Yes**        |
-
-GameMaze = authentic visuals + modern convenience + gamepad-only interface.
+**📖** If you want the deeper rationale, history, and “where this fits in the emulation landscape,” read: **[GameMazeEssence.md](GameMazeEssence.md)**.
 
 ---
 
@@ -110,9 +74,9 @@ GameMaze expands beyond CRT EmuDriver's GPU limitations:
 
 | **FEATURE** | **CRT EMUDRIVER** | **GAMEMAZE** |
 |-------------|-------------------|--------------|
-| **1. Works with modern GPUs beyond legacy list** | NO (legacy list only) | YES, SOME (see tested list) |
+| **1. Works with modern GPUs beyond legacy list** | NO (legacy list only) | Sometimes (see tested list) |
 | **2. Works through digital HDMI/DP output** | NO | YES |
-| **3. Works with newest drivers** | NO (frozen at 22.5.1, 2022) | YES (tested up to Feb 2026) |
+| **3. Works with newest drivers** | NO (frozen at 22.5.1, 2022) | tested OK on my setup (up to Feb 2026) |
 
 CRT EmuDriver enables true native resolutions (e.g., 320×240) via analog output and legacy drivers. GameMaze uses **super resolutions** (e.g., 2560×240) via CRU, which work over digital HDMI/DP with current drivers.
 
@@ -121,18 +85,18 @@ CRT EmuDriver enables true native resolutions (e.g., 320×240) via analog output
 *Super Mario Land running at native 144p via HDMI → RetroTink 4K with scanlines*
 ![GameBoy144p](/images/GBMario.jpeg) 
 
-**Tested List:**
+**Tested List (my hardware):**
 
-#### ✅ Confirmed Working (Feb 2026 drivers, super resolution via CRU + HDMI):
-- AMD Radeon HD 7750 (CRT EmuDriver list, VGA)
-- AMD RX 580 Nitro+ (CRT EmuDriver list)
-- AMD RX 6700 XT (**Not** on CRT EmuDriver list)
+#### ✅ Confirmed Working (Feb 2026 drivers, super resolution via CRU):
+- AMD Radeon HD 7750 (CRT EmuDriver list, legacy VGA test to validate super-res + modern-driver)
+- AMD RX 580 Nitro+ (CRT EmuDriver list, HDMI)
+- AMD RX 6700 XT (**Not** on CRT EmuDriver list, HDMI)
 
-#### ❌ Not Working (Feb 2026 drivers, no legacy drivers test):
+#### ❌ Not Working In My Tests (Feb 2026 drivers, no legacy drivers testing):
 - AMD 780M integrated GPU (Ryzen 9 8945HS)
 - NVIDIA RTX 3090 (MSI Suprim)
 
-Note: CRT EmuDriver-listed GPUs should work with super resolutions and current drivers. Similar discrete AMD GPUs (e.g., RX 6600) are likely compatible. Integrated graphics and modern NVIDIA cards have shown issues in testing. (But my pool of hardware was limited)
+Note: CRT EmuDriver-listed GPUs should work with super resolutions and current drivers. Similar discrete AMD GPUs (e.g., RX 6600) are likely compatible. Integrated graphics and modern NVIDIA cards have shown issues in my limited tests, treat it as empirical. 
 
 ## Reference Setup & Signal Chain
 
@@ -146,6 +110,23 @@ Note: CRT EmuDriver-listed GPUs should work with super resolutions and current d
 
 *60Hz preferred for 2D retro motion clarity.*
 
+---
+
+## 🕹️
+## Supported Systems and Resolutions 
+
+| Category                    | Native Res |
+|-----------------------------|------------|
+| **Handhelds** (GB, DS)      | 144p–256p  |
+| **Retro 8/16-bit + Arcade** | 224p–384p  |
+| **Oddballs** (PSP, 3DS)     | 272p–544p  |
+| **Gen 5** (PS1, N64)        | 240p       |
+| **Gen 6** (DC, PS2)         | 480p+      |
+| **Gen 7** (PS3, Wii, PC)    | 720p+      |
+
+*All → HDMI → scaler (CRU super-res + RetroTINK 4K)*
+
+---
 
 ![OCulink RX580](/images/OCulink_RX580.jpeg)
 
@@ -275,9 +256,9 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 	- **Run**: `restart64.exe` (CRU folder) → Test RetroArch
 	- **Reboot** → Test RetroArch  
 	- **Verify**: Custom resolutions appear in Windows Display Settings
-	- **If all fail**: GPU likely incompatible
+	
+ > **If all fail** → GPU likely incompatible
 
----
 
 *3DS in original 400p, Dragon Ball Z:Extreme Butoden*
 ![400p3DS](/images/3DSDBZ.jpeg)
@@ -350,22 +331,24 @@ Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home butto
 *Chrono Trigger PS1*
 ![PS1 Example](/images/crono.jpg)  
 
+---
+
 3. **CRT SwitchRes Cores** (224p/240p auto-switching)
- - **PS1 (Mednafen)**: Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal 
- - Settings → Video → Scaling → Aspect: **Core Provided**
- - Quick Menu → Overrides → **Save Core Override**
+   - **PS1 (Mednafen)**: Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal 
+   - Settings → Video → Scaling → Aspect: **Core Provided**
+   - Quick Menu → Overrides → **Save Core Override**
 
 4. **Arcade (FBNeo)**:
- - Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal
- - Quick Menu → **Core Options → Vertical Mode**: **TATE** or **TATE Alternate** (Safe, auto-applies to vertical games only)
- - Main menu → Settings → Video → Scaling → Aspect: **Core Provided** (**Full** if stretched)
- - Core Specific settings = Quick Menu → Overrides → **Save Core Override**, or:
- - Game-specific ratios = Quick Menu → Overrides → **Save Game Override**
+   - Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal
+   - Quick Menu → **Core Options → Vertical Mode**: **TATE** or **TATE Alternate** (Safe, auto-applies to vertical games only)
+   - Main menu → Settings → Video → Scaling → Aspect: **Core Provided** (**Full** if stretched)
+   - Core Specific settings = Quick Menu → Overrides → **Save Core Override**, or:
+   - Game-specific ratios = Quick Menu → Overrides → **Save Game Override**
 
 5. **[Res-O-Matic Cores](#res-o-matic-for-custom-resolutions)**:
- - **GBA**: Main menu → Settings → Video → CRT SwitchRes **OFF**, 160p via Res-O-Matic
- - **DS (DeSmuME)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Aspect **Full**, Screen Layout **Bottom/Top** or **Top/Bottom** as preferred, 256p via Res-O-Matic
- - **GameCube (Dolphin)/DreamCast (Flycast)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Main menu → Settings → Video → Scaling → Aspect **Core Provided**, 480p via Res-O-Matic
+   - **GBA**: Main menu → Settings → Video → CRT SwitchRes **OFF**, 160p via Res-O-Matic
+   - **DS (DeSmuME)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Aspect **Full**, Screen Layout **Bottom/Top** or **Top/Bottom** as preferred, 256p via Res-O-Matic
+   - **GameCube (Dolphin)/DreamCast (Flycast)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Main menu → Settings → Video → Scaling → Aspect **Core Provided**, 480p via Res-O-Matic
  
 ### Aspect Ratio Troubleshooting For Any Core:
  > For mathematically correct ratios, see [Perfect Aspect Ratio Guide](PerfectAspectRatio.md).
@@ -784,6 +767,3 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
-
-
-
