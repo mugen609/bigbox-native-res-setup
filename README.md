@@ -14,11 +14,13 @@ This project turns a Windows PC into a unified emulation console—boot straight
 
 Most emulation setups “work,” but over HDMI they can still look a bit off -- Soft scaling, weird stretching, and a pre-upscaled image going into a scaler that actually prefers native-like signals. 
 
-Some players don’t notice; if you do... GameMaze focuses on fixing that digital pipeline without giving up modern PC compatibility. 
-​
+Some players don’t notice. If you do, GameMaze focuses on fixing that digital pipeline without giving up modern PC compatibility. 
+​ 
+
  **It aims to:**
 
 ​ - Feed your scaler low, native output (144p–720p+) over HDMI/DP. 
+
 ​ - Keep a couch-based, gamepad-only flow from boot → play → quit. 
 
 ​ - Support both horizontal and TATE setups. 
@@ -40,7 +42,6 @@ Deeper rationale and history **[explained here!](GameMazeEssence.md)**
 
 From hardware to hotkeys—everything you need to turn Windows into a console.
 
-*It’s not just an emulation setup. It’s a reimagined console.*
 
 ## Screenshots
 
@@ -61,4 +62,4 @@ Feel free to use, adapt, or share this project. All referenced tools and emulato
  - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
  - [SSH Setup For Gamepad Only](SSH_NoPassword.md) 
 
- 
+ *It’s not just an emulation setup. It’s a reimagined console.*
