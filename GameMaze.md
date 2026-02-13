@@ -55,7 +55,7 @@ It optimizes for:
 In many setups, a scaler looks best when it receives a native low-resolution signal, not a pre-upscaled desktop frame.
 GameMaze’s approach is to output those low resolutions directly, while keeping the convenience and performance of a modern Windows emulation + PC gaming setup.
 
-**📖** If you want the deeper rationale, history, and “where this fits in the emulation landscape,” read: **[GameMazeEssence.md](GameMazeEssence.md)**.
+**📖** For deeper rationale and design details, also see: **[GameMaze Essence](GameMazeEssence.md)**.
 
 ---
 
