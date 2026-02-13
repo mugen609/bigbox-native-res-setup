@@ -5,24 +5,25 @@
 **One gamepad. Four decades of games. Zero compromises.**
 - **📖 [Jump to the full setup guide](GameMaze.md)** 
 
-This project turns a Windows PC into a unified emulation console—boot straight into a gamepad-only interface spanning everything from 1980s arcade machines to modern Switch and Steam titles. No stretched pixels. No desktop clutter. Just the games, the way they were meant to be seen and played.
+This project turns a Windows PC into a unified emulation console—boot straight into a gamepad-only interface, spanning everything from 1980s arcade machines to modern Switch and Steam titles. No stretched pixels. No desktop clutter. Just the games, the way they were meant to be seen and played but on modern flat panel.
 
-> **Digital-only video chain**  
-> HDMI/DisplayPort → scaler → modern flat panel.  
-> This is *not* a CRT / analog-output (VGA/SCART/component) guide.
+> **works with digital video chain / Relies on HDMI scaler**  
+ 
 
 ## Why It Exists
 
-High-quality HDMI scalers with CRT shader support achieve their best results when fed **native** signals, not pre-upscaled output. Matching the original console resolutions has a huge impact on how games look and feel.
+Most emulation setups work—but on a modern HDMI chain they can still look “off”: softened scaling, incorrect geometry/aspect, and a pre-upscaled desktop frame feeding a scaler that tends to shine on native-like inputs.
+​
+Some players don’t notice; if you do, GameMaze focuses on fixing that digital pipeline without giving up modern PC compatibility.
+​
+GameMaze aims to:
 
-Most emulation boxes cut corners, either sacrificing visual accuracy or ignoring modern systems. This build aims higher:
-
-- **Native resolution output** (144p–720p+) via HDMI for pixel-perfect fidelity  
-- **Gamepad-only operation** from boot to gameplay  
-- **Support for rotated (TATE) and horizontal displays**  
-- **Integration of standalone emulators, RetroArch, Steam etc.**, in one artwork-rich library that feels like a jukebox!
-
-It’s not just an emulation setup. It’s a reimagined console.
+​ - Feed your scaler low, native output (144p–720p+) over HDMI/DP.
+​ - Keep a couch-based, gamepad-only flow from boot → play → quit.
+​ - Support both horizontal and TATE setups.
+​ - Unify RetroArch, standalone emulators, and Steam/PC games into one library.
+​
+[(Deeper rationale / history:](GameMazeEssence.md)
 
 ## At a Glance
 
@@ -35,6 +36,8 @@ It’s not just an emulation setup. It’s a reimagined console.
 | **Controllers**       | Tested with DualSense, Xbox, Hori — up to 4 players|
 
 From hardware to hotkeys—everything you need to turn Windows into a console.
+
+*It’s not just an emulation setup. It’s a reimagined console.*
 
 ## Screenshots
 
@@ -54,4 +57,5 @@ Feel free to use, adapt, or share this project. All referenced tools and emulato
 **Advanced Guides:**
  - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
  - [SSH Setup For Gamepad Only](SSH_NoPassword.md) 
+
  
