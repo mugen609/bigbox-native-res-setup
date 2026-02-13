@@ -94,7 +94,7 @@ GameMaze relies on CRU **super resolutions** (e.g., 2560×240) over HDMI/DP with
 - AMD 780M integrated GPU (Ryzen 9 8945HS)
 - NVIDIA RTX 3090 (MSI Suprim)
 
-Note: CRT EmuDriver-listed GPUs should work with super resolutions and current drivers. Similar discrete AMD GPUs (e.g., RX 6600) are likely compatible. Integrated graphics and modern NVIDIA cards have shown issues in my limited tests, treat it as empirical. 
+Note: [CRT EmuDriver-listed GPUs](https://geedorah.com/eiusdemmodi/forum/viewtopic.php?id=295) should work with super resolutions and current drivers. Similar discrete AMD GPUs (e.g., RX 6600) are likely compatible. Integrated graphics and modern NVIDIA cards have shown issues in my limited tests, treat it as empirical. 
 
 ## Reference Setup & Signal Chain
 
