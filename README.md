@@ -48,7 +48,8 @@ From hardware to hotkeys—everything you need to turn Windows into a console.
 
 ## Screenshots
 
-![SNES Example](/images/SOM.jpg)  
+<img src="/images/SOM.jpg" alt="SNES Example" height="512">  
+
 *Secret of Mana running at original resolution with CRT shader via RetroTink 4K*
 
 ## License
