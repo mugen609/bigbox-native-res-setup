@@ -1,4 +1,4 @@
-# GameMaze  
+![GameMaze](/images/GameMaze2.png)
 *Native Resolutions • Seamless Gamepad Control • Console-Like Experience for scalers on modern displays*
 
 ---
@@ -27,13 +27,7 @@ This guide is a step-by-step recipe to make that real.
 Annexes:
  - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
  - [SSH Detailed Setup](SSH_NoPassword.md) 
- - [GameMaze Philosophy](GameMazeEssence.md)
-
----
-
-*Dragon Quest 6 on SNES in native resolution*
-![DQ6](/images/DQ6.jpg)  
-
+ - [GameMaze Philosophy](GameMazeEssence.md) 
 
 ## 👓
 ## Overview
@@ -195,6 +189,11 @@ I am deporting this section as it is a little long. **→ [SSH Remote Access Gui
 This is **highly recommended if you have two PCs**, but perfectly optional if working locally.
 
 > Better set this up **now**, (before CRU and emulator configuration) so you can do all subsequent work remotely.
+
+---
+
+*Dragon Quest 6 on SNES in native resolution*
+![DQ6](/images/DQ6.jpg) 
 
 ---
 
