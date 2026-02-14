@@ -335,7 +335,9 @@ $$
 So the active image should be **2160 pixels wide**, centered in a 2560-wide canvas with 400 pixels of black bars (200 per side).
 
 *Final Fantasy VI Advance at native 160p with correct 3:2 geometry*
-![FF6GBA](/images/GBAFF6.jpeg)
+
+<img src="/images/GBAFF6.jpeg" alt="FF6GBA" height="480">  
+
 
 ---
 
@@ -362,7 +364,8 @@ custom_viewport_y = "0"
 ```
 
 *Black Sigil (Nintendo DS) at 256p with TATE rotation*
-![BlackSigilDS](/images/DSBS.jpeg)  
+
+<img src="/images/DSBS.jpeg" alt="BlackSigilDS" height="720">  
 
 ### Configuration: Nintendo DS 
 **DS native resolution**: 256×192 per screen 
@@ -614,6 +617,7 @@ Vita games now display in perfect native 30:17 aspect ratio with imperceptible b
 From now on: Just launch Vita3K normally and the correction applies silently every time.
 
 **← [Back to Main Setup Guide](GameMaze.md)**
+
 
 
 
