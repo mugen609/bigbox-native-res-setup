@@ -104,8 +104,6 @@ Note: [CRT EmuDriver-listed GPUs](https://geedorah.com/eiusdemmodi/forum/viewtop
 - **Scaler**: HDMI scaler accepting 144p–544p inputs (RetroTINK 4K tested).
 - **Controllers**: DualSense ×2, Hori Octa Pro, Xbox Series X (4-player).
 
-*60Hz preferred for 2D retro motion clarity.*
-
 > **⚠️ No compatible GPU or HDMI scaler?**
 > 
 > GameMaze is built around native 144p–544p + modern res output into external scalers. If you lack this hardware but like the gamepad-only workflow concept, **you actually have better options:**
@@ -290,6 +288,7 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
  - Maintain original aspect ratio
  - No smoothing (nearest-neighbor only)  
  - Internal upscale (2-3×) OK for 3D games, native output 
+ - 60Hz preferred for 2D retro motion clarity.
  
  > **Note:** This section mostly treats aspect ratio correction lightly (stretch-to-fit, basic settings). For pixel-perfect geometry with mathematical precision, see the **[Perfect Aspect Ratio Guide](PerfectAspectRatio.md)**.
 
