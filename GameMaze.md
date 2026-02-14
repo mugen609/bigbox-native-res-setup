@@ -314,6 +314,9 @@ The following table shows the method per system:
 
 ---
 
+*Chrono Trigger PS1*  
+![PS1 Example](/images/crono.jpg)
+
 ##  📺
 ### RetroArch Configuration
 
@@ -329,9 +332,6 @@ The following table shows the method per system:
 2. **Per-Core Setup** (all cores)  
    - Load game → Settings → Video → Scaling → **Aspect Ratio: Core Provided**¹  
    - Quick Menu → Overrides → **Save Core Override**
-
-*Chrono Trigger PS1*  
-![PS1 Example](/images/crono.jpg)
 
 3. **CRT SwitchRes Cores** (224p/240p auto-switching)  
    - **PS1 (Mednafen)**: Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal  
