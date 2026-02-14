@@ -1,4 +1,14 @@
-# GameMaze Design Philosophy
+<div align="center">
+
+![GameMaze](/images/GameMaze2.png)
+
+*It’s not just an emulation setup... It’s a reimagined console.*
+
+</div>
+
+---
+
+# Design Philosophy
 
 *An annex documenting the project's purpose, evolution, and differentiation from established emulation approaches.*
 
@@ -19,10 +29,6 @@
 | [Hardware Strategy](#hardware-strategy) | Modern GPU compatibility and driver approach |
 | [User Experience Model](#user-experience-model-how-its-achieved) | Gamepad-only operation and interface unification |
 
----
-
- *It’s not just an emulation setup... It’s a reimagined console.*
- 
 ---
 
 ## Project Genesis (Why this exists)
