@@ -336,7 +336,7 @@ So the active image should be **2160 pixels wide**, centered in a 2560-wide canv
 
 *Final Fantasy VI Advance at native 160p with correct 3:2 geometry*
 
-<img src="/images/GBAFF6.jpeg" alt="FF6GBA" height="480">  
+<img src="/images/GBAFF6.jpeg" alt="FF6GBA" height="512">  
 
 
 ---
@@ -365,7 +365,7 @@ custom_viewport_y = "0"
 
 *Black Sigil (Nintendo DS) at 256p with TATE rotation*
 
-<img src="/images/DSBS.jpeg" alt="BlackSigilDS" height="720">  
+<img src="/images/DSBS.jpeg" alt="BlackSigilDS" height="960">  
 
 ### Configuration: Nintendo DS 
 **DS native resolution**: 256×192 per screen 
