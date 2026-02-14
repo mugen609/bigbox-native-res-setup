@@ -65,7 +65,6 @@ GameMaze’s approach is to output those low resolutions directly, while keeping
  - **SSH** (Recommended for gamepad-only workflow): Enable on emulation PC for keyboardless file transfers. See [SSH Setup](SSH_NoPassword.md).
  - **Secondary PC** (optional): Helps with initial setup/ROMs.
 
-
 ## ⚡
 ### GPU Compatibility
 
@@ -106,6 +105,18 @@ Note: [CRT EmuDriver-listed GPUs](https://geedorah.com/eiusdemmodi/forum/viewtop
 - **Controllers**: DualSense ×2, Hori Octa Pro, Xbox Series X (4-player).
 
 *60Hz preferred for 2D retro motion clarity.*
+
+> **⚠️ No compatible GPU or HDMI scaler?**
+> 
+> GameMaze is built around native 144p–544p + modern res output into external scalers. If you lack this hardware but like the gamepad-only workflow concept, **you actually have better options:**
+> 
+> - **[Batocera](https://batocera.org)** - Polished Linux appliance with superior OS-level integration (automatic controller reordering, cleaner UI, simpler setup). *Best choice if you don't need extensive Steam library.*
+> 
+> - **[RetroBat](https://www.retrobat.org)** - Windows-based with full Steam catalog access and similar unified interface. *Great if you need Windows compatibility.*
+> 
+> Both offer excellent gamepad-only experiences **without** GameMaze's hardware requirements or setup complexity. They're optimized for TV/monitor output rather than scaler pipelines.
+> 
+> **GameMaze's niche:** Specifically for scaler owners wanting resolution flexibility (144p–1080p) + Windows + modern systems in one box. → [Detailed comparison](GameMazeEssence.md#differentiation)
 
 ---
 
