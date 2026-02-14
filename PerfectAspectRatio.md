@@ -467,7 +467,7 @@ Fortunately, Vita3K is compatible with **ReShade**, which we will exploit to inj
 
 ### **OpenGL Only**
 
-**OpenGL Tested Only**; with Vulkan, I was unable to get ReShade's DLL after installation. 
+This guide uses OpenGL for compatibility and simplicity. Vulkan + ReShade is possible but requires manual DLL deployment and Windows Registry editing; may also be unstable on some Windows 11 + AMD configurations (exactly GameMaze expected configuration...).
 
 ---
 
