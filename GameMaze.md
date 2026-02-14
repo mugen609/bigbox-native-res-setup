@@ -110,7 +110,7 @@ Note: [CRT EmuDriver-listed GPUs](https://geedorah.com/eiusdemmodi/forum/viewtop
 > 
 > GameMaze is built around native 144p–544p + modern res output into external scalers. If you lack this hardware but like the gamepad-only workflow concept, **you actually have better options:**
 > 
-> - **[Batocera](https://batocera.org)** - Polished Linux appliance with superior OS-level integration (automatic controller reordering, cleaner UI, simpler setup). *Best choice if you don't need extensive Steam library.*
+> - **[Batocera](https://batocera.org)** - Linux based outstanding OS-level integration (automatic controller reordering, cleaner UI, simpler setup). *Best choice if you don't need extensive Steam library.*
 > 
 > - **[RetroBat](https://www.retrobat.org)** - Windows-based with full Steam catalog access and similar unified interface. *Great if you need Windows compatibility.*
 > 
