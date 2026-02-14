@@ -125,7 +125,7 @@ Note: [CRT EmuDriver-listed GPUs](https://geedorah.com/eiusdemmodi/forum/viewtop
 
 ---
 
-![OCulink RX580](/images/OCulink_RX580.jpeg)
+<img src="/images/OCulink_RX580.jpeg" alt="OCulink RX580" height="600">
 
 ## 🪟
 ## Software Requirements
@@ -198,7 +198,7 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 ---
 
 *Dragon Quest 6 on SNES in native resolution*
-![DQ6](/images/DQ6.jpg) 
+<img src="/images/DQ6.jpg" alt="DQ6" height="480"> 
 
 ---
 
@@ -264,7 +264,7 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 🎮
 
 *3DS in original 400p, Dragon Ball Z:Extreme Butoden*
-![400p3DS](/images/3DSDBZ.jpeg)
+<img src="/images/3DSDBZ.jpeg" alt="400p3DS6" height="512"> 
    
 ---
 
@@ -319,7 +319,8 @@ The following table shows the method per system:
 ---
 
 *Chrono Trigger PS1*  
-![PS1 Example](/images/crono.jpg)
+<img src="/images/crono.jpg" alt="PS1 Example" height="480"> 
+
 
 ##  📺
 ### RetroArch Configuration
@@ -361,7 +362,7 @@ The following table shows the method per system:
 ---
  
 *Final Fantasy 5 Advance at 160p*
-![FF5GBA](/images/GBAFF5.jpeg)  
+<img src="/images/GBAFF5.jpeg" alt="FF5GBA" height="480">  
 
 ## 🕹️
 ### Standalone Emulator Configuration
@@ -716,7 +717,9 @@ To make it blend into your BigBox theme:
 - Add images (e.g., Bluetooth logo, gamepads) as banner / clear logo override / device / fanart, depending on your theme.
 
 ![LaunchBox Platforms](/images/platforms.png)  
+
 ![BT-Toggle Platform](/images/BTplatform.png)  
+
 ![LaunchBox Interface](/images/LB.png)
 
 ---
@@ -768,9 +771,3 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
-
-
-
-
-
-
