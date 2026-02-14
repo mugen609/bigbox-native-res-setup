@@ -1,8 +1,11 @@
-# GameMaze - Emulation Station
+<div align="center">
 
-![BigBox Powered Station](/images/BB.png)
+![GameMaze](/images/GameMaze2.png)
 
 **One gamepad  •  Four decades of games  •  Zero compromises.**
+
+</div>
+
 - **📖 [Jump to the full setup guide](GameMaze.md)** 
 
 This project turns a Windows PC into a unified emulation console—boot straight into a gamepad-only interface, spanning everything from 1980s arcade machines to modern Switch and Steam titles. No stretched pixels. No desktop clutter. Just the games, the way they were meant to be seen and played... But on modern flat panel!
