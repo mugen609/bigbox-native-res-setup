@@ -319,47 +319,41 @@ The following table shows the method per system:
 
 1. **Global Settings**
 
-- **Menu**: Settings → User Interface → **rgui** (Not the sexiest skin but best for low-res)
-- **Controllers** (for reWASD harmony):  
-  Menu → Settings → Drivers → **Input**: `dinput` + **Controller**: `dinput`; → **Save config**
-  
-Why `dinput`? `SDL2` = Bluetooth issues, `xinput` in RetroArch steals Home button from reWASD.
+   - **Menu**: Settings → User Interface → **rgui** (Not the sexiest skin but best for low-res)
+   - **Video**: Settings → Video → **VSync: ON**¹, **Adaptive VSync: OFF**¹ (stable for 15kHz arcade)
+   - **Controllers** (for reWASD harmony):  
+     Menu → Settings → Drivers → **Input**: `dinput` + **Controller**: `dinput` → **Save config**  
+	 
+     *Why `dinput`? `SDL2` = Bluetooth issues, `xinput` steals Home button from reWASD.*
 
-2. **Per-Core Setup** (all cores)
-- Load game → Main menu → Settings → Video → Scaling → **Aspect Ratio: Core Provided**  
-- Quick Menu → Overrides → **Save Core Override**
-
----
-
-*Chrono Trigger PS1*
-![PS1 Example](/images/crono.jpg)  
-
----
-
-3. **CRT SwitchRes Cores** (224p/240p auto-switching)
-   - **PS1 (Mednafen)**: Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal 
-   - Settings → Video → Scaling → Aspect: **Core Provided**
+2. **Per-Core Setup** (all cores)  
+   - Load game → Settings → Video → Scaling → **Aspect Ratio: Core Provided**¹  
    - Quick Menu → Overrides → **Save Core Override**
 
-4. **Arcade (FBNeo)**:
-   - Main menu → Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal
-   - Quick Menu → **Core Options → Vertical Mode**: **TATE** or **TATE Alternate** (Safe, auto-applies to vertical games only)
-   - Main menu → Settings → Video → Scaling → Aspect: **Core Provided** (**Full** if stretched)
-   - Core Specific settings = Quick Menu → Overrides → **Save Core Override**, or:
-   - Game-specific ratios = Quick Menu → Overrides → **Save Game Override**
+*Chrono Trigger PS1*  
+![PS1 Example](/images/crono.jpg)
 
-5. **[Res-O-Matic Cores](#res-o-matic-for-custom-resolutions)**:
-   - **GBA**: Main menu → Settings → Video → CRT SwitchRes **OFF**, 160p via Res-O-Matic
-   - **DS (DeSmuME)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Aspect **Full**, Screen Layout **Bottom/Top** or **Top/Bottom** as preferred, 256p via Res-O-Matic
-   - **GameCube (Dolphin)/DreamCast (Flycast)**: Main menu → Settings → Video → CRT SwitchRes **OFF**, Main menu → Settings → Video → Scaling → Aspect **Core Provided**, 480p via Res-O-Matic
- 
-### Aspect Ratio Troubleshooting For Any Core:
- > For mathematically correct ratios, see [Perfect Aspect Ratio Guide](PerfectAspectRatio.md).
- > **Here, quick fixes for stretched/wrong displays:**
- >  - **If stretched/wrong** (esp. vertical arcades), Aspect Ratio: **Full**  
- >  - **Per-game exception**: **Game Override** (not Core Override) — saves for *specific game only*  
- >  - **Safe with 4:3 profile in the scaler**: RT4K enforces target ratio regardless of "Full" ratio setting.
- 
+3. **CRT SwitchRes Cores** (224p/240p auto-switching)  
+   - **PS1 (Mednafen)**: Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal  
+   - Settings → Video → Scaling → Aspect: **Core Provided**¹  
+   - Quick Menu → Overrides → **Save Core Override**
+
+4. **Arcade (FBNeo)**:  
+   - Settings → Video → CRT SwitchRes **ON**, 15kHz, 2560 horizontal  
+   - Quick Menu → **Core Options → Vertical Mode**: **TATE** or **TATE Alternate** (Safe, auto-applies to vertical games only)  
+   - Settings → Video → Scaling → Aspect: **Core Provided**¹ (horizontal games) / **Full**² (vertical games)  
+   - Quick Menu → Overrides → **Save Core Override**, or **Save Game Override** for per-ROM tweaks (vertical ones)
+
+5. **[Res-O-Matic](#res-o-matic-for-custom-resolutions) Cores**:  
+   - **GBA**³: CRT SwitchRes **OFF**, 160p via Res-O-Matic  
+   - **DS (DeSmuME)**: CRT SwitchRes **OFF**, Aspect **Full**³, Screen Layout **Bottom/Top** or **Top/Bottom**, 256p via Res-O-Matic  
+   - **GameCube (Dolphin)/Dreamcast (Flycast)**: CRT SwitchRes **OFF**, Aspect **Core Provided**, 480p via Res-O-Matic
+   
+**¹ Core Provided** works for 99% horizontal arcade (e.g., Street Fighter II 384×224 → perfect 4:3 with scaler set to 4:3).  
+**² Full for vertical TATE**: Forces canvas fill → 3:4 rotated proportions on 4:3 scaler (e.g., Pac-Man fills portrait monitor correctly). Use **per-game override** in FBNeo (diverse PCBs).
+### ³ Aspect Ratio Troubleshooting
+> For mathematically correct ratios, see **[Perfect Aspect Ratio Guide](PerfectAspectRatio.md)**.  
+
 ---
  
 *Final Fantasy 5 Advance at 160p*
