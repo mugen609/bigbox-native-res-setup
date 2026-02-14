@@ -125,7 +125,7 @@ Note: [CRT EmuDriver-listed GPUs](https://geedorah.com/eiusdemmodi/forum/viewtop
 
 ---
 
-<img src="/images/OCulink_RX580.jpeg" alt="OCulink RX580" height="600">
+<img src="/images/OCulink_RX580.jpeg" alt="OCulink RX580" height="512">
 
 ## 🪟
 ## Software Requirements
@@ -170,7 +170,7 @@ Control Panel → Hardware and Sound → Power Options → Choose what the power
 
 **Symptom**: Scaler image blurred/pixelated (*DRM blocking content*).
 
-![Before: DRM blocking](/images/DRM.jpg)
+<img src="/images/DRM.jpg" alt="DRM blocking]0" height="600">
 
 **Fix**: AMD Software → **Settings** (⚙️) → **Display** → **Overrides** → **HDCP: Disabled**
 ![After: Fixed](/images/amdhdcp.png)
@@ -197,7 +197,8 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 
 ---
 
-*Dragon Quest 6 on SNES in native resolution*
+*Dragon Quest 6 on SNES in native resolution* 
+
 <img src="/images/DQ6.jpg" alt="DQ6" height="480"> 
 
 ---
