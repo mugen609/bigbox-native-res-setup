@@ -162,6 +162,7 @@ The following elements represent findings or unusual combinations:
 | **CRU slot strategy** | 6-resolution limit | **Unlimited slots** (CRU 1.5.3+) enabling 9+ timings | Version exploitation for extended coverage |
 
 > **¹Note**: Super resolution (2560 width) is required because digital connections (HDMI/DisplayPort) and modern drivers reject true low-width signals (like 320×240). However, HDMI doesn't care about the absolute resolution: it only validates timing and refresh rate. 
+>
 > This flexibility allows 2560×144 through 2560×544 to work as valid signals with uniform horizontal timings and only vertical blanking varying per resolution, simplifying configuration compared to analog modeline generation.
 
 ### Resolution Coverage
