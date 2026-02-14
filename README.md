@@ -4,8 +4,6 @@
 
 **One gamepad  •  Four decades of games  •  Zero compromises.**
 
-</div>
-
 ---
 
 - **📖 [Jump to the full setup guide](GameMaze.md)** 
@@ -56,6 +54,8 @@ From hardware to hotkeys—everything you need to turn Windows into a console.
 Feel free to use, adapt, or share this project. All referenced tools and emulators remain under their original licenses.
 
 ---
+
+</div>
 
 **📖 [Full guide here!](GameMaze.md)**
 
