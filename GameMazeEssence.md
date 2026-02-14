@@ -205,7 +205,7 @@ Two independent decisions govern visual output:
 | **2×–3×**       | Improved geometry, reduced shimmer; still output at native resolution | PS1 3D polygons, N64, PS2   |
 
 
-Internal scaling is beneficial when as it improves visual quality (mostly on 3D games) without compromising output timing. The output remains native resolution (e.g., 240p) regardless of internal multiplier.
+Internal scaling is beneficial as it improves visual quality (mostly on 3D games) without compromising output timing. The output remains native resolution (e.g., 240p) regardless of internal multiplier.
 
 ---
 
@@ -268,5 +268,3 @@ The project's value lies in **extending the solution space**: demonstrating that
 **Advanced Guides:**
  - [Perfect Aspect Ratio Tutorial](PerfectAspectRatio.md)
  - [SSH Setup For Gamepad Only](SSH_NoPassword.md) 
-
-
