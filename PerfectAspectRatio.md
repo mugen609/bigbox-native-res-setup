@@ -1,4 +1,4 @@
-# 🎯 Perfect Aspect Ratios
+# ![icon](/images/GameMaze-icon.png) 🎯 Perfect Aspect Ratios
 
 *A GameMaze annexe covering mathematically correct geometry for non-standard aspect ratios.*
 
@@ -613,3 +613,4 @@ Vita games now display in perfect native 30:17 aspect ratio with imperceptible b
 From now on: Just launch Vita3K normally and the correction applies silently every time.
 
 **← [Back to Main Setup Guide](GameMaze.md)**
+
