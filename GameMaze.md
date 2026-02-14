@@ -80,7 +80,7 @@ GameMaze relies on CRU **super resolutions** (e.g., 2560×240) over HDMI/DP with
 ---
 
 *Super Mario Land running at native 144p via HDMI → RetroTink 4K with scanlines*
-<img src="/images/GBMario.jpeg" alt="GameBoy 144p" height="400">
+<img src="/images/GBMario.jpeg" alt="GameBoy 144p" height="480">
 
 **Tested List (my hardware):**
 
@@ -768,6 +768,7 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
+
 
 
 
