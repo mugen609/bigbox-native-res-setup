@@ -1,6 +1,10 @@
+<div align="center">
+
 ![GameMaze](/images/GameMaze2.png)
 
 *Native Resolutions • Seamless Gamepad Control • Console-Like Experience for scalers on modern displays*
+
+</div>
 
 ---
 
@@ -764,4 +768,5 @@ This project is about more than just running games. GameMaze brings together mul
 - Unified access to emulation, arcade, and modern PC titles in one library.
 
 If you are facing similar challenges—wanting both authenticity and convenience on modern displays—this approach should give you a solid, repeatable foundation to build on and customize for your own hardware and preferences.
+
 
