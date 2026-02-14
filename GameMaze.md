@@ -283,7 +283,7 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 
 **Emulators handle resolution in 3 ways**:
  - SwitchRes in Retroarch for 224p & 240p 
- - *Desktop default (Emulator launches at desktop resolution*, **most common**): we will need [Res-O-Matic](#res-o-matic-for-custom-resolutions) if we want a different game resolution. 
+ - *Desktop default (Emulator launches at desktop resolution*, **most common**): we will need [Res-O-Matic](#res-o-matic-for-custom-resolutions) when we want a different game resolution. 
  - Config file edition
  
 The following table shows the method per system:
