@@ -157,7 +157,7 @@ The following elements represent findings or unusual combinations:
 
 | Aspect | Conventional Approach | GameMaze Approach | Origin |
 |--------|----------------------|-------------------|--------|
-| **Horizontal timing¹** | Variable with resolution | **Uniform**: 2560 active, FP16, SW32, Blank80, Polarity -/- | HDMI constraint (can't accept true low widths); super resolution simplifies configuration |
+| **Horizontal timing** | Variable with resolution | **Uniform¹**: 2560 active, FP16, SW32, Blank80, Polarity -/- | HDMI constraint (can't accept true low widths); super resolution simplifies configuration |
 | **Vertical progression** | Proportional scaling (e.g., 320p=FP16/4) | **Blanking-only variation**: 9,12,14,15,16,17,24,25,34 | Tested stability across 144p–544p range |
 | **CRU slot strategy** | 6-resolution limit | **Unlimited slots** (CRU 1.5.3+) enabling 9+ timings | Version exploitation for extended coverage |
 
