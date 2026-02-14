@@ -217,12 +217,10 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 | 400p       | 2560×400     | 16/3              | 32/4             | 80/25          | -/-      | 60.000       |
 | 544p       | 2560×544     | 16/3              | 32/4             | 80/34          | -/-      | 60.000       |
 
-
-
 **Notes**:
  - **CRU slot budget**: Since CRU 1.5.3, slot limits have been removed (previously capped at 6). I've tested 9 custom timings successfully; feel free to add more if needed, CRU changelog claims it will work.
  - **480p/720p/1080p**: Standard HDMI modes, no CRU needed.
- - **Horizontal timings**: All share Active: 2560, Front Porch: 16, Sync Width: 32, Blanking: 80, Polarity: -.
+ - **Horizontal timings**: All share Active: 2560, Front Porch: 16, Sync Width: 32, Blanking: 80, Polarity: -. * This uniformity is a consequence of HDMI's super resolution requirement (digital connections and modern drivers reject true low-width signals like 320×240). With HDMI, it's OK to have only vertical blanking vary per resolution.*
 
 ![240p in CRU](/images/240.PNG)
 
