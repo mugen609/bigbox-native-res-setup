@@ -222,7 +222,7 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 >
 > - **480p/720p/1080p**: Standard HDMI modes, no CRU needed.
 >
-> - **Horizontal timings**: All share Active: 2560, Front Porch: 16, Sync Width: 32, Blanking: 80, Polarity: -. * This uniformity is a consequence of HDMI's super resolution requirement (digital connections and modern drivers reject true low-width signals like 320×240). With HDMI, it's OK to have only vertical blanking vary per resolution.*
+> - **Horizontal timings**: All share Active: 2560, Front Porch: 16, Sync Width: 32, Blanking: 80, Polarity: -. *This uniformity is a consequence of HDMI's super resolution requirement (digital connections and modern drivers reject true low-width signals like 320×240). With HDMI, it's OK to have only vertical blanking vary per resolution.*
 
 ![240p in CRU](/images/240.PNG)
 
