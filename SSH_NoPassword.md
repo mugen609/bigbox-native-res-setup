@@ -1,3 +1,4 @@
+![GameMaze](/images/GameMaze2.png) 
 # 🌐 Gamepad-Only Workflow: SSH Remote Access
 
 *A GameMaze annexe covering passwordless SSH.*
@@ -78,3 +79,4 @@
  > - *No screen passwords — Windows stays auto-login*
  > - *USB fallback available but less convenient*
  > - *CRU bonus: Export .bin → WinSCP → main PC backup*
+
