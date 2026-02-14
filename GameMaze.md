@@ -363,6 +363,7 @@ The following table shows the method per system:
 ---
  
 *Final Fantasy 5 Advance at 160p*
+
 <img src="/images/GBAFF5.jpeg" alt="FF5GBA" height="480">  
 
 ## 🕹️
