@@ -104,7 +104,7 @@ Note: [CRT EmuDriver-listed GPUs](https://geedorah.com/eiusdemmodi/forum/viewtop
 > 
 > - **[RetroBat](https://www.retrobat.org)** - Windows-based with full Steam catalog access and similar unified interface. *Great if you need Windows compatibility.*
 > 
-> Both offer excellent gamepad-only experiences **without** GameMaze's hardware requirements or setup complexity. They're optimized for TV/monitor output rather than scaler pipelines.
+> Both offer excellent gamepad-only experiences **without** GameMaze's hardware requirements or setup complexity. They're optimized for modern TV/monitor output rather than scaler pipelines.
 > 
 > **GameMaze's niche:** Specifically for scaler owners wanting resolution flexibility (144p–1080p) + modern systems in one box. → [Detailed comparison](GameMazeEssence.md#differentiation)
 
@@ -211,7 +211,9 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 
 <p align="center">
   <em>Dragon Quest 6 on SNES in native resolution</em>
-  <img src="/images/DQ6.jpg" alt="DQ6" height="496"><br>
+</p>
+<p align="center">
+  <img src="/images/DQ6.jpg" alt="DQ6" height="496">
 </p>
 
 ---
@@ -335,7 +337,9 @@ The following table shows the method per system:
 
 <p align="center">
   <em>Chrono Trigger PS1</em>
-  <img src="/images/crono.jpg" alt="4PS1 Example" height="496"><br>
+</p>
+<p align="center">
+  <img src="/images/crono.jpg" alt="4PS1 Example" height="496">
 </p>
 
 ##  📺
@@ -379,7 +383,9 @@ The following table shows the method per system:
 
 <p align="center">
   <em>Final Fantasy 5 Advance at 160p</em>
-  <img src="/images/GBAFF5.jpeg" alt="FF5GBA" height="496"><br>
+</p>
+<p align="center">
+  <img src="/images/GBAFF5.jpeg" alt="FF5GBA" height="496">
 </p>
 
 ## 🕹️
