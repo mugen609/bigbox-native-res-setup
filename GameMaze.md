@@ -51,12 +51,17 @@ It optimizes for:
 
 ## Why GameMaze?
 
-In many setups, a scaler looks best when it receives a native low-resolution signal, not a pre-upscaled desktop frame.
+In many situations, a scaler looks best when it receives a native low-resolution signal, not a pre-upscaled desktop frame.
 GameMaze’s approach is to output those low resolutions directly, while keeping the convenience and performance of a modern Windows emulation + PC gaming setup.
 
 **📖** For deeper rationale and design details, also see: **[GameMaze Essence](GameMazeEssence.md)**.
 
 ---
+
+<p align="center">
+  <img src="/images/GBMario.jpeg" alt="GameBoy 144p" height="496"><br>
+  <em>Super Mario Land running at native 144p via HDMI → RetroTink 4K with scanlines</em>
+</p>
 
 ## Requirements and Software
 
@@ -78,9 +83,6 @@ GameMaze relies on CRU **super resolutions** (e.g., 2560×240) over HDMI/DP with
 
 ---
 
-*Super Mario Land running at native 144p via HDMI → RetroTink 4K with scanlines*
-<img src="/images/GBMario.jpeg" alt="GameBoy 144p" height="480">
-
 **Tested List (my hardware):**
 
 #### ✅ Confirmed Working (Feb 2026 drivers, super resolution via CRU):
@@ -94,16 +96,6 @@ GameMaze relies on CRU **super resolutions** (e.g., 2560×240) over HDMI/DP with
 
 Note: [CRT EmuDriver-listed GPUs](https://geedorah.com/eiusdemmodi/forum/viewtopic.php?id=295) should work with super resolutions and current drivers. Similar discrete AMD GPUs (e.g., RX 6600) are likely compatible. Integrated graphics and modern NVIDIA cards have shown issues in my limited tests, but treat it as empirical. 
 
-## My Setup & Signal Chain (as example only)
-
-[Mini PC: Ryzen 9 8945HS] ──[eGPU: OCuLink]── [RX 6700 XT] ──[HDMI: CRU super-res]── [RetroTINK 4K] ──[CRT shaders → 1440p]── [LG OLED: 1440p 60Hz, VESA TATE]
-
-
-**Key components:**
-- **GPU**: RX 6700 XT. See [GPU Compatibility](#gpu-compatibility).
-- **Scaler**: HDMI scaler accepting 144p–544p inputs (RetroTINK 4K tested).
-- **Controllers**: DualSense ×2, Hori Octa Pro, Xbox Series X (4-player).
-
 > **⚠️ No compatible GPU or HDMI scaler?**
 > 
 > GameMaze is built around → native 144p–544p → + modern res → output into external scalers. If you lack this hardware but like the gamepad-only workflow / all games launch from the same interface /concept, **you actually have better options:**
@@ -115,6 +107,17 @@ Note: [CRT EmuDriver-listed GPUs](https://geedorah.com/eiusdemmodi/forum/viewtop
 > Both offer excellent gamepad-only experiences **without** GameMaze's hardware requirements or setup complexity. They're optimized for TV/monitor output rather than scaler pipelines.
 > 
 > **GameMaze's niche:** Specifically for scaler owners wanting resolution flexibility (144p–1080p) + modern systems in one box. → [Detailed comparison](GameMazeEssence.md#differentiation)
+
+---
+
+## My Setup & Signal Chain (as example only)
+
+[Mini PC: Ryzen 9 8945HS] ──[eGPU: OCuLink]── [RX 6700 XT] ──[HDMI: CRU super-res]── [RetroTINK 4K] ──[CRT shaders → 1440p]── [LG OLED: 1440p 60Hz, VESA TATE]
+
+**Key components:**
+- **GPU**: RX 6700 XT. See [GPU Compatibility](#gpu-compatibility).
+- **Scaler**: HDMI scaler accepting 144p–544p inputs (RetroTINK 4K tested).
+- **Controllers**: DualSense ×2, Hori Octa Pro, Xbox Series X (4-player).
 
 ---
 
@@ -206,9 +209,10 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 
 ---
 
-*Dragon Quest 6 on SNES in native resolution* 
-
-<img src="/images/DQ6.jpg" alt="DQ6" height="480"> 
+<p align="center">
+  <img src="/images/DQ6.jpg" alt="DQ6" height="496"><br>
+  <em>Dragon Quest 6 on SNES in native resolution</em>
+</p>
 
 ---
 
@@ -271,10 +275,10 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 	
  > **If all fail** → GPU likely incompatible
 
-🎮
-
-*3DS in original 400p, Dragon Ball Z:Extreme Butoden*
-<img src="/images/3DSDBZ.jpeg" alt="400p3DS6" height="512"> 
+<p align="center">
+  <img src="/images/3DSDBZ.jpeg" alt="400p3DS6" height="512"><br>
+  <em>🎮 3DS in original 400p, Dragon Ball Z:Extreme Butoden</em>
+</p>
    
 ---
 
@@ -329,9 +333,10 @@ The following table shows the method per system:
 
 ---
 
-*Chrono Trigger PS1*  
-<img src="/images/crono.jpg" alt="PS1 Example" height="480"> 
-
+<p align="center">
+  <img src="/images/crono.jpg" alt="4PS1 Example" height="496"><br>
+  <em>Chrono Trigger PS1</em>
+</p>
 
 ##  📺
 ### RetroArch Configuration
@@ -371,10 +376,11 @@ The following table shows the method per system:
 > For mathematically correct ratios, see **[Perfect Aspect Ratio Guide](PerfectAspectRatio.md)**.  
 
 ---
- 
-*Final Fantasy 5 Advance at 160p*
 
-<img src="/images/GBAFF5.jpeg" alt="FF5GBA" height="480">  
+<p align="center">
+  <img src="/images/GBAFF5.jpeg" alt="FF5GBA" height="496"><br>
+  <em>Final Fantasy 5 Advance at 160p</em>
+</p>
 
 ## 🕹️
 ### Standalone Emulator Configuration
@@ -583,11 +589,11 @@ You can easily find general documentation online, eg. [Just Jamie's Tutorial](ht
 
 ![LaunchBox Quit Script](/images/close.png)
 
-- **Optional Extra polish** *(Mostly if popup windows bother you)*:
+- **Optional popups hidding)*:
 	- Tools → Manage Emulators → select emulator → Details:  
 	  - Enable **Attempt to hide console window on startup/shutdown**.  
 	  - Under **Startup Screen**:  
-		- Enable **Aggressive Startup Window Hiding** (helps hide transient launcher windows).  
+		- Enable **Aggressive Startup Window Hiding** (helps hide launcher's windows).  
 	  - Enable **Hide All Windows that are not in Exclusive Fullscreen Mode** to help keep BigBox in focus.
 
 ---
@@ -746,8 +752,7 @@ To make it blend into your BigBox theme:
 **Windows Settings** (Settings app):
 - **Startup Apps**: Task Manager (Ctrl+Shift+Esc) → Startup → **disable OneDrive/bloat** *(keep reWASD/LaunchBox)*
 - Privacy → **Disable telemetry** 
-- System → **Turn off notifications/Action Center**
-- Update → **Pause updates** + disable notifications
+- System → Notifications → disable (System → Notifications → **Do not disturb mode**)
 
 **Third-party Tools**:
 - **O&O ShutUp10**: Recommended settings (telemetry + notifications)
