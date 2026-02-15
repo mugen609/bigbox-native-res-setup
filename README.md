@@ -1,6 +1,6 @@
 <div align="center">
 
-![GameMaze](/images/GameMaze2.png)
+![GameMaze](/images/GameMaze1.png)
 
 **One gamepad  •  Four decades of games  •  Zero compromises.**
 
