@@ -59,8 +59,8 @@ GameMaze’s approach is to output those low resolutions directly, while keeping
 ---
 
 <p align="center">
-  <img src="/images/GBMario.jpeg" alt="GameBoy 144p" height="496"><br>
   <em>Super Mario Land running at native 144p via HDMI → RetroTink 4K with scanlines</em>
+  <img src="/images/GBMario.jpeg" alt="GameBoy 144p" height="496"><br>
 </p>
 
 ## Requirements and Software
@@ -210,8 +210,8 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
 ---
 
 <p align="center">
-  <img src="/images/DQ6.jpg" alt="DQ6" height="496"><br>
   <em>Dragon Quest 6 on SNES in native resolution</em>
+  <img src="/images/DQ6.jpg" alt="DQ6" height="496"><br>
 </p>
 
 ---
@@ -276,8 +276,8 @@ This is **highly recommended if you have two PCs**, but perfectly optional if wo
  > **If all fail** → GPU likely incompatible
 
 <p align="center">
-  <img src="/images/3DSDBZ.jpeg" alt="400p3DS6" height="512"><br>
   <em>🎮 3DS in original 400p, Dragon Ball Z:Extreme Butoden</em>
+  <img src="/images/3DSDBZ.jpeg" alt="400p3DS6" height="512"><br>
 </p>
    
 ---
@@ -334,8 +334,8 @@ The following table shows the method per system:
 ---
 
 <p align="center">
-  <img src="/images/crono.jpg" alt="4PS1 Example" height="496"><br>
   <em>Chrono Trigger PS1</em>
+  <img src="/images/crono.jpg" alt="4PS1 Example" height="496"><br>
 </p>
 
 ##  📺
@@ -378,8 +378,8 @@ The following table shows the method per system:
 ---
 
 <p align="center">
-  <img src="/images/GBAFF5.jpeg" alt="FF5GBA" height="496"><br>
   <em>Final Fantasy 5 Advance at 160p</em>
+  <img src="/images/GBAFF5.jpeg" alt="FF5GBA" height="496"><br>
 </p>
 
 ## 🕹️
