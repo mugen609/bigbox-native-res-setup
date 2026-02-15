@@ -11,7 +11,7 @@
 ![1980-2020](/images/GameRibbonSmall.png)
 - **📖 [Jump to the full setup guide](GameMaze.md)** 
 
-This project turns a Windows PC into a unified emulation console—boot straight into a gamepad-only interface, spanning everything at orignal resolution: from 1980s arcade machines to modern Switch and Steam titles. No stretched pixels. No desktop clutter. Just the games, the way they were meant to be seen and played... But on modern flat panel!
+This project turns a Windows PC into a unified emulation console—boot straight into a gamepad-only interface, spanning everything at original resolution: from 1980s arcade machines to modern Switch and Steam titles. No stretched pixels. No desktop clutter. Just the games, the way they were meant to be seen and played... But on modern flat panel!
 
 > **works with digital video chain / Relies on HDMI scaler**  
  
